@@ -1,6 +1,7 @@
 # Growlauncher API Documentation
 
-[![](assets/logo.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
+[![](assets/banner.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
+[![](assets/icon.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
 
 [![Docs Status](https://img.shields.io/badge/Status-Complete-green)]()
 [![Lua Version](https://img.shields.io/badge/Lua-5.4-blue)](https://www.lua.org/)
