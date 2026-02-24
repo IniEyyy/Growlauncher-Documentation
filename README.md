@@ -654,6 +654,7 @@ JSON builder functions for making custom module.
 | `deprecatedFunction`  | -                                                                          | -                       | Placeholder function (internal) | X
 | `executeFromAssets`   | `path:string`, `name:string`                                               | -                       | Deprecated asset execute        |
 | `createPlayer`        | `name:string`, `flag:string`, `netID:number`, `posX:number`, `posY:number` | [NetAvatar](#netavatar) | Spawn a visual NPC Avatar       |
+| `SetPathFlag`         | -                                                                          | -                       | -                               |
 
 ---
 
