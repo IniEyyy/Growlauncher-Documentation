@@ -83,11 +83,21 @@ Make sure to use real growlauncher, buy it [here](#-community).
 ## Script Path
 
 - **GL < v6.1.25**:
+
   `storage/emulated/0/Android/data/launcher.powerkuy.growlauncher/ScriptLua/`
+  
 - **GL v6.1.25+**:
+
   `storage/emulated/0/Android/data/launcher.powerkuy.growlauncher/files/ScriptLua/`
+  
 - **GL v7.0.0+**:
-  `storage/emulated/0/Android/data/launcher.powerkuy.growlauncher/media/ScriptLua/` <- to support new android system
+
+  `storage/emulated/0/Android/data/launcher.powerkuy.growlauncher/media/ScriptLua/` <- to support the new Android system
+  
+- **GL v7.0.1+**:
+
+  `storage/emulated/0/Android/media/launcher.powerkuy.growlauncher/ScriptLua/` <-to support the new Android system and ensure easier file management
+  
 
 ## Module Icon Source
 
@@ -476,7 +486,7 @@ Make sure to use real growlauncher, buy it [here](#-community).
 | :-             | :-                               | :-              | :-                         | :-                                                                        |
 | `tile.getTile` | `x:number`, `y:number`           | [`Tile`](#tile) | Get tile at coordinates    | `tile.getTile(GetLocal().posX//32,GetLocal().posY//32)`                   |
 | `tile.setFg`   | [`Tile`](#tile), `itemid:number` | -               | Change foreground visually | `tile.setFg(tile.getTile(GetLocal().posX//32,GetLocal().posY//32), 7188)` |
-| `tile.setBg`   | [`Tile`](#tile), `itemid:number` | -               | Change background visually | `tile.setFg(tile.getTile(GetLocal().posX//32,GetLocal().posY//32), 7188)` |
+| `tile.setBg`   | [`Tile`](#tile), `itemid:number` | -               | Change background visually | `tile.setBg(tile.getTile(GetLocal().posX//32,GetLocal().posY//32), 18)` |
 
 ## Growtopia Namespace
 
@@ -672,7 +682,7 @@ For better experience when creating lua scripts, install `sumneko` extension in 
 
 # 📌 Notes
 
-- Support us by buying the real growlauncher.
+- Support us by buying the official growlauncher.
 - More free scripts there!
 
 ---
