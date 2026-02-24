@@ -444,18 +444,19 @@ Make sure to use real growlauncher, buy it [here](#-community).
 
 ## Math & Utility
 
-| Function            | Params                                         | Return           | Description                      | Example                                                           |
-| :-                  | :-                                             | :-               | :-                               | :-                                                                |
-| `split`             | `str:string`, `regex:string`                   | `string[]`       | Split string by regex.           | `str = "a,b,c"; for _,a in pairs(str:split(",")) do log(a) end`   |
-| `ImVec2`            | `x:number`, `y:number`                         | [Vec2](#vector2) | Sets width and height or value.  | `ImVec2(1,0.3)`                                                   |
-| `ImVec4`            | `x:number`, `y:number`, `z:number`, `w:number` | [Vec4](#vector4) | Sets the color value.            | `ImVec4(0,0.55,0.56,1)`                                           |
-| `getTime`           | -                                              | `number`         | Current time in ms.              | `getTime()`                                                       |
-| `string:split`      | `sep:string`                                   | `string[]`       | Split string by sep.             | `str = "1,2"; for _,a in pairs(str:split(",")) do log(a) end`     |
-| `writeToLocal`      | `name:string`, `s:string`                      | -                | Write local file/data.           | `writeToLocal("save.txt","ok")`                                   |
-| `getAppLibrary`     | -                                              | `string`         | Get app library path.            | `log(getAppLibrary())`                                            |
-| `executeFromAssets` | `path:string`, `name:string`                   | -                | Deprecated execute asset.        | -                                                                 |
-| `error`             | `text:string`                                  | -                | Shows an error warning.          | `error("error text")`                                             |
-| `fetch`             | `url:string`                                  | response, error                | Get text data from url          | `fetch("https://raw.githubusercontent.com/PowerKuy/Growlauncher-Documentation/refs/heads/main/sample-scripts/example-for-fetch.lua")`                                             |
+| Function            | Params                                         | Return           | Description                      | Example                                                         |
+| :-                  | :-                                             | :-               | :-                               | :-                                                              |
+| `split`             | `str:string`, `regex:string`                   | `string[]`       | Split string by regex.           | `str = "a,b,c"; for _,a in pairs(str:split(",")) do log(a) end` |
+| `ImVec2`            | `x:number`, `y:number`                         | [Vec2](#vector2) | Sets width and height or value.  | `ImVec2(1,0.3)`                                                 |
+| `ImVec4`            | `x:number`, `y:number`, `z:number`, `w:number` | [Vec4](#vector4) | Sets the color value.            | `ImVec4(0,0.55,0.56,1)`                                         |
+| `getTime`           | -                                              | `number`         | Current time in ms.              | `getTime()`                                                     |
+| `string:split`      | `sep:string`                                   | `string[]`       | Split string by sep.             | `str = "1,2"; for _,a in pairs(str:split(",")) do log(a) end`   |
+| `writeToLocal`      | `name:string`, `s:string`                      | -                | Write local file/data.           | `writeToLocal("save.txt","ok")`                                 |
+| `getAppLibrary`     | -                                              | `string`         | Get app library path.            | `log(getAppLibrary())`                                          |
+| `executeFromAssets` | `path:string`, `name:string`                   | -                | Deprecated execute asset.        | -                                                               |
+| `error`             | `text:string`                                  | -                | Shows an error warning.          | `error("error text")`                                           |
+| `fetch`             | `url:string`                                   | response, error  | Get text data from url           | `fetch("https://raw.githubusercontent.com/PowerKuy/Growlauncher-Documentation/refs/heads/main/sample-scripts/example-for-fetch.lua")`  |
+| `getDiscordID`      | -                                              | -                | Get user discord id              | `log(getDiscordID)`                                             |
 
 ---
 
