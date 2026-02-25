@@ -90,7 +90,7 @@ Make sure to use real growlauncher, buy it [here](#-community).
 
   `storage/emulated/0/Android/data/launcher.powerkuy.growlauncher/files/ScriptLua/`
   
-- **GL v7.0.0+**:
+- **GL v7.0.0**:
 
   `storage/emulated/0/Android/data/launcher.powerkuy.growlauncher/media/ScriptLua/` <- to support the new Android system
   
@@ -99,6 +99,8 @@ Make sure to use real growlauncher, buy it [here](#-community).
   `storage/emulated/0/Android/media/launcher.powerkuy.growlauncher/ScriptLua/` <-to support the new Android system and ensure easier file management
   
 
+  `storage/emulated/0/Android/media/launcher.powerkuy.growlauncher/ScriptLua/` <-to support the new Android system and ensure easier file management
+  
 ## Module Icon Source
 
 - `https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Filled`
