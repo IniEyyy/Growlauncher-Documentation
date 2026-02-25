@@ -1,12 +1,13 @@
 # Growlauncher API Documentation
 
-[![](assets/logo.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
+[![](assets/banner.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
+[![](assets/icon.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
 
 [![Docs Status](https://img.shields.io/badge/Status-Complete-green)]()
 [![Lua Version](https://img.shields.io/badge/Lua-5.4-blue)](https://www.lua.org/)
 
 Growlauncher provides Lua scripting support for Growtopia.
-This documentation is intended for users who want to create, customize, and extend scripts for personal use.
+This documentation is intended for users who want to create, customize, and extend scripts for personal or public use.
 
 ---
 
@@ -94,6 +95,9 @@ Make sure to use real growlauncher, buy it [here](#-community).
   `storage/emulated/0/Android/data/launcher.powerkuy.growlauncher/media/ScriptLua/` <- to support the new Android system
   
 - **GL v7.0.1+**:
+
+  `storage/emulated/0/Android/media/launcher.powerkuy.growlauncher/ScriptLua/` <-to support the new Android system and ensure easier file management
+  
 
   `storage/emulated/0/Android/media/launcher.powerkuy.growlauncher/ScriptLua/` <-to support the new Android system and ensure easier file management
   
@@ -415,8 +419,6 @@ Make sure to use real growlauncher, buy it [here](#-community).
 
 | Function        | Params                                                                                                | Return | Description                    | Example                                                       |
 | :-              | :-                                                                                                    | :-:    | :-                             | :-                                                            |
-| `gamePacket`    | [`packet:TankPacket`](#tankpacket)                                                                    | -      | Trigger game packet (internal) | `gamePacket(pkt)`                                             | X
-| `sendToJava`    | `message:string`                                                                                      | -      | (internal)                     | -                                                             | X
 | `sendPacket`    | `type:number`, `packet:string`, `to_client_first?:boolean`                                            | -      | Send packet to server          | `sendPacket(2,"action\|input\ntext\|Hi")`                     |
 | `sendVariant`   | `variantlist:VariantList`, [`packet_data?:TankPacket`](#tankpacket), `netid?:number`, `value?:number` | -      | Send variant list              | `sendVariant({v1 = "OnConsoleMessage", v2 = "Console here"})` |
 | `sendPacketRaw` | `flag:boolean`, [`packet:TankPacket`](#tankpacket)                                                    | -      | Send raw TankPacket            | `p=getLocal(); sendPacketRaw(false, {type=3, value=18, x=p.posX, y=p.posY, px=p.posX//32, py = p.posY//32})` |
@@ -454,20 +456,19 @@ Make sure to use real growlauncher, buy it [here](#-community).
 
 ## Math & Utility
 
-| Function            | Params                                         | Return           | Description                      | Example                                                           |
-| :-                  | :-                                             | :-               | :-                               | :-                                                                |
-| `split`             | `str:string`, `regex:string`                   | `string[]`       | Split string by regex.           | `str = "a,b,c"; for _,a in pairs(str:split(",")) do log(a) end`   |
-| `ImVec2`            | `x:number`, `y:number`                         | [Vec2](#vector2) | Sets width and height or value.  | `ImVec2(1,0.3)`                                                   |
-| `ImVec4`            | `x:number`, `y:number`, `z:number`, `w:number` | [Vec4](#vector4) | Sets the color value.            | `ImVec4(0,0.55,0.56,1)`                                           |
-| `getTime`           | -                                              | `number`         | Current time in ms.              | `getTime()`                                                       |
-| `decryptText`       | `text:string`                                  | -                | Decrypt (internal).              | -                                                                 | X
-| `string:split`      | `sep:string`                                   | `string[]`       | Split string by sep.             | `str = "1,2"; for _,a in pairs(str:split(",")) do log(a) end`     |
-| `writeToLocal`      | `name:string`, `s:string`                      | -                | Write local file/data.           | `writeToLocal("save.txt","ok")`                                   |
-| `getAppLibrary`     | -                                              | `string`         | Get app library path.            | `log(getAppLibrary())`                                            |
-| `decryptTextHuh`    | `text:string`                                  | -                | Decrypt alt (internal).          | -                                                                 | X
-| `executeFromAssets` | `path:string`, `name:string`                   | -                | Deprecated execute asset.        | -                                                                 |
-| `error`             | `text:string`                                  | -                | Shows an error warning.          | `error("error text")`                                             |
-| `fetch`             | `url:string`                                  | response, error                | Get text data from url          | `fetch("https://raw.githubusercontent.com/PowerKuy/Growlauncher-Documentation/refs/heads/main/sample-scripts/example-for-fetch.lua")`                                             |
+| Function            | Params                                         | Return           | Description                      | Example                                                         |
+| :-                  | :-                                             | :-               | :-                               | :-                                                              |
+| `split`             | `str:string`, `regex:string`                   | `string[]`       | Split string by regex.           | `str = "a,b,c"; for _,a in pairs(str:split(",")) do log(a) end` |
+| `ImVec2`            | `x:number`, `y:number`                         | [Vec2](#vector2) | Sets width and height or value.  | `ImVec2(1,0.3)`                                                 |
+| `ImVec4`            | `x:number`, `y:number`, `z:number`, `w:number` | [Vec4](#vector4) | Sets the color value.            | `ImVec4(0,0.55,0.56,1)`                                         |
+| `getTime`           | -                                              | `number`         | Current time in ms.              | `getTime()`                                                     |
+| `string:split`      | `sep:string`                                   | `string[]`       | Split string by sep.             | `str = "1,2"; for _,a in pairs(str:split(",")) do log(a) end`   |
+| `writeToLocal`      | `name:string`, `s:string`                      | -                | Write local file/data.           | `writeToLocal("save.txt","ok")`                                 |
+| `getAppLibrary`     | -                                              | `string`         | Get app library path.            | `log(getAppLibrary())`                                          |
+| `executeFromAssets` | `path:string`, `name:string`                   | -                | Deprecated execute asset.        | -                                                               |
+| `error`             | `text:string`                                  | -                | Shows an error warning.          | `error("error text")`                                           |
+| `fetch`             | `url:string`                                   | response, error  | Get text data from url           | `fetch("https://raw.githubusercontent.com/PowerKuy/Growlauncher-Documentation/refs/heads/main/sample-scripts/example-for-fetch.lua")`  |
+| `getDiscordID`      | -                                              | -                | Get user discord id              | `log(getDiscordID)`                                             |
 
 ---
 
@@ -487,7 +488,7 @@ Make sure to use real growlauncher, buy it [here](#-community).
 | :-             | :-                               | :-              | :-                         | :-                                                                        |
 | `tile.getTile` | `x:number`, `y:number`           | [`Tile`](#tile) | Get tile at coordinates    | `tile.getTile(GetLocal().posX//32,GetLocal().posY//32)`                   |
 | `tile.setFg`   | [`Tile`](#tile), `itemid:number` | -               | Change foreground visually | `tile.setFg(tile.getTile(GetLocal().posX//32,GetLocal().posY//32), 7188)` |
-| `tile.setBg`   | [`Tile`](#tile), `itemid:number` | -               | Change background visually | `tile.setFg(tile.getTile(GetLocal().posX//32,GetLocal().posY//32), 7188)` |
+| `tile.setBg`   | [`Tile`](#tile), `itemid:number` | -               | Change background visually | `tile.setBg(tile.getTile(GetLocal().posX//32,GetLocal().posY//32), 18)` |
 
 ## Growtopia Namespace
 
@@ -623,7 +624,6 @@ JSON builder functions for making custom module.
 | `randomCSleep`  | `min:number`, `max:number`                       | `number`  | Random coroutine sleep      | `randomCSleep(200,400)`                         |
 | `runThread`     | `func:function`, `...any`                        | `any ...` | Run function in new thread  | `runThread(function() log("Thread") end)`       |
 | `runCoroutine`  | `func:function`, `...any`                        | `any ...` | Run coroutine               | `runCoroutine(function() log("Coroutine") end)` |
-| `tickCoroutine` | -                                                | -         | Tick coroutine (internal)   | -                                               | X
 
 ---
 
@@ -660,10 +660,9 @@ JSON builder functions for making custom module.
 
 | Function              | Params                                                                     | Return                  | Description                     |
 | :-                    | :-                                                                         | :-                      | :-                              |
-| `allowGameRun`        | -                                                                          | -                       | Deprecated allow run (internal) | X
-| `deprecatedFunction`  | -                                                                          | -                       | Placeholder function (internal) | X
 | `executeFromAssets`   | `path:string`, `name:string`                                               | -                       | Deprecated asset execute        |
 | `createPlayer`        | `name:string`, `flag:string`, `netID:number`, `posX:number`, `posY:number` | [NetAvatar](#netavatar) | Spawn a visual NPC Avatar       |
+| `SetPathFlag`         | -                                                                          | -                       | -                               |
 
 ---
 
@@ -685,7 +684,7 @@ For better experience when creating lua scripts, install `sumneko` extension in 
 
 # 📌 Notes
 
-- Support us by buying the real growlauncher.
+- Support us by buying the official growlauncher.
 - More free scripts there!
 
 ---
