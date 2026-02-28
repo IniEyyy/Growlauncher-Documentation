@@ -1,0 +1,110 @@
+/* Enhanced VitePress Theme Styles */
+
+/* Left Border for Active Sidebar Items */
+.VPSidebarItem .link.active {
+  position: relative;
+  padding-left: 16px;
+}
+
+.VPSidebarItem .link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--vp-c-brand-1);
+  border-radius: 0 2px 2px 0;
+}
+
+/* Search box wider */
+.VPNav .VPSearchBox {
+  width: 350px;
+  max-width: 450px;
+}
+
+/* Enhanced code blocks */
+.vp-code {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Better typography spacing */
+.VPDoc h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.VPDoc h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Enhanced sidebar styling */
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+/* Smooth hover animations for sidebar items */
+.VPSidebarItem .link {
+  transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.VPSidebarItem .link:hover {
+  transform: translateX(3px);
+  box-shadow: 0 0 8px rgba(100, 108, 255, 0.15);
+}
+
+/* Subtle page transitions */
+.VPContent {
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Better table styling */
+.VPDoc table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced link hover effects */
+.VPDoc a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--vp-c-brand-1);
+  text-underline-offset: 2px;
+}
+
+/* Better button styling */
+.VPButton {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.VPButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Improved outline (right sidebar) styling */
+.VPOutline {
+  border-left: 1px solid var(--vp-c-divider);
+  padding-left: 1rem;
+}
+
+.VPOutline .outline-link {
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.VPOutline .outline-link:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* Better mobile responsiveness */
+@media (max-width: 768px) {
+  .VPNav .VPSearchBox {
+    width: 200px;
+  }
+}

@@ -1,0 +1,212 @@
+/* Simple and reliable animations for VitePress */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* Search box animations - more specific and wider */
+.VPNav .VPSearchBox {
+  transition: all 0.3s ease !important;
+  width: 350px !important;
+  max-width: 450px !important;
+}
+
+.VPNav .VPSearchBox input {
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+  padding: 14px 20px !important;
+  font-size: 15px !important;
+  border-radius: 10px !important;
+  border: 2px solid transparent !important;
+}
+
+.VPNav .VPSearchBox:focus-within {
+  transform: scale(1.03) !important;
+  box-shadow: 0 6px 25px rgba(52, 152, 219, 0.2) !important;
+}
+
+.VPNav .VPSearchBox input:focus {
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3) !important;
+  border-color: rgba(52, 152, 219, 0.4) !important;
+  outline: none !important;
+}
+
+.VPNav .VPSearchBox input::placeholder {
+  color: #999 !important;
+  transition: color 0.3s ease !important;
+}
+
+.VPNav .VPSearchBox input:focus::placeholder {
+  color: transparent !important;
+}
+
+/* Search dropdown - more specific */
+.VPNav .VPSearchDropdown {
+  transition: all 0.3s ease !important;
+  transform-origin: top center !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important;
+  animation: slideDown 0.3s ease-out !important;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Search results - more specific */
+.VPNav .VPSearchResults .VPSearchResult {
+  transition: all 0.2s ease !important;
+  border-radius: 6px !important;
+  margin: 4px 0 !important;
+}
+
+.VPNav .VPSearchResults .VPSearchResult:hover {
+  background: rgba(52, 152, 219, 0.1) !important;
+  transform: translateX(6px) !important;
+  padding-left: 16px !important;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15) !important;
+}
+
+/* Navigation animations - more specific */
+.VPNav .VPNavMenu .item {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.VPNav .VPNavMenu .item:hover {
+  transform: translateY(-3px) !important;
+  color: var(--vp-c-brand-1, #3498db) !important;
+}
+
+.VPNav .VPNavMenu .item::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: var(--vp-c-brand-1, #3498db) !important;
+  transition: all 0.3s ease !important;
+  transform: translateX(-50%) !important;
+}
+
+.VPNav .VPNavMenu .item:hover::after {
+  width: 100% !important;
+}
+
+/* Button animations - more specific */
+.VPButton, button:not(.VPSearchBox button) {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+}
+
+.VPButton:hover, button:not(.VPSearchBox button):hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3) !important;
+  background: var(--vp-c-brand-1, #3498db) !important;
+  color: white !important;
+}
+
+.VPButton:active, button:not(.VPSearchBox button):active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2) !important;
+}
+
+/* Content animations */
+.VPContent {
+  animation: fadeInUp 0.5s ease-out !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Link animations */
+a {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+a:hover {
+  color: var(--vp-c-brand-1, #3498db) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1, #3498db) !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+  transition: outline 0.2s ease !important;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  .VPSidebar {
+    transition: transform 0.3s ease !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .VPNavHamburger {
+    transition: all 0.3s ease !important;
+    transform: scale(1.1) !important;
+    border-radius: 4px !important;
+    padding: 4px !important;
+    background: rgba(52, 152, 219, 0.1) !important;
+  }
+  
+  .VPNavHamburger:hover {
+    background: rgba(52, 152, 219, 0.2) !important;
+    transform: scale(1.15) !important;
+  }
+}
+
+/* Dark mode */
+.dark {
+  --vp-c-brand-1: #5dade2;
+  --vp-c-brand-2: #3498db;
+  --vp-c-brand-3: #2874a6;
+}
+
+.dark .VPNav .VPSearchBox input:focus {
+  box-shadow: 0 0 0 4px rgba(93, 173, 226, 0.3) !important;
+  border-color: rgba(93, 173, 226, 0.4) !important;
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-1, #3498db) !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-2, #2980b9) !important;
+  transform: scale(1.1) !important;
+}

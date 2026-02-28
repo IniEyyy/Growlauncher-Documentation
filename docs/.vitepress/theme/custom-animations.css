@@ -1,0 +1,391 @@
+/* Custom animations and transitions for VitePress */
+:root {
+  --vp-c-brand-1: #3498db;
+  --vp-c-brand-2: #2980b9;
+  --vp-c-brand-3: #1f618d;
+}
+
+/* Global smooth scrolling */
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* Enhanced dropdown animations with slide-down */
+.VPSidebarGroup.collapsible .items {
+  overflow: hidden !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transform-origin: top !important;
+}
+
+.VPSidebarGroup.collapsible[aria-expanded="false"] .items {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  transform: scaleY(0) !important;
+  margin-top: 0 !important;
+}
+
+.VPSidebarGroup.collapsible[aria-expanded="true"] .items {
+  max-height: 500px !important;
+  opacity: 1 !important;
+  transform: scaleY(1) !important;
+  margin-top: 8px !important;
+}
+
+/* Sidebar button animations */
+.VPSidebarGroup.collapsible .button {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.VPSidebarGroup.collapsible .button:hover {
+  background: rgba(52, 152, 219, 0.1) !important;
+  transform: translateX(3px) !important;
+  padding-left: 8px !important;
+}
+
+.VPSidebarGroup.collapsible .button::after {
+  content: '' !important;
+  position: absolute !important;
+  right: 8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 4px solid transparent !important;
+  border-right: 4px solid transparent !important;
+  border-top: 4px solid var(--vp-c-brand-1) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.VPSidebarGroup.collapsible[aria-expanded="true"] .button::after {
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* Sidebar link animations */
+.VPSidebarItem .link {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  padding-left: 16px !important;
+}
+
+.VPSidebarItem .link:hover {
+  transform: translateX(6px) !important;
+  background: linear-gradient(90deg, var(--vp-c-brand-1) 0%, transparent 100%) !important;
+  background-size: 3px 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  padding-left: 20px !important;
+}
+
+.VPSidebarItem .link.active {
+  transform: translateX(8px) !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-brand-1) !important;
+  padding-left: 20px !important;
+}
+
+/* Active indicator animation */
+.VPSidebarItem .link.active::before {
+  content: '' !important;
+  position: absolute !important;
+  left: -12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 4px !important;
+  height: 20px !important;
+  background: var(--vp-c-brand-1) !important;
+  border-radius: 2px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.4) !important;
+}
+
+.VPSidebarItem .link.active:hover::before {
+  height: 24px !important;
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.6) !important;
+}
+
+/* Navigation bar animations */
+.VPNav .item {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.VPNav .item:hover {
+  transform: translateY(-3px) !important;
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPNav .item::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: var(--vp-c-brand-1) !important;
+  transition: all 0.3s ease !important;
+  transform: translateX(-50%) !important;
+}
+
+.VPNav .item:hover::after {
+  width: 100% !important;
+}
+
+/* Search box animations */
+.VPSearchBox {
+  transition: all 0.3s ease !important;
+}
+
+.VPSearchBox input {
+  transition: all 0.3s ease !important;
+  border-radius: 8px !important;
+}
+
+.VPSearchBox input:focus {
+  transform: scale(1.02) !important;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2) !important;
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+/* Search dropdown animations */
+.VPSearchDropdown {
+  transition: all 0.3s ease !important;
+  transform-origin: top center !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.VPSearchDropdown.show {
+  animation: slideDown 0.3s ease-out !important;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scaleY(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+/* Search result animations */
+.VPSearchResult {
+  transition: all 0.2s ease !important;
+  border-radius: 4px !important;
+}
+
+.VPSearchResult:hover {
+  background: rgba(52, 152, 219, 0.1) !important;
+  transform: translateX(5px) !important;
+  padding-left: 12px !important;
+}
+
+/* Content animations */
+.VPContent {
+  animation: fadeInUp 0.5s ease-out !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button animations */
+.VPButton {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+}
+
+.VPButton:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3) !important;
+  background: var(--vp-c-brand-1) !important;
+}
+
+.VPButton:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2) !important;
+}
+
+/* Ripple effect */
+.VPButton::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  transform: translate(-50%, -50%) !important;
+  transition: width 0.6s, height 0.6s !important;
+}
+
+.VPButton:active::before {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+/* Code block animations */
+.vp-code-group .tab {
+  transition: all 0.3s ease !important;
+  border-radius: 6px 6px 0 0 !important;
+}
+
+.vp-code-group .tab:hover {
+  background: rgba(52, 152, 219, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+.vp-code-group .tab.active {
+  background: var(--vp-c-brand-1) !important;
+  color: white !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3) !important;
+}
+
+/* Link animations */
+a {
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+a:hover {
+  color: var(--vp-c-brand-1) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1) !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+  transition: outline 0.2s ease !important;
+}
+
+/* Mobile menu animations */
+@media (max-width: 768px) {
+  .VPSidebar {
+    transition: transform 0.3s ease !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .VPNavHamburger {
+    transition: all 0.3s ease !important;
+    transform: scale(1.1) !important;
+    border-radius: 4px !important;
+    padding: 4px !important;
+    background: rgba(52, 152, 219, 0.1) !important;
+  }
+  
+  .VPNavHamburger:hover {
+    background: rgba(52, 152, 219, 0.2) !important;
+    transform: scale(1.15) !important;
+  }
+}
+
+/* Dark mode adjustments */
+.dark {
+  --vp-c-brand-1: #5dade2;
+  --vp-c-brand-2: #3498db;
+  --vp-c-brand-3: #2874a6;
+}
+
+.dark .VPSearchBox input:focus {
+  box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.2) !important;
+}
+
+/* Page transition effects */
+body {
+  transition: opacity 0.3s ease !important;
+}
+
+.page-transitioning {
+  opacity: 0.7 !important;
+}
+
+/* Enhanced sidebar group header */
+.VPSidebarGroup .text {
+  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+}
+
+.VPSidebarGroup.collapsible:hover .text {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Tooltip animations */
+.VPTooltip {
+  animation: tooltipFadeIn 0.2s ease-out !important;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading states */
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Footer animations */
+.VPFooter {
+  transition: all 0.3s ease !important;
+}
+
+/* Interactive elements */
+[role="button"], [role="link"], .clickable {
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+[role="button"]:hover, [role="link"]:hover, .clickable:hover {
+  transform: translateY(-1px) !important;
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-1) !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-2) !important;
+  transform: scale(1.1) !important;
+}

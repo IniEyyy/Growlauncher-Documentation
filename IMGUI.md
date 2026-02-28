@@ -4,10 +4,7 @@
 
 ## Table of Contents
 
-- [Context Creation & Access](#context-creation--access)
-- [Main Functions](#main-functions)
 - [Demo & Debug Utilities](#demo--debug-utilities)
-- [Style Management](#style-management)
 - [Window Management](#window-management)
 - [Child Windows](#child-windows)
 - [Window Utilities](#window-utilities)
@@ -34,38 +31,13 @@
 - [Clipping](#clipping)
 - [Focus & Activation](#focus--activation)
 - [Item Utilities](#item-utilities)
-- [Viewports](#viewports)
 - [Miscellaneous Utilities](#miscellaneous-utilities)
 - [Input Handling](#input-handling)
 - [Input Text Widgets](#input-text-widgets)
 - [Image Functions](#image-functions)
-- [Docking](#docking)
 - [Tables](#tables)
 - [State Management](#state-management)
-- [Memory Management](#memory-management)
 - [Enums & Constants](#enums--constants)
-
-## Context Creation & Access
-
-| Function            | Params                  | Return          | Description                   |
-| :-                  | :-                      | :-              | :-                            |
-| `CreateContext`     | `shared_font_atlas:any` | `ImGuiContext`  | Creates a new ImGui context   |
-| `DestroyContext`    | `ctx:ImGuiContext`      | -               | Destroys an ImGui context     |
-| `GetCurrentContext` | -                       | `ImGuiContext`  | Returns current ImGui context |
-| `SetCurrentContext` | `ctx:ImGuiContext`      | -               | Sets current ImGui context    |
-
-## Main Functions
-
-| Function                | Params                        | Return          | Description                   |
-| :-                      | :-                            | :-              | :-                            |
-| `GetIO`                 | -                             | `ImGuiIO`       | Returns ImGui IO structure    |
-| `GetStyle`              | -                             | `ImGuiStyle`    | Returns ImGui style structure |
-| `GetBackgroundDrawList` | `viewport:ImGuiViewport\|nil` | `ImDrawList`    | Gets background draw list     |
-| `GetForegroundDrawList` | `viewport:ImGuiViewport\|nil` | `ImDrawList`    | Gets foreground draw list     |
-| `NewFrame`              | -                             | -               | Starts a new ImGui frame      |
-| `EndFrame`              | -                             | -               | Ends current ImGui frame      |
-| `Render`                | -                             | -               | Renders ImGui draw data       |
-| `GetDrawData`           | -                             | `ImDrawData`    | Gets current draw data        |
 
 ## Demo & Debug Utilities
 
@@ -81,14 +53,6 @@
 | `ShowUserGuide`       | -                     | -         | Shows ImGui user guide        |
 | `ShowAboutWindow`     | `p_open:boolean\|nil` | -         | Shows ImGui about window      |
 | `GetVersion`          | -                     | `string`  | Returns ImGui version         |
-
-## Style Management
-
-| Function             | Params | Return | Description              |
-| :-                   | :-     | :-     | :-                       |
-| `StyleColorsDark`    | -      | -      | Sets dark color style    |
-| `StyleColorsClassic` | -      | -      | Sets classic color style |
-| `StyleColorsLight`   | -      | -      | Sets light color style   |
 
 ## Window Management
 
@@ -113,22 +77,18 @@
 | `IsWindowCollapsed`           | -                                                        | `boolean`       | Returns true if window is collapsed |
 | `IsWindowFocused`             | `flags:ImGuiFocusedFlags\|nil`                           | `boolean`       | Returns true if window is focused   |
 | `IsWindowHovered`             | `flags:ImGuiHoveredFlags\|nil`                           | `boolean`       | Returns true if window is hovered   |
-| `GetWindowDrawList`           | -                                                        | `ImDrawList`    | Gets window's draw list             |
-| `GetWindowDpiScale`           | -                                                        | `number`        | Gets window's DPI scale             |
 | `GetWindowPos`                | -                                                        | `number, number`| Gets window position                |
 | `GetWindowSize`               | -                                                        | `number, number`| Gets window size                    |
 | `GetWindowWidth`              | -                                                        | `number`        | Gets window width                   |
 | `GetWindowHeight`             | -                                                        | `number`        | Gets window height                  |
 | `GetWindowContentRegionMin`   | -                                                        | `number, number`| Gets window content region min      |
 | `GetWindowContentRegionMax`   | -                                                        | `number, number`| Gets window content region max      |
-| `GetWindowContentRegionWidth` | -                                                        | `number`        | Gets window content region width    |
 | `SetNextWindowPos`            | `pos:ImVec2`, `cond:ImGuiCond\|nil`, `pivot:ImVec2\|nil` | -               | Sets next window position           |
 | `SetNextWindowSize`           | `size:ImVec2`, `cond:ImGuiCond\|nil`                     | -               | Sets next window size               |
 | `SetNextWindowContentSize`    | `size:ImVec2`                                            | -               | Sets next window content size       |
 | `SetNextWindowCollapsed`      | `collapsed:boolean`, `cond:ImGuiCond\|nil`               | -               | Sets next window collapsed state    |
 | `SetNextWindowFocus`          | -                                                        | -               | Sets next window to be focused      |
 | `SetNextWindowBgAlpha`        | `alpha:number`                                           | -               | Sets next window background alpha   |
-| `SetNextWindowViewport`       | `viewport:ImGuiViewport`                                 | -               | Sets next window viewport           |
 | `SetWindowPos`                | `pos:ImVec2`, `cond:ImGuiCond\|nil`                      | -               | Sets current window position        |
 | `SetWindowSize`               | `size:ImVec2`, `cond:ImGuiCond\|nil`                     | -               | Sets current window size            |
 | `SetWindowCollapsed`          | `collapsed:boolean`, `cond:ImGuiCond\|nil`               | -               | Sets current window collapsed state |
@@ -144,7 +104,6 @@
 | `GetContentRegionMax`         | -      | `ImVec2`  | Gets maximum content region        |
 | `GetWindowContentRegionMin`   | -      | `ImVec2`  | Gets window content region minimum |
 | `GetWindowContentRegionMax`   | -      | `ImVec2`  | Gets window content region maximum |
-| `GetWindowContentRegionWidth` | -      | `number`  | Gets window content region width   |
 
 ## Scrolling
 
@@ -336,15 +295,6 @@
 | `PlotHistogram` | `label:string`, `values:number[]`, `values_offset:integer\|nil`, `overlay_text:string\|nil`, `scale_min:number\|nil`, `scale_max:number\|nil`, `graph_size:ImVec2\|nil`                                                 | -      | Plot histogram                |
 | `PlotHistogram` | `label:string`, `values_getter:function`, `data:userdata`, `values_count:integer`, `values_offset:integer\|nil`, `overlay_text:string\|nil`, `scale_min:number\|nil`, `scale_max:number\|nil`, `graph_size:ImVec2\|nil` | -      | Plot histogram with callback  |
 
-## Value Helpers
-
-| Function       | Params                                                  | Return | Description                      |
-| :-             | :-                                                      | :-     | :-                               |
-| `ValueBool`    | `prefix:string`, `b:boolean`                            | -      | Displays boolean value           |
-| `ValueInt`     | `prefix:string`, `v:integer`                            | -      | Displays integer value           |
-| `ValueUint`    | `prefix:string`, `v:integer`                            | -      | Displays unsigned integer value  |
-| `ValueFloat`   | `prefix:string`, `v:number`, `float_format:string\|nil` | -      | Displays float value             |
-
 ## Menus
 
 | Function            | Params                                                                                  | Return             | Description                   |
@@ -466,12 +416,6 @@
 | `SetItemAllowOverlap`        | -                                    | -         | Sets item to allow overlap            |
 | `GetItemID`                  | -                                    | `integer` | Gets item ID                          |
 
-## Viewports
-
-| Function          | Params | Return          | Description          |
-| :-                | :-     | :-              | :-                   |
-| `GetMainViewport` | -      | `ImGuiViewport` | Gets main viewport   |
-
 ## Miscellaneous Utilities
 
 | Function                           | Params                                                                                                                                       | Return                   | Description                      |
@@ -564,17 +508,6 @@
 | `Image`       | `user_texture_id:any`, `size:ImVec2`, `uv0:ImVec2\|nil`, `uv1:ImVec2\|nil`, `tint_col:ImVec4\|nil`, `border_col:ImVec4\|nil`                           | -         | Displays an image |
 | `ImageButton` | `user_texture_id:any`, `size:ImVec2`, `uv0:ImVec2\|nil`, `uv1:ImVec2\|nil`, `frame_padding:integer\|nil`, `bg_col:ImVec4\|nil`, `tint_col:ImVec4\|nil` | `boolean` | Image button      |
 
-## Docking
-
-| Function                | Params                                                                                     | Return    | Description                      |
-|  :-                     | :-                                                                                        | :-        | :-                               |
-| `DockSpace`             | `id:integer`, `size:ImVec2\|nil`, `flags:ImGuiDockNodeFlags\|nil`, `window_class:any\|nil` | `integer` | Creates dock space               |
-| `DockSpaceOverViewport` | `viewport:ImGuiViewport\|nil`, `flags:ImGuiDockNodeFlags\|nil`, `window_class:any\|nil`    | `integer` | Creates dock space over viewport |
-| `SetNextWindowDockID`   | `dock_id:integer`, `cond:ImGuiCond\|nil`                                                   | -         | Sets next window dock ID         |
-| `SetNextWindowClass`    | `window_class:any`                                                                         | -         | Sets next window class           |
-| `GetWindowDockID`       | -                                                                                          | `integer` | Gets window dock ID              |
-| `IsWindowDocked`        | -                                                                                          | `boolean` | Checks if window docked          |
-
 ## Tables
 
 | Function                 | Params                                                                                                               | Return                     | Description                 |
@@ -603,15 +536,6 @@
 | Function          | Params                                   | Return | Description               |
 | :-                | :-                                       | :-     | :-                        |
 | `SetNextItemOpen` | `is_open:boolean`, `cond:ImGuiCond\|nil` | -      | Sets next item open state |
-
-## Memory Management
-
-| Function                | Params                                                            | Return                    | Description              |
-| :-                      | :-                                                                | :-                        | :-                       |
-| `SetAllocatorFunctions` | `alloc_func:function`, `free_func:function`, `user_data:any\|nil` | -                         | Sets allocator functions |
-| `GetAllocatorFunctions` | -                                                                 | `function, function, any` | Gets allocator functions |
-| `MemAlloc`              | `size:integer`                                                    | `any`                     | Allocates memory         |
-| `MemFree`               | `ptr:any`                                                         | -                         | Frees memory             |
 
 ## Enums & Constants
 
