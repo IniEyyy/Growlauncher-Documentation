@@ -6,8 +6,6 @@ Non-Player Character structures.
 
 Represents a client-side NPC.
 
-### Properties
-
 | Field       | Type                |
 | :-          | :-:                 |
 | `pos`       | [Vector2](/structs/vectors#vector2) |

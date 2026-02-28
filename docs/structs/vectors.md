@@ -6,8 +6,6 @@ Vector structures for positions, sizes, and coordinates.
 
 2D vector for positions and coordinates.
 
-### Properties
-
 | Field | Type   |
 | :-    | :-:    |
 | `x`   | number |
@@ -16,8 +14,6 @@ Vector structures for positions, sizes, and coordinates.
 ## Vector3
 
 3D vector for spatial coordinates.
-
-### Properties
 
 | Field | Type   |
 | :-    | :-:    |
@@ -29,8 +25,6 @@ Vector structures for positions, sizes, and coordinates.
 
 4D vector commonly used for colors or RGBA values.
 
-### Properties
-
 | Field | Type   |
 | :-    | :-:    |
 | `x`   | number |
@@ -41,8 +35,6 @@ Vector structures for positions, sizes, and coordinates.
 ## Rect
 
 Rectangle structure for areas and bounds.
-
-### Properties
 
 | Field | Type   |
 | :-    | :-:    |

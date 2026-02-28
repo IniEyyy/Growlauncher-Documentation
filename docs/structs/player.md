@@ -6,8 +6,6 @@ Player and character related structures.
 
 Represents a player character in the world.
 
-### Properties
-
 | Field       | Type                                  |
 | :-          | :-:                                   |
 | `pos`       | [Vector2](/structs/vectors#vector2)                   |
@@ -36,8 +34,6 @@ Represents a player character in the world.
 ## NetAvatarClothes
 
 Represents player clothing and accessories.
-
-### Properties
 
 | Field      | Type   |
 | :-         | :-:    |

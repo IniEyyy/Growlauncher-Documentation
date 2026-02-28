@@ -6,8 +6,6 @@ Tile and world data structures.
 
 Represents a tile in the game world.
 
-### Properties
-
 | Field          | Type                     |
 | :-             | :-:                      |
 | `fg`           | number                   |
@@ -24,8 +22,6 @@ Represents a tile in the game world.
 ## TileExtra
 
 Additional tile data for special tiles.
-
-### Properties
 
 | Field          | Type     |
 | :-             | :-:      |
@@ -56,8 +52,6 @@ Additional tile data for special tiles.
 
 Item information and properties.
 
-### Properties
-
 | Field           | Type   |
 | :-              | :-:    |
 | `id`            | number |
@@ -70,9 +64,7 @@ Item information and properties.
 
 ## TankPacket
 
-Network packet structure for game communication.
-
-### Properties
+Network packet structure for game communication.    
 
 | Field      | Type   |
 | :-         | :-:    |

@@ -6,8 +6,6 @@ Game world objects and UI structures.
 
 Represents an item in player inventory.
 
-### Properties
-
 | Field    | Type   |
 | :-       | :-:    |
 | `id`     | number |
@@ -16,8 +14,6 @@ Represents an item in player inventory.
 ## WorldObject
 
 Represents an object in the game world.
-
-### Properties
 
 | Field    | Type                |
 | :-       | :-:                 |
@@ -30,8 +26,6 @@ Represents an object in the game world.
 ## Dialog
 
 Represents a dialog interface.
-
-### Properties
 
 | Field     | Type   |
 | :-        | :-:    |

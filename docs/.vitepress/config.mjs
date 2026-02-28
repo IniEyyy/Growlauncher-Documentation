@@ -133,6 +133,10 @@ export default defineConfig({
           { text: "Packet Types", link: "/enums/packet-types" }
         ]
       }
+    ], 
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/IniEyyy/Growlauncher-Documentation' },
+      { icon: 'discord', link: 'https://discord.gg/powerkuyofficial' }
     ]
   }
 })

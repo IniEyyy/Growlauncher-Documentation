@@ -1,8 +1,5 @@
 # Growlauncher API Documentation
 
-[![Docs Status](https://img.shields.io/badge/Status-Complete-green)]()
-[![Lua Version](https://img.shields.io/badge/Lua-5.4-blue)](https://www.lua.org/)
-
 Growlauncher provides Lua scripting support for Growtopia.
 This documentation is intended for users who want to create, customize, and extend scripts for personal or public use.
 

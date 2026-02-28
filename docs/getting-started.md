@@ -3,7 +3,7 @@
 ## Requirements
 
 - Growlauncher installed (buy it [here](https://discord.gg/powerkuyofficial))
-- Basic Lua knowledge (Lua 5.4)
+- Basic Lua knowledge ([Lua 5.4](https://www.lua.org/manual/5.4/))
 
 ## Script Path
 

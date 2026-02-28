@@ -6,8 +6,6 @@ Variant data structures for network communication and data handling.
 
 Multi-type data container that can hold different data types.
 
-### Properties
-
 | Field | Type    |
 | :-    | :-:     |
 | `x`   | number? |
@@ -17,8 +15,6 @@ Multi-type data container that can hold different data types.
 ## VariantList
 
 List of variant data used for network communication.
-
-### Properties
 
 | Field | Type                                      |
 | :-    | :-:                                       |

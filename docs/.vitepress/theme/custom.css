@@ -187,6 +187,56 @@ html.dark .VPNav {
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
+/* Glowing text effect on hover */
+.VPNavBarMenu .link:hover {
+  color: var(--neon-primary);
+  text-shadow: 
+    0 0 8px rgba(14, 165, 233, 0.8),
+    0 0 12px rgba(14, 165, 233, 0.6),
+    0 0 16px rgba(14, 165, 233, 0.4);
+  transition: all 0.3s ease;
+}
+
+html.dark .VPNavBarMenu .link:hover {
+  color: var(--neon-primary);
+  text-shadow: 
+    0 0 10px rgba(0, 240, 255, 0.9),
+    0 0 15px rgba(0, 240, 255, 0.7),
+    0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+/* Fast Moving Gradient Line for Topbar */
+.VPNav {
+  position: relative;
+  overflow: visible;
+}
+
+.VPNav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(14, 165, 233, 0.9) 15%,
+    var(--neon-primary) 35%,
+    rgba(124, 58, 237, 0.9) 50%,
+    var(--neon-secondary) 65%,
+    rgba(139, 92, 246, 0.9) 85%,
+    transparent 100%
+  );
+  animation: topbarLineScan 0.5s linear infinite;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+@keyframes topbarLineScan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
 /* Sidebar Styling */
 .VPSidebar {
   position: relative;
