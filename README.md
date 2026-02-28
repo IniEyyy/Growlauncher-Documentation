@@ -11,15 +11,15 @@ This documentation is intended for users who want to create, customize, and exte
 
 ---
 
-# 📚 Table of Contents
+# Table of Contents
 
-- [📝 Introduction](#-introduction)
-- [🚀 Getting Started](#-getting-started)
+- [Introduction](#-introduction)
+- [Getting Started](#-getting-started)
   - [Script Path](#script-path)
   - [Module Icon Source](#module-icon-source)
   - [Growtopia Packet Type](#growtopia-enum-packet-type)
   - [Growlauncher enum MenuTypes](#growlauncher-enum-menutype)
-- [🧱 Structs](#-structs)
+- [Structs](#-structs)
   - [WorldTileMap](#worldtilemap)
   - [Vector2](#vector2)
   - [Vector3](#vector3)
@@ -37,18 +37,18 @@ This documentation is intended for users who want to create, customize, and exte
   - [NetAvatar](#netavatar)
   - [TankPacket](#tankpacket)
   - [TileExtra](#tileextra)
-- [🚀 Main Functions](#-main-functions)
+- [Main Functions](#-main-functions)
   - [Console & Logging](#console--logging)
   - [Networking & Packets](#networking--packets)
   - [Player Info](#player-info)
   - [Item Info](#item-info)
   - [World & Game State](#world--game-state)
   - [Math & Utility](#math--utility)
-- [🎣 Hooks, Callbacks & Concurrency](#-hooks-callbacks--concurrency)
+- [Hooks, Callbacks & Concurrency](#-hooks-callbacks--concurrency)
   - [Hook Events](#hook-events)
   - [Hook & Callback Functions](#hook--callbacks-functions)
   - [Threading & Coroutine](#threading--coroutine)
-- [📑 Namespaces](#-namespaces)
+- [Namespaces](#-namespaces)
   - [ItemInfoManager](#iteminfomanager-namespace)
   - [Tile](#tile-namespace)
   - [Growtopia](#growtopia-namespace)
@@ -56,17 +56,17 @@ This documentation is intended for users who want to create, customize, and exte
   - [Preferences](#preferences-namespace)
   - [UserInterface](#userinterface-namespace)
   - [UIManager](#uimanager-namespace)
-- [📦 Value & Modules](#-value--modules)
+- [Value & Modules](#-value--modules)
   - [Value Functions](#value)
   - [Modules (Notification & UI)](#notification--ui-modules)
-- [🛑 Deprecated](#-deprecated)
-- [📜 Sample Script](#-sample-scripts)
-- [🙌 Credits](#-credits)
-- [🏠 Community](#-community)
+- [Deprecated](#-deprecated)
+- [Sample Script](#-sample-scripts)
+- [Credits](#-credits)
+- [Community](#-community)
 
 ---
 
-# 📝 Introduction
+# Introduction
 
 Growlauncher exposes a Lua API that allows you to:
 
@@ -76,7 +76,7 @@ Growlauncher exposes a Lua API that allows you to:
 
 ---
 
-# 🚀 Getting Started
+# Getting Started
 
 Make sure to use real growlauncher, buy it [here](#-community).
 
@@ -168,7 +168,7 @@ Make sure to use real growlauncher, buy it [here](#-community).
 
 ---
 
-# 🧱 Structs
+# Structs
 
 | Struct                                    | Fields                                                                                          |
 | :-                                        | :-                                                                                              |
@@ -405,7 +405,7 @@ Make sure to use real growlauncher, buy it [here](#-community).
 
 ---
 
-# 🚀 Main Functions
+# Main Functions
 
 ## Console & Logging
 
@@ -472,7 +472,7 @@ Make sure to use real growlauncher, buy it [here](#-community).
 
 ---
 
-# 📑 Namespaces
+# Namespaces
 
 ## ItemInfoManager Namespace
 
@@ -584,7 +584,7 @@ JSON builder functions for making custom module.
 
 ---
 
-# 🎣 Hooks, Callbacks & Concurrency
+# Hooks, Callbacks & Concurrency
 
 ## Hook Events
 
@@ -627,7 +627,7 @@ JSON builder functions for making custom module.
 
 ---
 
-# 📦 Value & Modules
+# Value & Modules
 
 ## Value
 
@@ -656,7 +656,7 @@ JSON builder functions for making custom module.
 
 ---
 
-# 🛑 Deprecated
+# Deprecated
 
 | Function              | Params                                                                     | Return                  | Description                     |
 | :-                    | :-                                                                         | :-                      | :-                              |
@@ -666,7 +666,7 @@ JSON builder functions for making custom module.
 
 ---
 
-# 📜 Sample Scripts
+# Sample Scripts
 
 - [UI Sample Script](sample-scripts/sample-ui.lua)
 - [Powerkuy's script](https://discord.com/channels/897496245373906995/1230832789541224489/1230832789541224489)
@@ -689,14 +689,14 @@ For better experience when creating lua scripts, install `sumneko` extension in 
 
 ---
 
-# 🙌 Credits
+# Credits
 
 - **Author:** IniEy
 - **Creator:** Powerkuy
 
 ---
 
-# 🏠 Community
+# Community
 
 Official discord server: [![Powerkuy Commmunity](https://img.shields.io/discord/897496245373906995)](https://discord.gg/powerkuyofficial)
 

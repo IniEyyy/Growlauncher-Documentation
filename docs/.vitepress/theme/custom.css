@@ -764,7 +764,15 @@ html.dark .VPSidebarItem.has-children > .link {
 
 }
 
-
+/* Hide anchor links (which show # symbols) completely */
+.VPDoc h1 .header-anchor,
+.VPDoc h2 .header-anchor,
+.VPDoc h3 .header-anchor,
+.VPDoc h4 .header-anchor,
+.VPDoc h5 .header-anchor,
+.VPDoc h6 .header-anchor {
+  display: none !important;
+}
 
 .VPDoc h2::before {
 
@@ -785,16 +793,6 @@ html.dark .VPSidebarItem.has-children > .link {
   border-radius: 2px;
 
   box-shadow: var(--neon-glow-primary);
-
-}
-
-
-
-.VPDoc h2:hover .header-anchor {
-
-  color: var(--neon-primary);
-
-  text-shadow: var(--neon-glow-primary);
 
 }
 
@@ -1136,7 +1134,7 @@ button[class*="copy"]::after,
 
 [data-copy="true"]::after {
 
-  content: '📋';
+  content: 'Copy';
 
   position: absolute;
 
@@ -1144,11 +1142,13 @@ button[class*="copy"]::after,
 
   right: 6px;
 
-  font-size: 0.9em;
+  font-size: 0.7em;
 
   opacity: 0.7;
 
   transition: opacity 0.2s ease;
+
+  font-weight: 500;
 
 }
 

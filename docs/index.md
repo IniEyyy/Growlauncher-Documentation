@@ -5,7 +5,7 @@ This documentation is intended for users who want to create, customize, and exte
 
 ---
 
-# 📝 Introduction
+# Introduction
 
 Growlauncher exposes a Lua API that allows you to:
 
@@ -13,7 +13,7 @@ Growlauncher exposes a Lua API that allows you to:
 - Automate actions like sending packets, moving, and reading game state.
 - Create custom modules and user interfaces.
 
-# 🚀 Getting Started
+# Getting Started
 
 Make sure to use real growlauncher, buy it from the official sources.
 
@@ -41,10 +41,10 @@ Make sure to use real growlauncher, buy it from the official sources.
 
 ---
 
-## 📚 Quick Navigation
+## Quick Navigation
 
-- [🚀 Getting Started](/getting-started)
-- [🧱 Structs](/structs)
-- [🚀 Functions](/functions/)
-- [🎣 Hooks](/hooks/)
-- [📑 Namespaces](/namespaces/)
+- [Getting Started](/getting-started)
+- [Structs](/structs)
+- [Functions](/functions/)
+- [Hooks](/hooks/)
+- [Namespaces](/namespaces/)
