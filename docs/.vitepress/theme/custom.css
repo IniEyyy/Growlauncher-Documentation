@@ -1,110 +1,520 @@
-/* Enhanced VitePress Theme Styles */
+/* Futuristic Neon Cyberpunk VitePress Theme */
 
-/* Left Border for Active Sidebar Items */
-.VPSidebarItem .link.active {
+/* CSS Variables for Neon Theme */
+:root {
+  /* Light Theme Colors */
+  --neon-bg-light: #f8fafc;
+  --neon-surface-light: #ffffff;
+  --neon-primary-light: #0ea5e9;
+  --neon-secondary-light: #7c3aed;
+  --neon-accent-light: #06b6d4;
+  --neon-text-light: #1e293b;
+  --neon-text-muted-light: #64748b;
+  
+  /* Dark Theme Colors */
+  --neon-bg-dark: #0a0f1c;
+  --neon-surface-dark: #111827;
+  --neon-primary-dark: #00f0ff;
+  --neon-secondary-dark: #8b5cf6;
+  --neon-accent-dark: #06b6d4;
+  --neon-text-dark: #e5e7eb;
+  --neon-text-muted-dark: #9ca3af;
+  
+  /* Glow Effects */
+  --neon-glow-primary-light: 0 0 15px rgba(14, 165, 233, 0.4);
+  --neon-glow-secondary-light: 0 0 15px rgba(124, 58, 237, 0.4);
+  --neon-glow-accent-light: 0 0 12px rgba(6, 182, 212, 0.3);
+  
+  --neon-glow-primary-dark: 0 0 20px rgba(0, 240, 255, 0.5);
+  --neon-glow-secondary-dark: 0 0 20px rgba(139, 92, 246, 0.5);
+  --neon-glow-accent-dark: 0 0 15px rgba(6, 182, 212, 0.4);
+  
+  /* Transitions */
+  --neon-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme */
+html:not(.dark) {
+  --neon-bg: var(--neon-bg-light);
+  --neon-surface: var(--neon-surface-light);
+  --neon-primary: var(--neon-primary-light);
+  --neon-secondary: var(--neon-secondary-light);
+  --neon-accent: var(--neon-accent-light);
+  --neon-text: var(--neon-text-light);
+  --neon-text-muted: var(--neon-text-muted-light);
+  --neon-glow-primary: var(--neon-glow-primary-light);
+  --neon-glow-secondary: var(--neon-glow-secondary-light);
+  --neon-glow-accent: var(--neon-glow-accent-light);
+  
+  /* VitePress Light Theme Overrides */
+  --vp-c-bg: var(--neon-bg);
+  --vp-c-bg-soft: var(--neon-surface);
+  --vp-c-bg-elv: #f1f5f9;
+  --vp-c-text: var(--neon-text);
+  --vp-c-text-1: var(--neon-text);
+  --vp-c-text-2: var(--neon-text-muted);
+  --vp-c-brand-1: var(--neon-primary);
+  --vp-c-brand-2: var(--neon-secondary);
+  --vp-c-divider: rgba(124, 58, 237, 0.15);
+  --vp-c-border: rgba(124, 58, 237, 0.2);
+}
+
+/* Dark Theme */
+html.dark {
+  --neon-bg: var(--neon-bg-dark);
+  --neon-surface: var(--neon-surface-dark);
+  --neon-primary: var(--neon-primary-dark);
+  --neon-secondary: var(--neon-secondary-dark);
+  --neon-accent: var(--neon-accent-dark);
+  --neon-text: var(--neon-text-dark);
+  --neon-text-muted: var(--neon-text-muted-dark);
+  --neon-glow-primary: var(--neon-glow-primary-dark);
+  --neon-glow-secondary: var(--neon-glow-secondary-dark);
+  --neon-glow-accent: var(--neon-glow-accent-dark);
+  
+  /* VitePress Dark Theme Overrides */
+  --vp-c-bg: var(--neon-bg);
+  --vp-c-bg-soft: var(--neon-surface);
+  --vp-c-bg-elv: #1a2332;
+  --vp-c-text: var(--neon-text);
+  --vp-c-text-1: var(--neon-text);
+  --vp-c-text-2: var(--neon-text-muted);
+  --vp-c-brand-1: var(--neon-primary);
+  --vp-c-brand-2: var(--neon-secondary);
+  --vp-c-divider: rgba(139, 92, 246, 0.2);
+  --vp-c-border: rgba(139, 92, 246, 0.3);
+}
+
+/* Animated Background Gradient */
+body {
   position: relative;
-  padding-left: 16px;
+  background: var(--neon-bg);
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.05), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.04), transparent 40%),
+    radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.03), transparent 30%);
+  background-attachment: fixed;
+}
+
+html.dark body {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(0, 240, 255, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.06), transparent 40%),
+    radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.04), transparent 30%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.02), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.015), transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: neonPulse 8s ease-in-out infinite alternate;
+}
+
+html.dark body::before {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(0, 240, 255, 0.03), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.02), transparent 50%);
+}
+
+@keyframes neonPulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Glass Effect Navbar */
+.VPNav {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(14, 165, 233, 0.2);
+  box-shadow: 0 2px 20px rgba(14, 165, 233, 0.1);
+  transition: var(--neon-transition);
+}
+
+html.dark .VPNav {
+  background: rgba(17, 24, 39, 0.8) !important;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 2px 20px rgba(0, 240, 255, 0.1);
+}
+
+/* Site Title Neon Effect */
+.VPNavBarTitle .title {
+  background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: var(--neon-glow-primary);
+  transition: var(--neon-transition);
+}
+
+.VPNavBarTitle .title:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Nav Links Neon Underline */
+.VPNavBarMenu .link {
+  position: relative;
+  transition: var(--neon-transition);
+}
+
+.VPNavBarMenu .link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-primary), var(--neon-accent));
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--neon-glow-accent);
+}
+
+.VPNavBarMenu .link:hover::after,
+.VPNavBarMenu .link.active::after {
+  width: 100%;
+}
+
+.VPNavBarMenu .link.active {
+  color: var(--neon-primary);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* Sidebar Neon Vertical Lines */
+.VPSidebarItem .link {
+  position: relative;
+  padding-left: 20px;
+  transition: var(--neon-transition);
+}
+
+.VPSidebarItem .link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 3px;
+  height: 20px;
+  background: linear-gradient(180deg, var(--neon-primary), var(--neon-accent));
+  border-radius: 0 2px 2px 0;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--neon-glow-primary);
+}
+
+.VPSidebarItem .link:hover::before {
+  transform: translateY(-50%) scaleY(1);
 }
 
 .VPSidebarItem .link.active::before {
+  transform: translateY(-50%) scaleY(1);
+  box-shadow: var(--neon-glow-primary);
+}
+
+.VPSidebarItem .link:hover {
+  transform: translateX(2px);
+  color: var(--neon-primary);
+}
+
+.VPSidebarItem .link.active {
+  background: rgba(0, 240, 255, 0.1);
+  border-radius: 6px;
+  color: var(--neon-primary);
+}
+
+/* Collapsible Dropdown Animations */
+.VPSidebarItem.has-children .items {
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPSidebarItem.has-children .caret {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPSidebarItem.has-children.collapsed .caret {
+  transform: rotate(-90deg);
+}
+
+/* Page Content Fade-in Animation */
+.VPContent {
+  animation: pageFadeIn 0.4s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings Neon Accent */
+.VPDoc h2 {
+  position: relative;
+  padding-left: 16px;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.VPDoc h2::before {
   content: '';
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
-  background: var(--vp-c-brand-1);
-  border-radius: 0 2px 2px 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--neon-primary), var(--neon-secondary));
+  border-radius: 2px;
+  box-shadow: var(--neon-glow-primary);
 }
 
-/* Search box wider */
-.VPNav .VPSearchBox {
-  width: 350px;
-  max-width: 450px;
+.VPDoc h2:hover .header-anchor {
+  color: var(--neon-primary);
+  text-shadow: var(--neon-glow-primary);
 }
 
-/* Enhanced code blocks */
-.vp-code {
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Better typography spacing */
-.VPDoc h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.VPDoc h3 {
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Enhanced sidebar styling */
-.VPSidebar {
-  border-right: 1px solid var(--vp-c-divider);
-}
-
-/* Smooth hover animations for sidebar items */
-.VPSidebarItem .link {
-  transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), 
-              box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+/* Code Blocks Neon Border */
+.vp-code,
+div[class*="language-"] {
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(14, 165, 233, 0.1);
   position: relative;
-}
-
-.VPSidebarItem .link:hover {
-  transform: translateX(3px);
-  box-shadow: 0 0 8px rgba(100, 108, 255, 0.15);
-}
-
-/* Subtle page transitions */
-.VPContent {
-  transition: opacity 0.2s ease-in-out;
-}
-
-/* Better table styling */
-.VPDoc table {
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Enhanced link hover effects */
-.VPDoc a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--vp-c-brand-1);
-  text-underline-offset: 2px;
+html.dark .vp-code,
+html.dark div[class*="language-"] {
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  background: rgba(17, 24, 39, 0.6) !important;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(0, 240, 255, 0.1);
 }
 
-/* Better button styling */
+.vp-code::before,
+div[class*="language-"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--neon-primary), 
+    transparent
+  );
+  animation: codeScan 3s linear infinite;
+}
+
+@keyframes codeScan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Buttons Neon Glow */
 .VPButton {
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: var(--neon-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.VPButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.3), transparent);
+  transition: width 0.3s, height 0.3s;
+  transform: translate(-50%, -50%);
+}
+
+.VPButton:hover::before {
+  width: 100%;
+  height: 100%;
 }
 
 .VPButton:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(0, 240, 255, 0.3),
+    0 0 20px rgba(0, 240, 255, 0.2);
 }
 
-/* Improved outline (right sidebar) styling */
+/* Links Neon Hover */
+.VPDoc a {
+  transition: var(--neon-transition);
+  position: relative;
+}
+
+.VPDoc a:hover {
+  color: var(--neon-primary);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+/* Search Box Neon */
+.VPSearchBox {
+  border: 1px solid rgba(14, 165, 233, 0.3) !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(8px);
+  transition: var(--neon-transition);
+}
+
+html.dark .VPSearchBox {
+  border: 1px solid rgba(0, 240, 255, 0.3) !important;
+  background: rgba(17, 24, 39, 0.8) !important;
+}
+
+.VPSearchBox:focus-within {
+  border-color: var(--neon-primary) !important;
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3) !important;
+}
+
+html.dark .VPSearchBox:focus-within {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3) !important;
+}
+
+/* Outline Sidebar */
 .VPOutline {
-  border-left: 1px solid var(--vp-c-divider);
+  border-left: 1px solid rgba(124, 58, 237, 0.2);
   padding-left: 1rem;
+}
+
+html.dark .VPOutline {
+  border-left: 1px solid rgba(139, 92, 246, 0.3);
 }
 
 .VPOutline .outline-link {
   border-radius: 4px;
-  transition: background-color 0.2s ease;
+  transition: var(--neon-transition);
+  position: relative;
 }
 
 .VPOutline .outline-link:hover {
-  background-color: var(--vp-c-bg-soft);
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--neon-secondary);
+  transform: translateX(2px);
 }
 
-/* Better mobile responsiveness */
+.VPOutline .outline-link.active {
+  color: var(--neon-secondary);
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.VPOutline .outline-link.active::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  background: var(--neon-secondary);
+  border-radius: 2px;
+  box-shadow: var(--neon-glow-secondary);
+}
+
+/* Tables Neon Enhancement */
+.VPDoc table {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .VPDoc table {
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.VPDoc table th {
+  background: rgba(14, 165, 233, 0.1);
+  border-bottom: 2px solid var(--neon-primary);
+  color: var(--neon-primary);
+}
+
+html.dark .VPDoc table th {
+  background: rgba(0, 240, 255, 0.1);
+}
+
+.VPDoc table tr:hover {
+  background: rgba(14, 165, 233, 0.05);
+}
+
+html.dark .VPDoc table tr:hover {
+  background: rgba(0, 240, 255, 0.05);
+}
+
+/* Sidebar Background Glow */
+.VPSidebar {
+  position: relative;
+  overflow: hidden;
+}
+
+.VPSidebar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(14, 165, 233, 0.03), 
+    transparent
+  );
+  pointer-events: none;
+  animation: sidebarGlow 6s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+html.dark .VPSidebar::after {
+  background: linear-gradient(90deg, 
+    rgba(0, 240, 255, 0.05), 
+    transparent
+  );
+}
+
+@keyframes sidebarGlow {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .VPNav .VPSearchBox {
     width: 200px;
+  }
+  
+  .VPSidebar::after {
+    display: none;
   }
 }
