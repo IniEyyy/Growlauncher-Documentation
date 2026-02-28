@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Growlauncher API Docs',
+  base: '/Growlauncher-Documentation/',
   description: 'Complete API documentation for Growlauncher',
   lang: 'en-US',
   
