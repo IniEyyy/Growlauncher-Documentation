@@ -397,6 +397,141 @@ div[class*="language-"]::before {
   transition: var(--neon-transition);
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(14, 165, 233, 0.1));
+  backdrop-filter: blur(10px);
+}
+
+html.dark .VPButton {
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(0, 240, 255, 0.1));
+}
+
+/* Copy Code Button Specific */
+button[title*="Copy"],
+button[aria-label*="copy"],
+button[class*="copy"],
+.vp-copy-code-button,
+.copy-button,
+[data-copy="true"] {
+  transition: var(--neon-transition);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(6, 182, 212, 0.05));
+  color: var(--neon-text);
+  font-weight: 500;
+  padding: 6px 12px;
+  font-size: 0.85em;
+}
+
+html.dark button[title*="Copy"],
+html.dark button[aria-label*="copy"],
+html.dark button[class*="copy"],
+html.dark .vp-copy-code-button,
+html.dark .copy-button,
+html.dark [data-copy="true"] {
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(139, 92, 246, 0.1));
+  color: var(--neon-text);
+}
+
+button[title*="Copy"]::before,
+button[aria-label*="copy"]::before,
+button[class*="copy"]::before,
+.vp-copy-code-button::before,
+.copy-button::before,
+[data-copy="true"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.3), transparent);
+  transition: width 0.3s ease, height 0.3s ease;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+button[title*="Copy"]:hover::before,
+button[aria-label*="copy"]:hover::before,
+button[class*="copy"]:hover::before,
+.vp-copy-code-button:hover::before,
+.copy-button:hover::before,
+[data-copy="true"]:hover::before {
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent);
+}
+
+button[title*="Copy"]:hover,
+button[aria-label*="copy"]:hover,
+button[class*="copy"]:hover,
+.vp-copy-code-button:hover,
+.copy-button:hover,
+[data-copy="true"]:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 
+    0 4px 15px rgba(0, 240, 255, 0.3),
+    0 0 10px rgba(139, 92, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.5);
+  color: var(--neon-primary);
+}
+
+html.dark button[title*="Copy"]:hover,
+html.dark button[aria-label*="copy"]:hover,
+html.dark button[class*="copy"]:hover,
+html.dark .vp-copy-code-button:hover,
+html.dark .copy-button:hover,
+html.dark [data-copy="true"]:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 
+    0 4px 15px rgba(0, 240, 255, 0.4),
+    0 0 10px rgba(139, 92, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 240, 255, 0.7);
+}
+
+button[title*="Copy"]:active,
+button[aria-label*="copy"]:active,
+button[class*="copy"]:active,
+.vp-copy-code-button:active,
+.copy-button:active,
+[data-copy="true"]:active {
+  transform: translateY(0px) scale(0.98);
+  box-shadow: 
+    0 2px 8px rgba(0, 240, 255, 0.3),
+    inset 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Copy icon styling */
+button[title*="Copy"]::after,
+button[aria-label*="copy"]::after,
+button[class*="copy"]::after,
+.vp-copy-code-button::after,
+.copy-button::after,
+[data-copy="true"]::after {
+  content: '📋';
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  font-size: 0.9em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+button[title*="Copy"]:hover::after,
+button[aria-label*="copy"]:hover::after,
+button[class*="copy"]:hover::after,
+.vp-copy-code-button:hover::after,
+.copy-button:hover::after,
+[data-copy="true"]:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .VPButton::before {
@@ -406,21 +541,60 @@ div[class*="language-"]::before {
   left: 50%;
   width: 0;
   height: 0;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.3), transparent);
-  transition: width 0.3s, height 0.3s;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.4), transparent);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .VPButton:hover::before {
-  width: 100%;
-  height: 100%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent);
 }
 
 .VPButton:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
   box-shadow: 
-    0 8px 25px rgba(0, 240, 255, 0.3),
-    0 0 20px rgba(0, 240, 255, 0.2);
+    0 12px 30px rgba(0, 240, 255, 0.4),
+    0 0 20px rgba(139, 92, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 240, 255, 0.6);
+}
+
+html.dark .VPButton:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 12px 30px rgba(0, 240, 255, 0.5),
+    0 0 20px rgba(139, 92, 246, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.8);
+}
+
+.VPButton:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 
+    0 4px 15px rgba(0, 240, 255, 0.3),
+    inset 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.VPButton::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(0, 240, 255, 0.2), transparent);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.VPButton:hover::after {
+  opacity: 1;
+  position: relative;
 }
 
 /* Links Neon Hover */
