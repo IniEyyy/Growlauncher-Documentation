@@ -500,9 +500,15 @@ html.dark .VPOutline {
 /* Tables Neon Enhancement */
 .VPDoc table {
   border-radius: 10px;
-  overflow: hidden;
   border: 1px solid rgba(14, 165, 233, 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100% !important;
+  max-width: 100% !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  display: table;
 }
 
 html.dark .VPDoc table {
@@ -514,10 +520,27 @@ html.dark .VPDoc table {
   background: rgba(14, 165, 233, 0.1);
   border-bottom: 2px solid var(--neon-primary);
   color: var(--neon-primary);
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
 }
 
 html.dark .VPDoc table th {
   background: rgba(0, 240, 255, 0.1);
+}
+
+.VPDoc table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+  word-wrap: break-word;
+}
+
+html.dark .VPDoc table td {
+  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.VPDoc table tr:last-child td {
+  border-bottom: none;
 }
 
 .VPDoc table tr:hover {
@@ -526,6 +549,22 @@ html.dark .VPDoc table th {
 
 html.dark .VPDoc table tr:hover {
   background: rgba(0, 240, 255, 0.05);
+}
+
+/* Force all tables to full width */
+.vp-doc table,
+.VPDocContent table,
+.VPDoc table,
+div[class*="vp-doc"] table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+}
+
+/* Table container fixes */
+.vp-doc > div > table,
+.VPDocContent > div > table {
+  width: 100% !important;
 }
 
 /* Sidebar Styling */
