@@ -16,7 +16,7 @@ Player data and inventory information.
 ### [Item Info](/functions/item-info)
 Item database and information functions.
 
-### [World](/functions/world)
+### [World & Game State](/functions/world-state)
 World data, tiles, and world information.
 
 ### [Math & Utility](/functions/math-utility)

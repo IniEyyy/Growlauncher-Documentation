@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Growlauncher installed (buy it [here](https://github.com/IniEyyy/Growlauncher-Documentation#-community))
+- Growlauncher installed (buy it [here](https://discord.gg/powerkuyofficial))
 - Basic Lua knowledge (Lua 5.4)
 
 ## Script Path
@@ -54,6 +54,5 @@ LogToConsole("Current world: " .. worldName)
 
 ## Next Steps
 
-- Learn about [Structs](/structs/overview)
-- Explore [Functions](/functions/index)
-- Check out [Examples](/examples/basic-script)
+- Learn about [Structs](/structs/)
+- Explore [Functions](/functions/)

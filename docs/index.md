@@ -51,5 +51,3 @@ Make sure to use real growlauncher, buy it from the official sources.
 - [🚀 Functions](/functions/)
 - [🎣 Hooks](/hooks/)
 - [📑 Namespaces](/namespaces/)
-- [📦 Modules](/modules/)
-- [📜 Examples](/examples/)
