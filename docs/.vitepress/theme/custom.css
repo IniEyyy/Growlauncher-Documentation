@@ -671,46 +671,51 @@ html.dark .VPOutline {
   box-shadow: var(--neon-glow-secondary);
 }
 
-/* Tables Neon Enhancement */
+/* Tables Neon Enhancement - Compact */
 .VPDoc table {
-  border-radius: 10px;
+  border-radius: 6px;
   border: 1px solid rgba(14, 165, 233, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 100% !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  width: auto !important;
   max-width: 100% !important;
   border-collapse: separate;
   border-spacing: 0;
   overflow: hidden;
-  table-layout: fixed;
-  display: table;
+  table-layout: auto;
+  display: inline-table;
+  margin: 0;
 }
 
 html.dark .VPDoc table {
   border: 1px solid rgba(0, 240, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .VPDoc table th {
-  background: rgba(14, 165, 233, 0.1);
-  border-bottom: 2px solid var(--neon-primary);
+  background: rgba(14, 165, 233, 0.08);
+  border-bottom: 1px solid var(--neon-primary);
   color: var(--neon-primary);
-  padding: 12px 16px;
+  padding: 8px 12px;
   text-align: left;
   font-weight: 600;
+  font-size: 0.85em;
+  white-space: nowrap;
 }
 
 html.dark .VPDoc table th {
-  background: rgba(0, 240, 255, 0.1);
+  background: rgba(0, 240, 255, 0.08);
 }
 
 .VPDoc table td {
-  padding: 12px 16px;
-  border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(14, 165, 233, 0.08);
   word-wrap: break-word;
+  font-size: 0.85em;
+  line-height: 1.2;
 }
 
 html.dark .VPDoc table td {
-  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.08);
 }
 
 .VPDoc table tr:last-child td {
@@ -718,27 +723,29 @@ html.dark .VPDoc table td {
 }
 
 .VPDoc table tr:hover {
-  background: rgba(14, 165, 233, 0.05);
+  background: rgba(14, 165, 233, 0.03);
 }
 
 html.dark .VPDoc table tr:hover {
-  background: rgba(0, 240, 255, 0.05);
+  background: rgba(0, 240, 255, 0.03);
 }
 
-/* Force all tables to full width */
+/* Force all tables to be compact */
 .vp-doc table,
 .VPDocContent table,
 .VPDoc table,
 div[class*="vp-doc"] table {
-  width: 100% !important;
+  width: auto !important;
   max-width: 100% !important;
-  table-layout: fixed !important;
+  table-layout: auto !important;
+  display: inline-table !important;
 }
 
 /* Table container fixes */
 .vp-doc > div > table,
 .VPDocContent > div > table {
-  width: 100% !important;
+  width: auto !important;
+  margin: 0;
 }
 
 /* Sidebar Styling */
