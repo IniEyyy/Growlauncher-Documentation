@@ -605,7 +605,10 @@ div[class*="language-"]:hover {
 .VPDoc table {
   border-radius: 8px;
   border: 1px solid rgba(0, 240, 255, 0.3);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(0, 240, 255, 0.2),
+    inset 0 0 10px rgba(0, 240, 255, 0.05);
   backdrop-filter: blur(10px);
   background: rgba(17, 24, 39, 0.3);
   overflow: visible;
