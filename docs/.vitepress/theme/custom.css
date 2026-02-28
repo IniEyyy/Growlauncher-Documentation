@@ -21,9 +21,9 @@
   --neon-text-muted-dark: #9ca3af;
   
   /* Glow Effects */
-  --neon-glow-primary-light: 0 0 15px rgba(14, 165, 233, 0.4);
-  --neon-glow-secondary-light: 0 0 15px rgba(124, 58, 237, 0.4);
-  --neon-glow-accent-light: 0 0 12px rgba(6, 182, 212, 0.3);
+  --neon-glow-primary-light: 0 0 20px rgba(14, 165, 233, 0.6);
+  --neon-glow-secondary-light: 0 0 20px rgba(124, 58, 237, 0.6);
+  --neon-glow-accent-light: 0 0 15px rgba(6, 182, 212, 0.5);
   
   --neon-glow-primary-dark: 0 0 20px rgba(0, 240, 255, 0.5);
   --neon-glow-secondary-dark: 0 0 20px rgba(139, 92, 246, 0.5);
@@ -55,8 +55,8 @@ html:not(.dark) {
   --vp-c-text-2: var(--neon-text-muted);
   --vp-c-brand-1: var(--neon-primary);
   --vp-c-brand-2: var(--neon-secondary);
-  --vp-c-divider: rgba(124, 58, 237, 0.15);
-  --vp-c-border: rgba(124, 58, 237, 0.2);
+  --vp-c-divider: rgba(14, 165, 233, 0.3);
+  --vp-c-border: rgba(14, 165, 233, 0.4);
 }
 
 /* Dark Theme */
@@ -90,9 +90,9 @@ body {
   position: relative;
   background: var(--neon-bg);
   background-image: 
-    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.05), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.04), transparent 40%),
-    radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.03), transparent 30%);
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.12), transparent 40%),
+    radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.08), transparent 30%);
   background-attachment: fixed;
 }
 
@@ -111,8 +111,8 @@ body::before {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.02), transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.015), transparent 50%);
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.08), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.06), transparent 50%);
   pointer-events: none;
   z-index: -1;
   animation: neonPulse 8s ease-in-out infinite alternate;
@@ -132,16 +132,16 @@ html.dark body::before {
 /* Glass Effect Navbar */
 .VPNav {
   backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.8) !important;
-  border-bottom: 1px solid rgba(14, 165, 233, 0.2);
-  box-shadow: 0 2px 20px rgba(14, 165, 233, 0.1);
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 2px solid rgba(14, 165, 233, 0.4);
+  box-shadow: 0 4px 25px rgba(14, 165, 233, 0.2);
   transition: var(--neon-transition);
 }
 
 html.dark .VPNav {
   background: rgba(17, 24, 39, 0.8) !important;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-  box-shadow: 0 2px 20px rgba(0, 240, 255, 0.1);
+  border-bottom: 2px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 4px 25px rgba(0, 240, 255, 0.15);
 }
 
 /* Site Title Neon Effect */
@@ -187,45 +187,110 @@ html.dark .VPNav {
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
-/* Sidebar Neon Vertical Lines */
-.VPSidebarItem .link {
+/* Sidebar Styling */
+.VPSidebar {
   position: relative;
-  padding-left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-right: 1px solid rgba(14, 165, 233, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 0 20px rgba(14, 165, 233, 0.1);
+}
+
+html.dark .VPSidebar {
+  background: rgba(17, 24, 39, 0.95);
+  border-right: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 2px 0 20px rgba(0, 240, 255, 0.15);
+}
+
+/* Sidebar Item Styling */
+.VPSidebarItem .link {
   transition: var(--neon-transition);
+  border-radius: 4px;
+  margin: 0px 4px;
+  padding: 3px 8px;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.85em;
+  line-height: 1.2;
 }
 
 .VPSidebarItem .link::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%) scaleY(0);
-  width: 3px;
-  height: 20px;
-  background: linear-gradient(180deg, var(--neon-primary), var(--neon-accent));
-  border-radius: 0 2px 2px 0;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--neon-glow-primary);
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(14, 165, 233, 0.1), 
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .VPSidebarItem .link:hover::before {
-  transform: translateY(-50%) scaleY(1);
-}
-
-.VPSidebarItem .link.active::before {
-  transform: translateY(-50%) scaleY(1);
-  box-shadow: var(--neon-glow-primary);
+  left: 100%;
 }
 
 .VPSidebarItem .link:hover {
-  transform: translateX(2px);
+  transform: translateX(4px);
   color: var(--neon-primary);
+  background: rgba(14, 165, 233, 0.08);
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2);
+}
+
+html.dark .VPSidebarItem .link:hover {
+  background: rgba(0, 240, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 240, 255, 0.3);
 }
 
 .VPSidebarItem .link.active {
-  background: rgba(0, 240, 255, 0.1);
-  border-radius: 6px;
+  background: linear-gradient(135deg, 
+    rgba(14, 165, 233, 0.15), 
+    rgba(124, 58, 237, 0.1)
+  );
+  border-radius: 8px;
   color: var(--neon-primary);
+  font-weight: 600;
+  box-shadow: 
+    0 2px 12px rgba(14, 165, 233, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+html.dark .VPSidebarItem .link.active {
+  background: linear-gradient(135deg, 
+    rgba(0, 240, 255, 0.2), 
+    rgba(139, 92, 246, 0.15)
+  );
+  box-shadow: 
+    0 2px 12px rgba(0, 240, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Sidebar Group Headers */
+.VPSidebarItem.has-children > .link {
+  font-weight: 600;
+  color: var(--neon-text);
+  background: rgba(14, 165, 233, 0.05);
+  border-left: 3px solid var(--neon-primary);
+  margin: 1px 4px;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  line-height: 1.2;
+}
+
+html.dark .VPSidebarItem.has-children > .link {
+  background: rgba(0, 240, 255, 0.08);
+  border-left: 3px solid var(--neon-primary);
+}
+
+/* Nested sidebar items */
+.VPSidebarItem .items .VPSidebarItem .link {
+  margin: 0px 2px 0px 10px;
+  padding: 2px 6px;
+  font-size: 0.8em;
+  line-height: 1.1;
 }
 
 /* Collapsible Dropdown Animations */
@@ -463,38 +528,9 @@ html.dark .VPDoc table tr:hover {
   background: rgba(0, 240, 255, 0.05);
 }
 
-/* Sidebar Background Glow */
+/* Sidebar Styling */
 .VPSidebar {
   position: relative;
-  overflow: hidden;
-}
-
-.VPSidebar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    rgba(14, 165, 233, 0.03), 
-    transparent
-  );
-  pointer-events: none;
-  animation: sidebarGlow 6s ease-in-out infinite alternate;
-  z-index: 1;
-}
-
-html.dark .VPSidebar::after {
-  background: linear-gradient(90deg, 
-    rgba(0, 240, 255, 0.05), 
-    transparent
-  );
-}
-
-@keyframes sidebarGlow {
-  0% { opacity: 0.3; }
-  100% { opacity: 0.7; }
 }
 
 /* Reduced Motion Support */
