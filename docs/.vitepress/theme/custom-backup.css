@@ -1,0 +1,1756 @@
+/* Futuristic Neon Cyberpunk VitePress Theme */
+
+
+
+/* CSS Variables for Neon Theme */
+
+:root {
+
+  /* Light Theme Colors */
+
+  --neon-bg-light: #f8fafc;
+
+  --neon-surface-light: #ffffff;
+
+  --neon-primary-light: #0ea5e9;
+
+  --neon-secondary-light: #7c3aed;
+
+  --neon-accent-light: #06b6d4;
+
+  --neon-text-light: #1e293b;
+
+  --neon-text-muted-light: #64748b;
+
+  
+
+  /* Dark Theme Colors */
+
+  --neon-bg-dark: #0a0f1c;
+
+  --neon-surface-dark: #111827;
+
+  --neon-primary-dark: #00f0ff;
+
+  --neon-secondary-dark: #8b5cf6;
+
+  --neon-accent-dark: #06b6d4;
+
+  --neon-text-dark: #e5e7eb;
+
+  --neon-text-muted-dark: #9ca3af;
+
+  
+
+  /* Glow Effects */
+
+  --neon-glow-primary-light: 0 0 20px rgba(14, 165, 233, 0.6);
+
+  --neon-glow-secondary-light: 0 0 20px rgba(124, 58, 237, 0.6);
+
+  --neon-glow-accent-light: 0 0 15px rgba(6, 182, 212, 0.5);
+
+  
+
+  --neon-glow-primary-dark: 0 0 20px rgba(0, 240, 255, 0.5);
+
+  --neon-glow-secondary-dark: 0 0 20px rgba(139, 92, 246, 0.5);
+
+  --neon-glow-accent-dark: 0 0 15px rgba(6, 182, 212, 0.4);
+
+  
+
+  /* Transitions */
+
+  --neon-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+
+
+/* Light Theme */
+
+html:not(.dark) {
+
+  --neon-bg: var(--neon-bg-light);
+
+  --neon-surface: var(--neon-surface-light);
+
+  --neon-primary: var(--neon-primary-light);
+
+  --neon-secondary: var(--neon-secondary-light);
+
+  --neon-accent: var(--neon-accent-light);
+
+  --neon-text: var(--neon-text-light);
+
+  --neon-text-muted: var(--neon-text-muted-light);
+
+  --neon-glow-primary: var(--neon-glow-primary-light);
+
+  --neon-glow-secondary: var(--neon-glow-secondary-light);
+
+  --neon-glow-accent: var(--neon-glow-accent-light);
+
+  
+
+  /* VitePress Light Theme Overrides */
+
+  --vp-c-bg: var(--neon-bg);
+
+  --vp-c-bg-soft: var(--neon-surface);
+
+  --vp-c-bg-elv: #f1f5f9;
+
+  --vp-c-text: var(--neon-text);
+
+  --vp-c-text-1: var(--neon-text);
+
+  --vp-c-text-2: var(--neon-text-muted);
+
+  --vp-c-brand-1: var(--neon-primary);
+
+  --vp-c-brand-2: var(--neon-secondary);
+
+  --vp-c-divider: rgba(14, 165, 233, 0.3);
+
+  --vp-c-border: rgba(14, 165, 233, 0.4);
+
+}
+
+
+
+/* Dark Theme */
+
+html.dark {
+
+  --neon-bg: var(--neon-bg-dark);
+
+  --neon-surface: var(--neon-surface-dark);
+
+  --neon-primary: var(--neon-primary-dark);
+
+  --neon-secondary: var(--neon-secondary-dark);
+
+  --neon-accent: var(--neon-accent-dark);
+
+  --neon-text: var(--neon-text-dark);
+
+  --neon-text-muted: var(--neon-text-muted-dark);
+
+  --neon-glow-primary: var(--neon-glow-primary-dark);
+
+  --neon-glow-secondary: var(--neon-glow-secondary-dark);
+
+  --neon-glow-accent: var(--neon-glow-accent-dark);
+
+  
+
+  /* VitePress Dark Theme Overrides */
+
+  --vp-c-bg: var(--neon-bg);
+
+  --vp-c-bg-soft: var(--neon-surface);
+
+  --vp-c-bg-elv: #1a2332;
+
+  --vp-c-text: var(--neon-text);
+
+  --vp-c-text-1: var(--neon-text);
+
+  --vp-c-text-2: var(--neon-text-muted);
+
+  --vp-c-brand-1: var(--neon-primary);
+
+  --vp-c-brand-2: var(--neon-secondary);
+
+  --vp-c-divider: rgba(139, 92, 246, 0.2);
+
+  --vp-c-border: rgba(139, 92, 246, 0.3);
+
+}
+
+
+
+/* Animated Background Gradient */
+
+body {
+
+  position: relative;
+
+  background: var(--neon-bg);
+
+  background-image: 
+
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.15), transparent 40%),
+
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.12), transparent 40%),
+
+    radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.08), transparent 30%);
+
+  background-attachment: fixed;
+
+}
+
+
+
+html.dark body {
+
+  background-image: 
+
+    radial-gradient(circle at 20% 20%, rgba(0, 240, 255, 0.08), transparent 40%),
+
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.06), transparent 40%),
+
+    radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.04), transparent 30%);
+
+}
+
+
+
+body::before {
+
+  content: '';
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  background: 
+
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.08), transparent 50%),
+
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.06), transparent 50%);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation: neonPulse 8s ease-in-out infinite alternate;
+
+}
+
+
+
+html.dark body::before {
+
+  background: 
+
+    radial-gradient(circle at 20% 20%, rgba(0, 240, 255, 0.03), transparent 50%),
+
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.02), transparent 50%);
+
+}
+
+
+
+@keyframes neonPulse {
+
+  0% { opacity: 0.5; }
+
+  100% { opacity: 1; }
+
+}
+
+
+
+/* Glass Effect Navbar */
+
+.VPNav {
+
+  backdrop-filter: blur(12px);
+
+  background: rgba(255, 255, 255, 0.95) !important;
+
+  border-bottom: 2px solid rgba(14, 165, 233, 0.4);
+
+  box-shadow: 0 4px 25px rgba(14, 165, 233, 0.2);
+
+  transition: var(--neon-transition);
+
+}
+
+
+
+html.dark .VPNav {
+
+  background: rgba(17, 24, 39, 0.8) !important;
+
+  border-bottom: 2px solid rgba(0, 240, 255, 0.3);
+
+  box-shadow: 0 4px 25px rgba(0, 240, 255, 0.15);
+
+}
+
+
+
+/* Site Title Neon Effect */
+
+.VPNavBarTitle .title {
+
+  background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  text-shadow: var(--neon-glow-primary);
+
+  transition: var(--neon-transition);
+
+}
+
+
+
+.VPNavBarTitle .title:hover {
+
+  transform: scale(1.05);
+
+  filter: brightness(1.2);
+
+}
+
+
+
+/* Nav Links Neon Underline */
+
+.VPNavBarMenu .link {
+
+  position: relative;
+
+  transition: var(--neon-transition);
+
+}
+
+
+
+.VPNavBarMenu .link::after {
+
+  content: '';
+
+  position: absolute;
+
+  bottom: -2px;
+
+  left: 0;
+
+  width: 0;
+
+  height: 2px;
+
+  background: linear-gradient(90deg, var(--neon-primary), var(--neon-accent));
+
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  box-shadow: var(--neon-glow-accent);
+
+}
+
+
+
+.VPNavBarMenu .link:hover::after,
+
+.VPNavBarMenu .link.active::after {
+
+  width: 100%;
+
+}
+
+
+
+.VPNavBarMenu .link.active {
+
+  color: var(--neon-primary);
+
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+
+}
+
+
+
+/* Glowing text effect on hover */
+
+.VPNavBarMenu .link:hover {
+
+  color: var(--neon-primary);
+
+  text-shadow: 
+
+    0 0 8px rgba(14, 165, 233, 0.8),
+
+    0 0 12px rgba(14, 165, 233, 0.6),
+
+    0 0 16px rgba(14, 165, 233, 0.4);
+
+  transition: all 0.3s ease;
+
+}
+
+
+
+html.dark .VPNavBarMenu .link:hover {
+
+  color: var(--neon-primary);
+
+  text-shadow: 
+
+    0 0 10px rgba(0, 240, 255, 0.9),
+
+    0 0 15px rgba(0, 240, 255, 0.7),
+
+    0 0 20px rgba(0, 240, 255, 0.5);
+
+}
+
+
+
+/* Fast Moving Gradient Line for Topbar */
+
+.VPNav {
+
+  position: relative;
+
+  overflow: visible;
+
+}
+
+
+
+.VPNav::after {
+
+  content: '';
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  right: 0;
+
+  height: 4px;
+
+  background: linear-gradient(90deg, 
+
+    transparent 0%,
+
+    rgba(14, 165, 233, 0.9) 15%,
+
+    var(--neon-primary) 35%,
+
+    rgba(124, 58, 237, 0.9) 50%,
+
+    var(--neon-secondary) 65%,
+
+    rgba(139, 92, 246, 0.9) 85%,
+
+    transparent 100%
+
+  );
+
+  animation: topbarLineScan 0.5s linear infinite;
+
+  z-index: 1000;
+
+  pointer-events: none;
+
+}
+
+
+
+@keyframes topbarLineScan {
+
+  0% { transform: translateX(-100%); }
+
+  100% { transform: translateX(100%); }
+
+}
+
+
+
+/* Sidebar Styling */
+
+.VPSidebar {
+
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border-right: 1px solid rgba(14, 165, 233, 0.3);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 2px 0 20px rgba(14, 165, 233, 0.1);
+
+}
+
+
+
+html.dark .VPSidebar {
+
+  background: rgba(17, 24, 39, 0.95);
+
+  border-right: 1px solid rgba(0, 240, 255, 0.3);
+
+  box-shadow: 2px 0 20px rgba(0, 240, 255, 0.15);
+
+}
+
+
+
+/* Sidebar Item Styling */
+
+.VPSidebarItem .link {
+
+  transition: var(--neon-transition);
+
+  border-radius: 4px;
+
+  margin: 0px 4px;
+
+  padding: 3px 8px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  font-size: 0.85em;
+
+  line-height: 1.2;
+
+}
+
+
+
+.VPSidebarItem .link::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+
+  left: -100%;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: linear-gradient(90deg, 
+
+    transparent, 
+
+    rgba(14, 165, 233, 0.1), 
+
+    transparent
+
+  );
+
+  transition: left 0.5s ease;
+
+}
+
+
+
+.VPSidebarItem .link:hover::before {
+
+  left: 100%;
+
+}
+
+
+
+.VPSidebarItem .link:hover {
+
+  transform: translateX(4px);
+
+  color: var(--neon-primary);
+
+  background: rgba(14, 165, 233, 0.08);
+
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2);
+
+}
+
+
+
+html.dark .VPSidebarItem .link:hover {
+
+  background: rgba(0, 240, 255, 0.1);
+
+  box-shadow: 0 2px 8px rgba(0, 240, 255, 0.3);
+
+}
+
+
+
+.VPSidebarItem .link.active {
+
+  background: linear-gradient(135deg, 
+
+    rgba(14, 165, 233, 0.15), 
+
+    rgba(124, 58, 237, 0.1)
+
+  );
+
+  border-radius: 8px;
+
+  color: var(--neon-primary);
+
+  font-weight: 600;
+
+  box-shadow: 
+
+    0 2px 12px rgba(14, 165, 233, 0.3),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+}
+
+
+
+html.dark .VPSidebarItem .link.active {
+
+  background: linear-gradient(135deg, 
+
+    rgba(0, 240, 255, 0.2), 
+
+    rgba(139, 92, 246, 0.15)
+
+  );
+
+  box-shadow: 
+
+    0 2px 12px rgba(0, 240, 255, 0.4),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+}
+
+
+
+/* Sidebar Group Headers */
+
+.VPSidebarItem.has-children > .link {
+
+  font-weight: 600;
+
+  color: var(--neon-text);
+
+  background: rgba(14, 165, 233, 0.05);
+
+  border-left: 3px solid var(--neon-primary);
+
+  margin: 1px 4px;
+
+  padding: 4px 8px;
+
+  font-size: 0.8em;
+
+  line-height: 1.2;
+
+}
+
+
+
+html.dark .VPSidebarItem.has-children > .link {
+
+  background: rgba(0, 240, 255, 0.08);
+
+  border-left: 3px solid var(--neon-primary);
+
+}
+
+
+
+/* Nested sidebar items */
+
+.VPSidebarItem .items .VPSidebarItem .link {
+
+  margin: 0px 2px 0px 10px;
+
+  padding: 2px 6px;
+
+  font-size: 0.8em;
+
+  line-height: 1.1;
+
+}
+
+
+
+/* Collapsible Dropdown Animations */
+
+.VPSidebarItem.has-children .items {
+
+  overflow: hidden;
+
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+
+
+.VPSidebarItem.has-children .caret {
+
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+
+
+.VPSidebarItem.has-children.collapsed .caret {
+
+  transform: rotate(-90deg);
+
+}
+
+
+
+/* Page Content Fade-in Animation */
+
+.VPContent {
+
+  animation: pageFadeIn 0.4s ease-out;
+
+}
+
+
+
+@keyframes pageFadeIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+
+/* Headings Neon Accent */
+
+.VPDoc h2 {
+
+  position: relative;
+
+  padding-left: 16px;
+
+  margin-top: 2.5rem;
+
+  margin-bottom: 1rem;
+
+}
+
+/* Hide anchor links (which show # symbols) completely */
+.VPDoc h1 .header-anchor,
+.VPDoc h2 .header-anchor,
+.VPDoc h3 .header-anchor,
+.VPDoc h4 .header-anchor,
+.VPDoc h5 .header-anchor,
+.VPDoc h6 .header-anchor {
+  display: none !important;
+}
+
+.VPDoc h2::before {
+
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  bottom: 0;
+
+  width: 4px;
+
+  background: linear-gradient(180deg, var(--neon-primary), var(--neon-secondary));
+
+  border-radius: 2px;
+
+  box-shadow: var(--neon-glow-primary);
+
+}
+
+
+
+/* Code Blocks Neon Border */
+
+.vp-code,
+
+div[class*="language-"] {
+
+  border: 1px solid rgba(14, 165, 233, 0.3);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.8) !important;
+
+  box-shadow: 
+
+    0 4px 20px rgba(0, 0, 0, 0.1),
+
+    inset 0 1px 0 rgba(14, 165, 233, 0.1),
+
+    0 0 15px rgba(14, 165, 233, 0.2);
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+
+
+html.dark .vp-code,
+
+html.dark div[class*="language-"] {
+
+  border: 1px solid rgba(0, 240, 255, 0.3);
+
+  background: rgba(17, 24, 39, 0.6) !important;
+
+  box-shadow: 
+
+    0 4px 20px rgba(0, 0, 0, 0.3),
+
+    inset 0 1px 0 rgba(0, 240, 255, 0.1),
+
+    0 0 15px rgba(0, 240, 255, 0.2);
+
+}
+
+
+
+.vp-code::before,
+
+div[class*="language-"]::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, 
+
+    transparent, 
+
+    var(--neon-primary), 
+
+    transparent
+
+  );
+
+  animation: codeScan 3s linear infinite;
+
+}
+
+
+
+@keyframes codeScan {
+
+  0% { transform: translateX(-100%); }
+
+  100% { transform: translateX(100%); }
+
+}
+
+
+
+/* Buttons Neon Glow */
+
+.VPButton {
+
+  transition: var(--neon-transition);
+
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(14, 165, 233, 0.3);
+
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(14, 165, 233, 0.1));
+
+  backdrop-filter: blur(10px);
+
+}
+
+
+
+html.dark .VPButton {
+
+  border: 1px solid rgba(0, 240, 255, 0.4);
+
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(0, 240, 255, 0.1));
+
+}
+
+
+
+/* Copy Code Button Specific */
+
+button[title*="Copy"],
+
+button[aria-label*="copy"],
+
+button[class*="copy"],
+
+.vp-copy-code-button,
+
+.copy-button,
+
+[data-copy="true"] {
+
+  transition: var(--neon-transition);
+
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(14, 165, 233, 0.2);
+
+  border-radius: 6px;
+
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(6, 182, 212, 0.05));
+
+  color: var(--neon-text);
+
+  font-weight: 500;
+
+  padding: 6px 12px;
+
+  font-size: 0.85em;
+
+}
+
+
+
+html.dark button[title*="Copy"],
+
+html.dark button[aria-label*="copy"],
+
+html.dark button[class*="copy"],
+
+html.dark .vp-copy-code-button,
+
+html.dark .copy-button,
+
+html.dark [data-copy="true"] {
+
+  border: 1px solid rgba(0, 240, 255, 0.3);
+
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(139, 92, 246, 0.1));
+
+  color: var(--neon-text);
+
+}
+
+
+
+button[title*="Copy"]::before,
+
+button[aria-label*="copy"]::before,
+
+button[class*="copy"]::before,
+
+.vp-copy-code-button::before,
+
+.copy-button::before,
+
+[data-copy="true"]::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  width: 0;
+
+  height: 0;
+
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.3), transparent);
+
+  transition: width 0.3s ease, height 0.3s ease;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+
+}
+
+
+
+button[title*="Copy"]:hover::before,
+
+button[aria-label*="copy"]:hover::before,
+
+button[class*="copy"]:hover::before,
+
+.vp-copy-code-button:hover::before,
+
+.copy-button:hover::before,
+
+[data-copy="true"]:hover::before {
+
+  width: 110%;
+
+  height: 110%;
+
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent);
+
+}
+
+
+
+button[title*="Copy"]:hover,
+
+button[aria-label*="copy"]:hover,
+
+button[class*="copy"]:hover,
+
+.vp-copy-code-button:hover,
+
+.copy-button:hover,
+
+[data-copy="true"]:hover {
+
+  transform: translateY(-1px) scale(1.01);
+
+  box-shadow: 
+
+    0 4px 15px rgba(0, 240, 255, 0.3),
+
+    0 0 10px rgba(139, 92, 246, 0.2),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  border-color: rgba(0, 240, 255, 0.5);
+
+  color: var(--neon-primary);
+
+}
+
+
+
+html.dark button[title*="Copy"]:hover,
+
+html.dark button[aria-label*="copy"]:hover,
+
+html.dark button[class*="copy"]:hover,
+
+html.dark .vp-copy-code-button:hover,
+
+html.dark .copy-button:hover,
+
+html.dark [data-copy="true"]:hover {
+
+  transform: translateY(-1px) scale(1.01);
+
+  box-shadow: 
+
+    0 4px 15px rgba(0, 240, 255, 0.4),
+
+    0 0 10px rgba(139, 92, 246, 0.3),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(0, 240, 255, 0.7);
+
+}
+
+
+
+button[title*="Copy"]:active,
+
+button[aria-label*="copy"]:active,
+
+button[class*="copy"]:active,
+
+.vp-copy-code-button:active,
+
+.copy-button:active,
+
+[data-copy="true"]:active {
+
+  transform: translateY(0px) scale(0.98);
+
+  box-shadow: 
+
+    0 2px 8px rgba(0, 240, 255, 0.3),
+
+    inset 0 1px 0 rgba(0, 0, 0, 0.15);
+
+}
+
+
+
+/* Copy icon styling */
+
+button[title*="Copy"]::after,
+
+button[aria-label*="copy"]::after,
+
+button[class*="copy"]::after,
+
+.vp-copy-code-button::after,
+
+.copy-button::after,
+
+[data-copy="true"]::after {
+
+  content: 'Copy';
+
+  position: absolute;
+
+  top: 2px;
+
+  right: 6px;
+
+  font-size: 0.7em;
+
+  opacity: 0.7;
+
+  transition: opacity 0.2s ease;
+
+  font-weight: 500;
+
+}
+
+
+
+button[title*="Copy"]:hover::after,
+
+button[aria-label*="copy"]:hover::after,
+
+button[class*="copy"]:hover::after,
+
+.vp-copy-code-button:hover::after,
+
+.copy-button:hover::after,
+
+[data-copy="true"]:hover::after {
+
+  opacity: 1;
+
+  transform: scale(1.1);
+
+}
+
+
+
+.VPButton::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  width: 0;
+
+  height: 0;
+
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.4), transparent);
+
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+
+}
+
+
+
+.VPButton:hover::before {
+
+  width: 150%;
+
+  height: 150%;
+
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent);
+
+}
+
+
+
+.VPButton:hover {
+
+  transform: translateY(-3px) scale(1.05);
+
+  box-shadow: 
+
+    0 12px 30px rgba(0, 240, 255, 0.4),
+
+    0 0 20px rgba(139, 92, 246, 0.3),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  border-color: rgba(0, 240, 255, 0.6);
+
+}
+
+
+
+html.dark .VPButton:hover {
+
+  transform: translateY(-3px) scale(1.05);
+
+  box-shadow: 
+
+    0 12px 30px rgba(0, 240, 255, 0.5),
+
+    0 0 20px rgba(139, 92, 246, 0.4),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  border-color: rgba(0, 240, 255, 0.8);
+
+}
+
+
+
+.VPButton:active {
+
+  transform: translateY(-1px) scale(0.98);
+
+  box-shadow: 
+
+    0 4px 15px rgba(0, 240, 255, 0.3),
+
+    inset 0 2px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+.VPButton::after {
+
+  content: '';
+
+  position: absolute;
+
+  top: -2px;
+
+  left: -2px;
+
+  right: -2px;
+
+  bottom: -2px;
+
+  background: linear-gradient(45deg, transparent, rgba(0, 240, 255, 0.2), transparent);
+
+  border-radius: 8px;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
+
+}
+
+
+
+.VPButton:hover::after {
+
+  opacity: 1;
+
+  position: relative;
+
+}
+
+
+
+/* Links Neon Hover */
+
+.VPDoc a {
+
+  transition: var(--neon-transition);
+
+  position: relative;
+
+}
+
+
+
+.VPDoc a:hover {
+
+  color: var(--neon-primary);
+
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+
+}
+
+
+
+/* Search Box Neon */
+
+.VPSearchBox {
+
+  border: 1px solid rgba(14, 165, 233, 0.3) !important;
+
+  border-radius: 8px !important;
+
+  background: rgba(255, 255, 255, 0.9) !important;
+
+  backdrop-filter: blur(8px);
+
+  transition: var(--neon-transition);
+
+}
+
+
+
+html.dark .VPSearchBox {
+
+  border: 1px solid rgba(0, 240, 255, 0.3) !important;
+
+  background: rgba(17, 24, 39, 0.8) !important;
+
+}
+
+
+
+.VPSearchBox:focus-within {
+
+  border-color: var(--neon-primary) !important;
+
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3) !important;
+
+}
+
+
+
+html.dark .VPSearchBox:focus-within {
+
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3) !important;
+
+}
+
+
+
+/* Outline Sidebar */
+
+.VPOutline {
+
+  border-left: 1px solid rgba(124, 58, 237, 0.2);
+
+  padding-left: 1rem;
+
+}
+
+
+
+html.dark .VPOutline {
+
+  border-left: 1px solid rgba(139, 92, 246, 0.3);
+
+}
+
+
+
+.VPOutline .outline-link {
+
+  border-radius: 4px;
+
+  transition: var(--neon-transition);
+
+  position: relative;
+
+}
+
+
+
+.VPOutline .outline-link:hover {
+
+  background: rgba(139, 92, 246, 0.1);
+
+  color: var(--neon-secondary);
+
+  transform: translateX(2px);
+
+}
+
+
+
+.VPOutline .outline-link.active {
+
+  color: var(--neon-secondary);
+
+  background: rgba(139, 92, 246, 0.15);
+
+}
+
+
+
+.VPOutline .outline-link.active::before {
+
+  content: '';
+
+  position: absolute;
+
+  left: -8px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 3px;
+
+  height: 16px;
+
+  background: var(--neon-secondary);
+
+  border-radius: 2px;
+
+  box-shadow: var(--neon-glow-secondary);
+
+}
+
+
+
+/* Tables Neon Enhancement - Compact */
+
+.VPDoc table {
+
+  border-radius: 6px;
+
+  border: 1px solid rgba(14, 165, 233, 0.2);
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  width: auto !important;
+
+  max-width: 100% !important;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+
+  overflow: hidden;
+
+  table-layout: auto;
+
+  display: inline-table;
+
+  margin: 0;
+
+}
+
+
+
+html.dark .VPDoc table {
+
+  border: 1px solid rgba(0, 240, 255, 0.2);
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+}
+
+
+
+.VPDoc table th {
+
+  background: rgba(14, 165, 233, 0.08);
+
+  border-bottom: 1px solid var(--neon-primary);
+
+  color: var(--neon-primary);
+
+  padding: 8px 12px;
+
+  text-align: left;
+
+  font-weight: 600;
+
+  font-size: 0.85em;
+
+  white-space: nowrap;
+
+}
+
+
+
+html.dark .VPDoc table th {
+
+  background: rgba(0, 240, 255, 0.08);
+
+}
+
+
+
+.VPDoc table td {
+
+  padding: 8px 12px;
+
+  border-bottom: 1px solid rgba(14, 165, 233, 0.08);
+
+  word-wrap: break-word;
+
+  font-size: 0.85em;
+
+  line-height: 1.2;
+
+}
+
+
+
+html.dark .VPDoc table td {
+
+  border-bottom: 1px solid rgba(0, 240, 255, 0.08);
+
+}
+
+
+
+.VPDoc table tr:last-child td {
+
+  border-bottom: none;
+
+}
+
+
+
+.VPDoc table tr:hover {
+
+  background: rgba(14, 165, 233, 0.03);
+
+}
+
+
+
+html.dark .VPDoc table tr:hover {
+
+  background: rgba(0, 240, 255, 0.03);
+
+}
+
+
+
+/* Force all tables to be compact */
+
+.vp-doc table,
+
+.VPDocContent table,
+
+.VPDoc table,
+
+div[class*="vp-doc"] table {
+
+  width: auto !important;
+
+  max-width: 100% !important;
+
+  table-layout: auto !important;
+
+  display: inline-table !important;
+
+}
+
+
+
+/* Table container fixes */
+
+.vp-doc > div > table,
+
+.VPDocContent > div > table {
+
+  width: auto !important;
+
+  margin: 0;
+
+}
+
+
+
+/* Sidebar Styling */
+
+.VPSidebar {
+
+  position: relative;
+
+}
+
+
+
+/* Custom Neon Scrollbar */
+
+::-webkit-scrollbar {
+
+  width: 8px;
+
+  height: 8px;
+
+}
+
+
+
+::-webkit-scrollbar-track {
+
+  background: rgba(14, 165, 233, 0.1);
+
+  border-radius: 4px;
+
+}
+
+
+
+html.dark ::-webkit-scrollbar-track {
+
+  background: rgba(0, 240, 255, 0.1);
+
+}
+
+
+
+::-webkit-scrollbar-thumb {
+
+  background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
+
+  border-radius: 4px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: var(--neon-glow-primary);
+
+  transition: var(--neon-transition);
+
+}
+
+
+
+html.dark ::-webkit-scrollbar-thumb {
+
+  background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow: var(--neon-glow-primary);
+
+}
+
+
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: linear-gradient(135deg, var(--neon-secondary), var(--neon-primary));
+
+  box-shadow: var(--neon-glow-secondary);
+
+  transform: scale(1.1);
+
+}
+
+
+
+::-webkit-scrollbar-thumb:active {
+
+  background: var(--neon-primary);
+
+  transform: scale(0.95);
+
+}
+
+
+
+/* Firefox scrollbar */
+
+* {
+
+  scrollbar-width: thin;
+
+  scrollbar-color: var(--neon-primary) rgba(14, 165, 233, 0.1);
+
+}
+
+
+
+html.dark * {
+
+  scrollbar-color: var(--neon-primary) rgba(0, 240, 255, 0.1);
+
+}
+
+
+
+/* Reduced Motion Support */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+
+  *::before,
+
+  *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+  }
+
+}
+
+
+
+/* Mobile Responsiveness */
+
+@media (max-width: 768px) {
+
+  .VPNav .VPSearchBox {
+
+    width: 200px;
+
+  }
+
+  
+
+  .VPSidebar::after {
+
+    display: none;
+
+  }
+
+}
+
