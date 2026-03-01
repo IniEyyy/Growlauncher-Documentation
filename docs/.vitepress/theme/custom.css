@@ -94,7 +94,7 @@ html:not(.dark) .vp-code-group code {
 
 /* Enhanced Light Mode Sidebar */
 html:not(.dark) .VPSidebar {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: linear-gradient(135deg, #ffffff, #f8fdff) !important;
   border-right: 1px solid rgba(14, 165, 233, 0.2);
   box-shadow: 2px 0 20px rgba(14, 165, 233, 0.15);
 }
