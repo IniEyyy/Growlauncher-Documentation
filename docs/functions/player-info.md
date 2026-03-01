@@ -7,29 +7,43 @@ Functions for getting player information and inventory data.
 ---
 
 ### getGems()
-```lua
-getGems() -> number
-```
+`getGems() -> number`
 - **Description**: Get current gem amount
-- **Returns**: `number` - Gem amount
-- **Example**: `log(getGems())`
+- **Parameters**: 
+    - None
+- **Returns**: 
+    - `number` - Gem amount
+- **Example**:
+    ```lua
+    log(getGems())
+    ```
 
 ---
 
 ### getLocal()
-```lua
-getLocal() -> NetAvatar
-```
+`getLocal() -> NetAvatar`
 - **Description**: Get local player
-- **Returns**: [`NetAvatar`](/structs/player#netavatar) - Local player data
-- **Example**: `log(getLocal().name)`
+- **Parameters**: 
+    - None
+- **Returns**: 
+    - [`NetAvatar`](/structs/player#netavatar) - Local player data
+- **Example**:
+    ```lua
+    log(getLocal().name)
+    ```
 
 ---
 
 ### getInventory()
-```lua
-getInventory() -> InventoryItem[]
-```
+`getInventory() -> InventoryItem[]`
 - **Description**: Get inventory items
-- **Returns**: [`InventoryItem[]`](/structs/game-objects#inventoryitem) - Inventory items
-- **Example**: `for _,item in pairs(getInventory()) do log(item.id) end`
+- **Parameters**: 
+    - None
+- **Returns**: 
+    - [`InventoryItem[]`](/structs/game-objects#inventoryitem) - Inventory items
+- **Example**:
+    ```lua
+    for _,item in pairs(getInventory()) do
+        log(item.id)
+    end
+    ```

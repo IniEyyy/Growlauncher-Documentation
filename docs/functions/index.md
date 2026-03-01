@@ -28,6 +28,6 @@ Mathematical functions and utility operations.
 -- Common function usage examples
 log("Hello World")                    -- Console
 local player = getLocal()             -- Player Info  
-local tile = getTile(100, 50)        -- World
+local tile = getTile(100, 50)         -- World
 sendPacket(2,"action|input\ntext|Hi") -- Networking
 ```
