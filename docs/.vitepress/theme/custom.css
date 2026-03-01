@@ -131,80 +131,62 @@ html:not(.dark) .VPSidebarItem .link.active {
   text-shadow: 0 0 10px rgba(14, 165, 233, 0.6);
 }
 
-/* Enhanced Light Mode Tables - Color Change by Turns */
+/* Enhanced Light Mode Tables - Soft Midnight Blue Palette */
 html:not(.dark) .VPDoc table {
-  background: #ffffff;
-  border: 2px solid #6366f1;
+  background: linear-gradient(135deg, #fafbff, #f0f9ff);
+  border: 2px solid #a5b4fc;
   border-radius: 12px;
   box-shadow: 
-    0 6px 25px rgba(99, 102, 241, 0.12),
-    0 0 0 1px rgba(147, 51, 234, 0.06);
+    0 12px 48px rgba(59, 130, 246, 0.15),
+    0 0 0 4px rgba(30, 58, 138, 0.1),
+    inset 0 2px 0 rgba(59, 130, 246, 0.15);
 }
 
 html:not(.dark) .VPDoc table th {
-  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
-  border-bottom: 2px solid #6366f1;
+  background: linear-gradient(135deg, #e0e7ff, #a5b4fc);
+  border-bottom: 2px solid #a5b4fc;
   color: #000000;
   font-weight: 700;
   text-align: left;
-}
-
-html:not(.dark) .VPDoc table th:first-child {
-  border-radius: 10px 0 0 0;
-}
-
-html:not(.dark) .VPDoc table th:last-child {
-  border-radius: 0 10px 0 0;
+  text-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
 }
 
 html:not(.dark) .VPDoc table td {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
   color: #000000;
-  padding: 8px 12px;
-}
-
-html:not(.dark) .VPDoc table tr:last-child td:first-child {
-  border-radius: 0 0 0 10px;
-}
-
-html:not(.dark) .VPDoc table tr:last-child td:last-child {
-  border-radius: 0 0 10px 0;
-}
-
-/* Alternating row colors - Turn 1: Blue */
-html:not(.dark) .VPDoc table tr:nth-child(odd) td {
-  background: #eff6ff;
-}
-
-/* Alternating row colors - Turn 2: Purple */
-html:not(.dark) .VPDoc table tr:nth-child(even) td {
-  background: #f3e8ff;
-}
-
-/* Alternating row colors - Turn 3: Teal (every 3rd row starting from 1) */
-html:not(.dark) .VPDoc table tr:nth-child(3n+1) td {
-  background: #f0fdfa;
-}
-
-/* Alternating row colors - Turn 4: Rose (every 4th row starting from 2) */
-html:not(.dark) .VPDoc table tr:nth-child(4n+2) td {
-  background: #fff1f2;
-}
-
-/* Hover effects override alternating colors */
-html:not(.dark) .VPDoc table tr:hover td {
-  background: #dbeafe !important;
-  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.2);
-}
-
-/* Table links keep their color, other text stays black */
-html:not(.dark) .VPDoc table td a {
-  color: #6366f1;
+  padding: 16px 20px;
   font-weight: 500;
 }
 
+/* Normal Alternating Row Colors - Soft Purple */
+html:not(.dark) .VPDoc table tr:nth-child(odd) td {
+  background: #e8f5fd;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6);
+}
+
+html:not(.dark) .VPDoc table tr:nth-child(even) td {
+  background: #f0f9ff;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Normal hover effects */
+html:not(.dark) .VPDoc table tr:hover td {
+  background: linear-gradient(135deg, #e8f5fd, #f0f9ff) !important;
+  box-shadow: 
+    inset 0 0 0 1px rgba(59, 130, 246, 0.2),
+    0 2px 8px rgba(59, 130, 246, 0.15);
+  transition: all 0.2s ease;
+}
+
+/* Normal table links */
+html:not(.dark) .VPDoc table td a {
+  color: #a5b4fc;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
 html:not(.dark) .VPDoc table td a:hover {
-  color: #9333ea;
+  color: #6366f1;
   text-decoration: underline;
 }
 
