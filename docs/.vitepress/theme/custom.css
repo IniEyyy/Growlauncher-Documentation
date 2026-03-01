@@ -3,13 +3,8 @@
 /* CSS Variables for Neon Theme */
 :root {
   /* Light Theme Colors - Bright & Vibrant */
-  --neon-bg-light: #f0f9ff;
+  --neon-bg-light: #fafbff;
   --neon-surface-light: #ffffff;
-  --neon-primary-light: #0ea5e9;
-  --neon-secondary-light: #7c3aed;
-  --neon-accent-light: #06b6d4;
-  --neon-text-light: #0f172a;
-  --neon-text-muted-light: #475569;
   
   /* Dark Theme Colors - Premium Palette */
   --neon-bg-dark: #0a0f1c;
@@ -21,9 +16,9 @@
   --neon-text-muted-dark: #9ca3af;
   
   /* Premium Glow Effects */
-  --neon-glow-primary-light: 0 0 30px rgba(14, 165, 233, 0.8);
-  --neon-glow-secondary-light: 0 0 30px rgba(124, 58, 237, 0.8);
-  --neon-glow-accent-light: 0 0 25px rgba(6, 182, 212, 0.7);
+  --neon-glow-primary-light: 0 0 20px rgba(99, 102, 241, 0.3);
+  --neon-glow-secondary-light: 0 0 20px rgba(165, 180, 252, 0.3);
+  --neon-glow-accent-light: 0 0 20px rgba(224, 231, 255, 0.3);
   
   --neon-glow-primary-dark: 0 0 40px rgba(0, 240, 255, 0.9);
   --neon-glow-secondary-dark: 0 0 40px rgba(139, 92, 246, 0.9);
