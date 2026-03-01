@@ -45,7 +45,7 @@ Create a simple Lua script to test your setup:
 LogToConsole("Hello from Growlauncher!")
 
 -- Display a notification
-sendNotification("Welcome to Growlauncher scripting!", "info")
+sendNotification("Welcome to Growlauncher scripting!")
 
 -- Get current world name
 local worldName = GetWorldName()

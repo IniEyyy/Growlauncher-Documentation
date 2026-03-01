@@ -15,13 +15,13 @@ Represents an item in player inventory.
 
 Represents an object in the game world.
 
-| Field    | Type                |
-| :-       | :-:                 |
+| Field    | Type                                |
+| :-       | :-:                                 |
 | `pos`    | [Vector2](/structs/vectors#vector2) |
-| `itemid` | number              |
-| `amount` | number              |
-| `invbit` | number              |
-| `id`     | number              |
+| `itemid` | number                              |
+| `amount` | number                              |
+| `invbit` | number                              |
+| `id`     | number                              |
 
 ## Dialog
 
