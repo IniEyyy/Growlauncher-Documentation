@@ -49,9 +49,9 @@ applyHook()
 -- Hook callback usage
 AddHookCallback(function(var, pkt)
     log("Variant received: " .. var.v1)
-end, "variant_logger")
+end, "onVariant")
 
 -- Remove hooks
 removeHook("onDraw")
-RemoveHookCallback("variant_logger")
+RemoveHookCallback("onVariant")
 ```
