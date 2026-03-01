@@ -31,7 +31,8 @@ export default defineConfig({
       { text: "ImGui", link: "/imgui/" },
       { text: "Hooks", link: "/hooks/" },
       { text: "Namespaces", link: "/namespaces/" },
-      { text: "Enums", link: "/enums/" }
+      { text: "Enums", link: "/enums/" },
+      { text: "Examples", link: "/examples" }
     ],
 
     sidebar: [
@@ -131,6 +132,13 @@ export default defineConfig({
           { text: "Enums Overview", link: "/enums/" },
           { text: "Menu Types", link: "/enums/menu-types" },
           { text: "Packet Types", link: "/enums/packet-types" }
+        ]
+      },
+      {
+        text: "Examples",
+        collapsed: false,
+        items: [
+          { text: "Examples Overview", link: "/examples" }
         ]
       }
     ], 
