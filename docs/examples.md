@@ -1,35 +1,36 @@
 # Examples
 
-Practical examples and sample scripts for Growlauncher API usage.
+Sample scripts from the `sample-scripts/` directory demonstrating various Growlauncher API features.
 
 ## Overview
 
-This section provides real-world examples of how to use various Growlauncher features, from basic scripts to complex UI applications.
+This section contains actual working scripts that demonstrate practical usage of the Growlauncher API. Each script is taken directly from the sample-scripts directory.
 
-## Categories
+## Available Sample Scripts
 
-### [ImGui Examples](#imgui-examples)
-Interactive user interfaces and custom overlays.
+### [Calculator](#calculator-lua)
+Complete calculator application with ImGui interface and preferences persistence.
 
-### [UI Module Examples](#ui-module-examples)
-Module system and configuration interfaces.
+### [Sample UI](#sample-uilua)
+Comprehensive UI module showcasing all available components.
 
-### [Preferences Examples](#preferences-examples)
-Settings management and data persistence.
+### [Preferences](#preferenceslua)
+Basic preferences usage for persistent configuration.
 
-### [Network Examples](#network-examples)
-Packet handling and network communication.
+### [World Saver](#world_saverlua)
+World bookmark management system with ImGui interface.
 
-### [Utility Examples](#utility-examples)
-Helper functions and common operations.
+### [Fetch](#fetchlua)
+Network request example with dynamic script loading.
+
+### [Example for Fetch](#example-for-fetchlua)
+Simple notification script used for fetch demonstration.
 
 ---
 
-## ImGui Examples
+## calculator.lua
 
-### Calculator Application
-
-A complete calculator with ImGui interface and preferences persistence.
+A complete calculator with ImGui interface and mathematical expression evaluation.
 
 ```lua
 -- ---@type Preferences
@@ -83,6 +84,19 @@ local function push(ch)
     CALC.expr = CALC.expr .. ch
 end
 
+local function backspace()
+    local len = #CALC.expr
+    if len > 0 then
+        CALC.expr = CALC.expr:sub(1, len - 1)
+    end
+end
+
+local function clear_all()
+    CALC.expr = ""
+    CALC.result = ""
+    CALC.err = nil
+end
+
 local function compute()
     local v, err = safe_eval(CALC.expr)
     if v == nil then
@@ -113,50 +127,125 @@ function OnDrawImGui(delta)
         ImGui.Separator()
         
         local btnX = math.floor(ImGui.GetContentRegionAvail().x * 0.25)
+        local function B(label, onClick)
+            if ImGui.Button(label, ImVec2(btnX - 5, 0)) then
+                onClick()
+            end
+        end
         
-        if ImGui.Button("C", ImVec2(btnX - 5, 0)) then
-            CALC.expr = ""
-            CALC.result = ""
-            CALC.err = nil
+        local function Row(buttons)
+            for i, b in ipairs(buttons) do
+                B(b[1], b[2])
+                if i < #buttons then
+                    ImGui.SameLine()
+                end
+            end
         end
-        ImGui.SameLine()
-        if ImGui.Button("=", ImVec2(btnX - 5, 0)) then
+
+        Row({{"C", function()
+            clear_all()
+        end}, {"\xef\x95\x9a", function()
+            backspace()
+        end}, {"%", function()
+            push("%")
+        end}, {"^", function()
+            push("^")
+        end}})
+
+        Row({{"7", function()
+            push("7")
+        end}, {"8", function()
+            push("8")
+        end}, {"9", function()
+            push("9")
+        end}, {"/", function()
+            push("/")
+        end}})
+
+        Row({{"4", function()
+            push("4")
+        end}, {"5", function()
+            push("5")
+        end}, {"6", function()
+            push("6")
+        end}, {"*", function()
+            push("*")
+        end}})
+
+        Row({{"1", function()
+            push("1")
+        end}, {"2", function()
+            push("2")
+        end}, {"3", function()
+            push("3")
+        end}, {"-", function()
+            push("-")
+        end}})
+
+        Row({{"0", function()
+            push("0")
+        end}, {".", function()
+            push(".")
+        end}, {"(", function()
+            push("(")
+        end}, {")", function()
+            push(")")
+        end}})
+
+        Row({{"pi", function()
+            push(tostring(math.pi))
+        end}, {"e", function()
+            push(tostring(math.exp(1)))
+        end}, {"=", function()
             compute()
-        end
+        end}, {"+", function()
+            push("+")
+        end}})
 
         ImGui.End()
     end
 end
 
+local ui = UserInterface.new("Calculator", "Calculate")
+ui:addLabelApp("Calculator", "Calculate")
+ui:addTooltip("Information", "Calculator for basic arithmetic operations", "Info", false)
+ui:addToggle("Enable", saved:get("opened", false), "enable_calculator", false)
+
+function OnDraw(d)
+  removeHook("ondraw")
+  runCoroutine(function()
+    sleep(6000)
+    addCategory("ImGui", "Wysiwyg")
+    addIntoModule(ui:generateJSON(), "ImGui")
+  end)
+end
+
+function OnValue(type, name, value)
+  if name == "enable_calculator" then
+    CALC.opened = value
+    saved:set("opened", CALC.opened)
+    saved:save()
+  end
+end
+
 applyHook()
 ```
 
-**Features demonstrated:**
-- ImGui window creation and management
-- Button layouts and responsive sizing
-- Text rendering and color coding
-- Preferences integration
-- Mathematical expression evaluation
-
 ---
 
-## UI Module Examples
+## sample-ui.lua
 
-### Complete UI Module
-
-Comprehensive UI module showcasing all available components.
+Complete UI module showcasing all available components.
 
 ```lua
 local ui = UserInterface.new("FullUIExample", "Verified")
 
--- Basic components
 ui:addLabel("Hello World")
 ui:addLabelApp("GrowLauncher UI", "Verified")
 ui:addToggle("Enable Feature", true, "feat_toggle", true)
 ui:addToggleButton("Power Button", false, "power_btn")
 ui:addButton("Click Me", "btn_click")
 
--- Expandable section with child components
 local expand = ui:addExpandableToggle("Advanced Settings", false, "adv_toggle", true, true)
     ui:addChildToggle(expand.list_child,"Enable Child", true, "child_toggle")
     ui:addChildSlider(expand.list_child,"Child Slider", 0, 100, 50, 1, false, "child_slider")
@@ -166,7 +255,6 @@ local expand = ui:addExpandableToggle("Advanced Settings", false, "adv_toggle", 
     ui:addChildInputString(expand.list_child,"Child String", "abc", "Label", "Type text", "Home", "child_str")
     ui:addChildButton(expand.list_child,"Child Button", "child_btn")
 
--- Main components
 ui:addSlider("Main Slider", 0, 100, 50, 1, false, "main_slider")
 ui:addInputInt("Enter Number", "10", "Label", "Type..", "Verified", "int_alias")
 ui:addInputString("Enter Text", "abc", "Label", "Type..", "Verified", "str_alias")
@@ -176,7 +264,6 @@ ui:addDivider()
 ui:addDisplayList("List Example", "Default", "list_alias")
 ui:addTileSelect("Tile Select", "Default", "tile_alias", 5)
 
--- Dialog with child components
 local dialog = ui:addDialog("Dialog Title", "Sub text", {})
     ui:addChildToggle(dialog.menu,"Enable Child", true, "child_toggle")
     ui:addChildSlider(dialog.menu,"Child Slider", 0, 100, 50, 1, false, "child_slider")
@@ -188,23 +275,13 @@ local dialog = ui:addDialog("Dialog Title", "Sub text", {})
 
 local json = ui:generateJSON()
 
--- Register the module
 require("IniEy")
 addIntoModule(json,"IniEy")
 ```
 
-**Features demonstrated:**
-- All UI component types
-- Parent-child relationships
-- Component configuration and aliases
-- JSON generation and module registration
-- Dialog creation and management
-
 ---
 
-## Preferences Examples
-
-### Settings Management
+## preferences.lua
 
 Basic preferences usage for persistent configuration.
 
@@ -226,19 +303,141 @@ userPrefs:set("username", "PlayerOne")
 userPrefs:save()
 ```
 
-**Features demonstrated:**
-- Preferences initialization
-- Default value handling
-- Setting and getting values
-- Manual save operation
+---
+
+## world_saver.lua
+
+World bookmark management system with ImGui interface.
+
+```lua
+local pref = require("preferences")
+local json = require("json")
+local saved = pref:new("world_saver.json")
+
+local worldSavers = saved:get("saved_world", {})
+local enabled = saved:get("opened", false)
+local buf_title = ""
+local buf_door = ""
+
+function RefreshGui()
+    local list = {}
+    for _, entry in ipairs(worldSavers) do
+        table.insert(list, {entry.title, "Door: " .. entry.door})
+    end
+    editValue("world_saver_list", json:encode(list))
+end
+
+function GoToWorld(entry)
+    sendPacket(3, "action|join_request\nname|".. entry.title .. "|".. entry.door .. "\ninvitedWorld|1\n")
+end
+
+function OnDrawImGui(delta)
+    if enabled then
+        ImGui.Begin("World Saver")
+
+        -- Input Title
+        ImGui.Text("Title:")
+        local contentX = ImGui.GetContentRegionAvail().x
+        ImGui.PushItemWidth(contentX)
+
+        local changed, newVal = ImGui.InputText("##title", buf_title, 256)
+        if changed then
+            buf_title = newVal
+        end
+        if ImGui.Button("Current World") then
+            buf_title = getCurrentWorldName() or ""
+        end
+        
+        -- Input DoorID
+        ImGui.Text("Door ID:")
+        changed, newVal = ImGui.InputText("##door", buf_door, 256)
+        if changed then
+            buf_door = newVal
+        end
+        
+        -- Create Button
+        if ImGui.Button("Create", ImVec2(contentX, 0)) then
+            if buf_title ~= "" and buf_door ~= "" then
+                table.insert(worldSavers, {
+                    title = buf_title,
+                    door = buf_door
+                })
+                saved:set("saved_world", worldSavers)
+                saved:save()
+                buf_title = ""
+                buf_door = ""
+                RefreshGui()
+            end
+        end
+
+        ImGui.Separator()
+
+        -- Display saved worlds
+        for i, entry in ipairs(worldSavers) do
+            ImGui.Text(entry.title .. " - Door: " .. entry.door)
+            ImGui.SameLine()
+            if ImGui.Button("Go##" .. i, ImVec2(50, 0)) then
+                GoToWorld(entry)
+            end
+            ImGui.SameLine()
+            if ImGui.Button("Delete##" .. i, ImVec2(50, 0)) then
+                table.remove(worldSavers, i)
+                saved:set("saved_world", worldSavers)
+                saved:save()
+                RefreshGui()
+                break
+            end
+        end
+
+        ImGui.End()
+    end
+end
+
+local ui = UserInterface.new("World Saver", "World")
+ui:addLabelApp("World Saver", "Save and quickly access your favorite worlds")
+ui:addTooltip("Information", "Save worlds with door IDs for quick access", "Info", false)
+ui:addToggle("Enable", saved:get("opened", false), "enable_world_saver", false)
+
+function OnValue(type, name, value)
+  if name == "enable_world_saver" then
+    enabled = value
+    saved:set("opened", enabled)
+    saved:save()
+  end
+end
+
+applyHook()
+```
 
 ---
 
-## Network Examples
+## fetch.lua
 
-### Variant Packet Sending
+Network request example with dynamic script loading.
 
-Send variant packets to server for notifications and actions.
+```lua
+local res, err = fetch(
+    "https://raw.githubusercontent.com/PowerKuy/Growlauncher-Documentation/refs/heads/main/sample-scripts/example-for-fetch.lua")
+
+if not res then
+    LogToConsole(err)
+    return
+end
+
+local chunk, loadErr = load(res)
+if not chunk then
+    LogToConsole(loadErr)
+    return
+end
+
+chunk()
+```
+
+---
+
+## example-for-fetch.lua
+
+Simple notification script used for fetch demonstration.
 
 ```lua
 LogToConsole("Hello im from Fetch script!")
@@ -249,161 +448,6 @@ var.v2 = "interface/large/adventure.rttex"
 var.v3 = "Omgg it works!, Fetch is working!"
 var.v4 = "audio/gong.wav"
 sendVariant(var)
-```
-
-**Features demonstrated:**
-- Variant packet creation
-- Notification system usage
-- Audio integration
-
-### Basic Packet Handling
-
-Hook into network events for packet monitoring.
-
-```lua
-function onVariant(var, pkt)
-    log("Variant received: " .. var.v1)
-    
-    -- Handle specific variant types
-    if var.v1 == "OnConsoleMessage" then
-        log("Console: " .. var.v2)
-    end
-end
-
-function onGamePacket(pkt)
-    log("Game packet type: " .. pkt.type)
-end
-
-addHook(onVariant, "onVariant")
-addHook(onGamePacket, "onGamePacket")
-applyHook()
-```
-
-**Features demonstrated:**
-- Hook registration
-- Variant packet handling
-- Game packet monitoring
-- Event-driven programming
-
----
-
-## Utility Examples
-
-### Basic Automation
-
-Simple automation script for common tasks.
-
-```lua
--- Auto-collect nearby items
-function autoCollect()
-    local player = getLocal()
-    local tiles = getTiles()
-    
-    for x = player.posX//32 - 5, player.posX//32 + 5 do
-        for y = player.posY//32 - 5, player.posY//32 + 5 do
-            local tile = getTile(x, y)
-            if tile.fg > 0 and tile.fg < 1000 then -- Collectible items
-                growtopia.dropItem(tile.fg)
-            end
-        end
-    end
-end
-
--- Auto-reply to messages
-function onChatMessage(name, message)
-    if message:find("hello") then
-        growtopia.sendChat("Hello " .. name .. "!")
-    end
-end
-
--- Register hooks
-addHook(onDraw, "autoCollect")
-applyHook()
-```
-
-**Features demonstrated:**
-- Player position tracking
-- Tile scanning and manipulation
-- Chat message handling
-- Automated actions
-
----
-
-## Best Practices
-
-### Code Organization
-
-```lua
--- Use modules for better organization
-local MyModule = {}
-
--- Configuration
-MyModule.config = {
-    enabled = true,
-    interval = 1000,
-    range = 5
-}
-
--- Main functions
-function MyModule.init()
-    log("Module initialized")
-end
-
-function MyModule.update(deltaTime)
-    if not MyModule.config.enabled then return end
-    
-    -- Update logic here
-end
-
-function MyModule.cleanup()
-    log("Module cleaned up")
-end
-
--- Hook registration
-function onDraw(deltaTime)
-    MyModule.update(deltaTime)
-end
-
-addHook(onDraw, "MyModule")
-applyHook()
-```
-
-### Error Handling
-
-```lua
-local function safeFunction()
-    local success, result = pcall(function()
-        -- Potentially failing code
-        local data = getSomeData()
-        return processData(data)
-    end)
-    
-    if not success then
-        log("Error: " .. result)
-        return nil
-    end
-    
-    return result
-end
-```
-
-### Performance Optimization
-
-```lua
--- Cache expensive operations
-local cachedData = {}
-local lastUpdate = 0
-
-function getCachedData()
-    local currentTime = getTime()
-    
-    if currentTime - lastUpdate > 5000 then -- Update every 5 seconds
-        cachedData = expensiveOperation()
-        lastUpdate = currentTime
-    end
-    
-    return cachedData
-end
 ```
 
 ---
