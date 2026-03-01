@@ -697,6 +697,34 @@ div[class*="language-"]:hover {
   transform: scaleX(1);
 }
 
+/* Make dropdown child text non-selectable but keep clickable */
+.VPSidebarItem .curtain,
+.VPSidebarItem .items,
+.VPSidebarItem .item {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* Prevent selection on all dropdown text but keep clicks */
+.VPSidebarItem .curtain *,
+.VPSidebarItem .items *,
+.VPSidebarItem .item * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* Make individual dropdown items clickable */
+.VPSidebarItem .item {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
 /* Premium Search Box */
 .VPSearchBox {
   border: 1px solid rgba(0, 240, 255, 0.4) !important;
