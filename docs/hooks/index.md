@@ -6,21 +6,73 @@ Hooks allow intercepting game events and packets for advanced scripting capabili
 
 ---
 
-- `onVariant(var, pkt)` [`var:VariantList`](/structs/variants#variantlist)[`pkt:TankPacket`](/structs/tiles#tankpacket)
+### onVariant()
+`onVariant(var, pkt)`
+- **Parameters**: 
+  - `var:VariantList` - Variant list data
+  - `pkt:TankPacket` - Tank packet data
+- **Description**: Called when variant list is received from server
 
-- `onGamePacket(pkt)` [`pkt:TankPacket`](/structs/tiles#tankpacket)
+---
 
-- `onSendPacketRaw(pkt)` [`pkt:TankPacket`](/structs/tiles#tankpacket)
+### onGamePacket()
+`onGamePacket(pkt)`
+- **Parameters**: 
+  - `pkt:TankPacket` - Tank packet data
+- **Description**: Called when game packet is received
 
-- `onSendPacket(type,pkt)` `type:number`, `pkt:string`
+---
 
-- `onValue(type,name,value)` `type:number`, `name:string`, `value:string|number|boolean|table`
+### onSendPacketRaw()
+`onSendPacketRaw(pkt)`
+- **Parameters**: 
+  - `pkt:TankPacket` - Tank packet data
+- **Description**: Called when raw packet is being sent
 
-- `onDrawImGui(deltaTime)` `deltaTime:number`
+---
 
-- `onDraw(deltaTime)` `deltaTime:number`
+### onSendPacket()
+`onSendPacket(type, pkt)`
+- **Parameters**: 
+  - `type:number` - Packet type
+  - `pkt:string` - Packet data
+- **Description**: Called when packet is being sent
 
-- `onDialog(title,alias,isAccepted)` `title:string`, `alias:string`, `isAccepted:boolean`
+---
+
+### onValue()
+`onValue(type, name, value)`
+- **Parameters**: 
+  - `type:number` - Value type
+  - `name:string` - Value name
+  - `value:string|number|boolean|table` - Value data
+- **Description**: Called when value event occurs
+
+---
+
+### onDrawImGui()
+`onDrawImGui(deltaTime)`
+- **Parameters**: 
+  - `deltaTime:number` - Time since last frame
+- **Description**: Called every frame for ImGui rendering
+
+---
+
+### onDraw()
+`onDraw(deltaTime)`
+- **Parameters**: 
+  - `deltaTime:number` - Time since last frame
+- **Description**: Called every frame for drawing operations
+
+---
+
+### onDialog()
+`onDialog(title, alias, isAccepted)`
+- **Parameters**: 
+  - `title:string` - Dialog title
+  - `alias:string` - Dialog alias
+  - `isAccepted:boolean` - Dialog acceptance status
+- **Description**: Called when dialog interaction occurs
 
 ---
 

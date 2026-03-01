@@ -2,11 +2,11 @@
 
 ## Functions
 
-| Function | Params | Returns | Description |
-| :- | :- | :- | :- |
-| `getItemInfoManager` | - | `ItemInfoManager`| Get global `ItemInfoManager` instance |
-| `itemInfoManager.getItemInfoByID` | `id:number` | `table\|nil` | Get item info object by item ID |
-| `itemInfoManager.getItemInfoByName` | `name:string` | `table\|nil` | Get item info object by name |
+| Function                            | Params        | Returns           | Description                           |
+| :-                                  | :-            | :-                | :-                                    |
+| `getItemInfoManager`                | -             | `ItemInfoManager` | Get global `ItemInfoManager` instance |
+| `itemInfoManager.getItemInfoByID`   | `id:number`   | `table\|nil`      | Get item info object by item ID       |
+| `itemInfoManager.getItemInfoByName` | `name:string` | `table\|nil`      | Get item info object by name          |
 
 ## Usage Examples
 

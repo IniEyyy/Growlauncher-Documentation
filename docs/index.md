@@ -20,3 +20,5 @@ Growlauncher exposes a Lua API that allows you to:
 - [Functions](/functions/)
 - [Hooks](/hooks/)
 - [Namespaces](/namespaces/)
+- [ImGui](/imgui/)
+- [Enums](/enums/)
