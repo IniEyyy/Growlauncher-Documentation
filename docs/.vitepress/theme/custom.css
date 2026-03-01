@@ -143,7 +143,7 @@ html:not(.dark) .VPDoc table {
 }
 
 html:not(.dark) .VPDoc table th {
-  background: linear-gradient(135deg, #e0e7ff, #a5b4fc);
+  background: linear-gradient(135deg, #e0e7ff, #c4cdff);
   border-bottom: 2px solid #a5b4fc;
   color: #000000;
   font-weight: 700;
@@ -160,7 +160,7 @@ html:not(.dark) .VPDoc table td {
 
 /* Normal Alternating Row Colors - Soft Purple */
 html:not(.dark) .VPDoc table tr:nth-child(odd) td {
-  background: #e8f5fd;
+  background: #e3f3fd;
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6);
 }
 
@@ -171,10 +171,10 @@ html:not(.dark) .VPDoc table tr:nth-child(even) td {
 
 /* Normal hover effects */
 html:not(.dark) .VPDoc table tr:hover td {
-  background: linear-gradient(135deg, #e8f5fd, #f0f9ff) !important;
+  background: #e8e8ff !important;
   box-shadow: 
-    inset 0 0 0 1px rgba(59, 130, 246, 0.2),
-    0 2px 8px rgba(59, 130, 246, 0.15);
+    inset 0 0 0 1px rgba(59, 130, 246, 0.15),
+    0 1px 4px rgba(59, 130, 246, 0.1);
   transition: all 0.2s ease;
 }
 
@@ -188,6 +188,16 @@ html:not(.dark) .VPDoc table td a {
 html:not(.dark) .VPDoc table td a:hover {
   color: #6366f1;
   text-decoration: underline;
+}
+
+/* Code blocks with clearer text */
+html:not(.dark) .VPDoc code {
+  opacity: 0.8;
+}
+
+/* Inline code with clearer text */
+html:not(.dark) .VPDoc :not(pre) > code {
+  opacity: 0.9;
 }
 
 /* Dark Theme */
