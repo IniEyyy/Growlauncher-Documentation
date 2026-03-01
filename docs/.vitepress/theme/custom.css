@@ -2,14 +2,14 @@
 
 /* CSS Variables for Neon Theme */
 :root {
-  /* Light Theme Colors */
-  --neon-bg-light: #f8fafc;
+  /* Light Theme Colors - Bright & Vibrant */
+  --neon-bg-light: #f0f9ff;
   --neon-surface-light: #ffffff;
   --neon-primary-light: #0ea5e9;
   --neon-secondary-light: #7c3aed;
   --neon-accent-light: #06b6d4;
-  --neon-text-light: #1e293b;
-  --neon-text-muted-light: #64748b;
+  --neon-text-light: #0f172a;
+  --neon-text-muted-light: #475569;
   
   /* Dark Theme Colors - Premium Palette */
   --neon-bg-dark: #0a0f1c;
@@ -60,6 +60,32 @@ html:not(.dark) {
   --vp-c-border: rgba(14, 165, 233, 0.4);
 }
 
+/* Enhanced Light Mode Code Blocks */
+html:not(.dark) .vp-code-group {
+  background: rgba(240, 249, 255, 0.9) !important;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.15);
+}
+
+html:not(.dark) .vp-code {
+  background: rgba(240, 249, 255, 0.8) !important;
+  border-radius: 6px;
+}
+
+html:not(.dark) pre {
+  background: rgba(240, 249, 255, 0.9) !important;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 8px;
+}
+
+html:not(.dark) code {
+  background: rgba(240, 249, 255, 0.7) !important;
+  color: #0f172a;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
 /* Enhanced Light Mode Sidebar */
 html:not(.dark) .VPSidebar {
   background: rgba(255, 255, 255, 0.95) !important;
@@ -99,30 +125,81 @@ html:not(.dark) .VPSidebarItem .link.active {
   text-shadow: 0 0 10px rgba(14, 165, 233, 0.6);
 }
 
-/* Enhanced Light Mode Tables */
+/* Enhanced Light Mode Tables - Color Change by Turns */
 html:not(.dark) .VPDoc table {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(14, 165, 233, 0.25);
+  background: #ffffff;
+  border: 2px solid #6366f1;
+  border-radius: 12px;
   box-shadow: 
-    0 2px 15px rgba(0, 0, 0, 0.08),
-    0 0 10px rgba(14, 165, 233, 0.15),
-    inset 0 0 8px rgba(14, 165, 233, 0.03);
+    0 6px 25px rgba(99, 102, 241, 0.12),
+    0 0 0 1px rgba(147, 51, 234, 0.06);
 }
 
 html:not(.dark) .VPDoc table th {
-  background: rgba(14, 165, 233, 0.08);
-  border-bottom: 1px solid rgba(14, 165, 233, 0.2);
-  color: #0c4a6e;
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  border-bottom: 2px solid #6366f1;
+  color: #000000;
+  font-weight: 700;
+  text-align: left;
+}
+
+html:not(.dark) .VPDoc table th:first-child {
+  border-radius: 10px 0 0 0;
+}
+
+html:not(.dark) .VPDoc table th:last-child {
+  border-radius: 0 10px 0 0;
 }
 
 html:not(.dark) .VPDoc table td {
-  border-bottom: 1px solid rgba(14, 165, 233, 0.1);
-  color: #334155;
+  border-bottom: 1px solid #e5e7eb;
+  color: #000000;
+  padding: 8px 12px;
 }
 
-html:not(.dark) .VPDoc table tr:hover {
-  background: rgba(14, 165, 233, 0.04);
-  box-shadow: 0 0 8px rgba(14, 165, 233, 0.15);
+html:not(.dark) .VPDoc table tr:last-child td:first-child {
+  border-radius: 0 0 0 10px;
+}
+
+html:not(.dark) .VPDoc table tr:last-child td:last-child {
+  border-radius: 0 0 10px 0;
+}
+
+/* Alternating row colors - Turn 1: Blue */
+html:not(.dark) .VPDoc table tr:nth-child(odd) td {
+  background: #eff6ff;
+}
+
+/* Alternating row colors - Turn 2: Purple */
+html:not(.dark) .VPDoc table tr:nth-child(even) td {
+  background: #f3e8ff;
+}
+
+/* Alternating row colors - Turn 3: Teal (every 3rd row starting from 1) */
+html:not(.dark) .VPDoc table tr:nth-child(3n+1) td {
+  background: #f0fdfa;
+}
+
+/* Alternating row colors - Turn 4: Rose (every 4th row starting from 2) */
+html:not(.dark) .VPDoc table tr:nth-child(4n+2) td {
+  background: #fff1f2;
+}
+
+/* Hover effects override alternating colors */
+html:not(.dark) .VPDoc table tr:hover td {
+  background: #dbeafe !important;
+  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+/* Table links keep their color, other text stays black */
+html:not(.dark) .VPDoc table td a {
+  color: #6366f1;
+  font-weight: 500;
+}
+
+html:not(.dark) .VPDoc table td a:hover {
+  color: #9333ea;
+  text-decoration: underline;
 }
 
 /* Dark Theme */
