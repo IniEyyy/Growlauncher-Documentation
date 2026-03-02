@@ -11,19 +11,19 @@ This section contains actual working scripts that demonstrate practical usage of
 ### [Calculator](#calculator-lua)
 Complete calculator application with ImGui interface and preferences persistence.
 
-### [Sample UI](#sample-uilua)
+### [Sample UI](#sample-ui-lua)
 Comprehensive UI module showcasing all available components.
 
-### [Preferences](#preferenceslua)
+### [Preferences](#preferences-lua)
 Basic preferences usage for persistent configuration.
 
-### [World Saver](#world_saverlua)
+### [World Saver](#world-saver-lua)
 World bookmark management system with ImGui interface.
 
-### [Fetch](#fetchlua)
+### [Fetch](#fetch-lua)
 Network request example with dynamic script loading.
 
-### [Example for Fetch](#example-for-fetchlua)
+### [Example for Fetch](#example-for-fetch-lua)
 Simple notification script used for fetch demonstration.
 
 ---
