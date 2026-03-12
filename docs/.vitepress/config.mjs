@@ -6,6 +6,10 @@ export default defineConfig({
   description: 'Complete API documentation for Growlauncher',
   lang: 'en-US',
   
+  head: [
+    ['link', { rel: 'icon', href: '/Growlauncher-Documentation/favicon.svg' }]
+  ],
+  
   // Disable dead link checking for now
   ignoreDeadLinks: true,
   
@@ -144,8 +148,7 @@ export default defineConfig({
     ], 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/IniEyyy/Growlauncher-Documentation' },
-      { icon: 'discord', link: 'https://discord.gg/powerkuyofficial' },
-      
+      { icon: 'discord', link: 'https://discord.gg/powerkuyofficial' }
     ]
   }
 })
