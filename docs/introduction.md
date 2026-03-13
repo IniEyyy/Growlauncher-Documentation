@@ -67,4 +67,4 @@ applyHook()
 
 - Visit the [Getting Started](/getting-started) guide for detailed setup instructions
 - Browse the [Functions](/functions/) documentation for available API calls
-- Check out [Sample Scripts](/sample-scripts/) for practical examples
+- Check out the [Examples](/examples) for practical examples
