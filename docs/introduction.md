@@ -1,6 +1,10 @@
 # Introduction
 
-Growlauncher provides a scripting API that allows users to interact with the game environment.
+Growlauncher exposes a Lua API that allows you to:
+
+- Interact with the Growtopia client.
+- Automate actions like sending packets, moving, and reading game state.
+- Create custom modules and user interfaces.
 
 ## Overview
 

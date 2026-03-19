@@ -34,6 +34,100 @@
   --neon-transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Hide copied text after code copy - Comprehensive */
+.vp-copy-code-message,
+.vp-copy-code-button[aria-label*="copied"],
+.vp-copy-code-button.copied,
+[class*="copied"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Hide any tooltip or message after copying */
+.vp-copy-code-button::after,
+.vp-copy-code-button::before {
+  display: none !important;
+}
+
+/* CSS Reset and Sidebar Fix */
+* {
+  box-sizing: border-box !important;
+}
+
+.VPDoc {
+  overflow: visible !important;
+  max-width: none !important;
+  width: auto !important;
+}
+
+.VPDoc .container {
+  overflow: visible !important;
+  max-width: none !important;
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.VPDoc .content-container {
+  overflow: visible !important;
+  max-width: none !important;
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+}
+
+.VPDoc .content {
+  overflow: visible !important;
+  max-width: none !important;
+  width: auto !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.VPDocAside {
+  width: 256px !important;
+  max-width: 256px !important;
+  flex: 0 0 256px !important;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 100 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.VPDocOutline {
+  overflow: visible !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+.VPDocAside .discord-card .discord-header,
+.VPSidebar .discord-card .discord-header,
+.aside .discord-card .discord-header {
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 768px) {
+  .VPDocAside .discord-card .discord-iframe,
+  .VPSidebar .discord-card .discord-iframe,
+  .aside .discord-card .discord-iframe {
+    height: 200px;
+  }
+  
+  .VPDocAside .discord-card,
+  .VPSidebar .discord-card,
+  .aside .discord-card {
+    margin: 12px 0;
+    padding: 10px;
+  }
+}
+
 /* Light Theme */
 html:not(.dark) {
   --neon-bg: var(--neon-bg-light);
@@ -248,66 +342,24 @@ html.dark body {
     radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.04), transparent 40%);
 }
 
-/* Layered Animated Background Orbs */
+/* Layered Animated Background Orbs - DISABLED */
 body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 15% 25%, rgba(0, 240, 255, 0.1), transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.08), transparent 50%),
-    radial-gradient(circle at 45% 55%, rgba(6, 182, 212, 0.06), transparent 40%);
-  pointer-events: none;
-  z-index: -3;
-  animation: cinematicPulse 15s ease-in-out infinite alternate;
+  display: none !important;
 }
 
-html.dark body::before {
-  background: 
-    radial-gradient(circle at 15% 25%, rgba(0, 240, 255, 0.05), transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.04), transparent 50%),
-    radial-gradient(circle at 45% 55%, rgba(6, 182, 212, 0.03), transparent 40%);
-}
-
-/* Floating Glowing Orbs */
+/* Floating Glowing Orbs - DISABLED */
 body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: -2;
+  display: none !important;
 }
 
-/* Animated Grid Pattern */
+/* Animated Grid Pattern - DISABLED */
 body::before::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  z-index: -1;
-  animation: gridMove 30s linear infinite;
+  display: none !important;
 }
 
-/* Floating Orb Elements */
+/* Floating Orb Elements - DISABLED */
 .parallax-orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: -2;
+  display: none !important;
 }
 
 .parallax-orb:nth-child(1) {
@@ -524,7 +576,7 @@ body::before::before {
   transition: var(--neon-transition-smooth);
   border-radius: 6px;
   margin: 2px 6px;
-  padding: 6px 12px;
+  padding: 3px 12px;
   position: relative;
   overflow: hidden;
   font-size: 0.85em;
@@ -984,4 +1036,97 @@ button[class*="copy"]::after,
   .VPDoc a:hover {
     transform: none;
   }
+}
+
+.VPDoc .content-container {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+div[data-v-98ddab3d],
+div[data-v-10119189] {
+  overflow: visible !important;
+  width: auto !important;
+}
+
+.VPDocAside[data-v-98ddab3d],
+.VPDocAside[data-v-10119189] {
+  width: 256px !important;
+  flex: 0 0 256px !important;
+}
+
+.VPOutline {
+  padding: 1rem 0 !important;
+}
+
+.VPOutline .outline-title {
+  font-size: 0.85em !important;
+  font-weight: 600 !important;
+  color: var(--neon-text-muted) !important;
+  margin-bottom: 0.5rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.VPOutline .outline-item {
+  margin: 0.25rem 0 !important;
+}
+
+.VPOutline .outline-link {
+  display: block !important;
+  padding: 0.25rem 0.5rem !important;
+  color: var(--neon-text) !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  transition: var(--neon-transition) !important;
+  font-size: 0.9em !important;
+  line-height: 1.4 !important;
+}
+
+.VPOutline .outline-link:hover {
+  background: rgba(0, 240, 255, 0.1) !important;
+  color: var(--neon-primary) !important;
+  transform: translateX(2px) !important;
+}
+
+.VPOutline .outline-link.active {
+  background: rgba(0, 240, 255, 0.2) !important;
+  color: var(--neon-primary) !important;
+  font-weight: 600 !important;
+  border-left: 3px solid var(--neon-primary) !important;
+}
+
+.VPDoc h1, .VPDoc h2, .VPDoc h3, .VPDoc h4, .VPDoc h5, .VPDoc h6 {
+  scroll-margin-top: 2rem !important;
+}
+
+.VPDoc h3 code, .VPDoc h4 code, .VPDoc h5 code {
+  font-family: 'Courier New', monospace !important;
+  background: rgba(0, 240, 255, 0.1) !important;
+  padding: 0.1em 0.3em !important;
+  border-radius: 3px !important;
+  font-size: 0.9em !important;
+}
+
+.VPDocFooter .edit-link-button:hover {
+  border-color: rgba(0, 240, 255, 0.6) !important;
+  color: var(--neon-primary) !important;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.6) !important;
+}
+
+.VPDocFooter .pager-link {
+  background: rgba(0, 240, 255, 0.1) !important;
+  border: 1px solid rgba(0, 240, 255, 0.3) !important;
+  border-radius: 8px !important;
+  padding: 12px 20px !important;
+  transition: var(--neon-transition-smooth) !important;
+}
+
+.VPDocFooter .pager-link:hover {
+  background: rgba(0, 240, 255, 0.2) !important;
+  border-color: rgba(0, 240, 255, 0.5) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3) !important;
 }

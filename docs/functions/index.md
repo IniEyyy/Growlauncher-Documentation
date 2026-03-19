@@ -4,10 +4,10 @@ Complete reference for all Growlauncher API functions.
 
 ## Categories
 
-### [Console](/functions/console)
-Basic logging and console output functions.
+### [Console & Logging](/functions/console)
+Basic logging and debugging functions for script development and monitoring.
 
-### [Networking](/functions/network)
+### [Networking & Packets](/functions/network)
 Packet sending and network communication.
 
 ### [Player Info](/functions/player-info)
@@ -21,6 +21,18 @@ World data, tiles, and world information.
 
 ### [Math & Utility](/functions/math-utility)
 Mathematical functions and utility operations.
+
+### [Hooks & Callbacks](/functions/hooks-callbacks)
+Event interception and response functions.
+
+### [Threading & Coroutine](/functions/threading)
+Concurrency and delay operations.
+
+### [Value Functions](/functions/value-functions)
+Internal value system management.
+
+### [Module Functions](/functions/module-functions)
+UI modules and notification system.
 
 ## Quick Reference
 
