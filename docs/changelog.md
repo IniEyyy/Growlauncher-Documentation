@@ -11,7 +11,7 @@
 - Esp Support Winter Ghost
 - Anti State
 
-**Growtopia Update 5.38
+**Growtopia Update 5.38**
 - New LUA API (fetch)
 - Some changes in chrome launch in Google Login
 
