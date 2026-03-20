@@ -3,6 +3,8 @@
 [![](assets/banner.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
 [![](assets/icon.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
 
+Check or [site](https://inieyyy.github.io/Growlauncher-Documentation/)
+
 [![Docs Status](https://img.shields.io/badge/Status-Complete-green)]()
 [![Lua Version](https://img.shields.io/badge/Lua-5.4-blue)](https://www.lua.org/)
 
