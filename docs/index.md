@@ -16,7 +16,7 @@ Growlauncher exposes a Lua API that allows you to:
 ## Quick Navigation
 
 - [Getting Started](/getting-started)
-- [Structs](/structs)
+- [Structs](/structs/)
 - [Functions](/functions/)
 - [Hooks](/hooks/)
 - [Namespaces](/namespaces/)
