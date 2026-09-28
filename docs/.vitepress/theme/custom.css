@@ -1,1132 +1,133 @@
-/* Cinematic Neon Cyberpunk VitePress Theme - Premium Edition */
-
-/* CSS Variables for Neon Theme */
 :root {
-  /* Light Theme Colors - Bright & Vibrant */
-  --neon-bg-light: #f0f9ff;
-  --neon-surface-light: #ffffff;
-  --neon-primary-light: #0ea5e9;
-  --neon-secondary-light: #7c3aed;
-  --neon-accent-light: #06b6d4;
-  --neon-text-light: #0f172a;
-  --neon-text-muted-light: #475569;
-  
-  /* Dark Theme Colors - Premium Palette */
-  --neon-bg-dark: #0a0f1c;
-  --neon-surface-dark: #111827;
-  --neon-primary-dark: #00f0ff;
-  --neon-secondary-dark: #8b5cf6;
-  --neon-accent-dark: #06b6d4;
-  --neon-text-dark: #e5e7eb;
-  --neon-text-muted-dark: #9ca3af;
-  
-  /* Premium Glow Effects */
-  --neon-glow-primary-light: 0 0 30px rgba(14, 165, 233, 0.8);
-  --neon-glow-secondary-light: 0 0 30px rgba(124, 58, 237, 0.8);
-  --neon-glow-accent-light: 0 0 25px rgba(6, 182, 212, 0.7);
-  
-  --neon-glow-primary-dark: 0 0 40px rgba(0, 240, 255, 0.9);
-  --neon-glow-secondary-dark: 0 0 40px rgba(139, 92, 246, 0.9);
-  --neon-glow-accent-dark: 0 0 35px rgba(6, 182, 212, 0.8);
-  
-  /* Premium Transitions */
-  --neon-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --neon-transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --ks-kinpaku: oklch(62% .17 258);
+  --ks-kinpaku-rich: oklch(55% .18 260);
+  --ks-kinpaku-deep: oklch(47% .17 262);
+  --ks-patina: oklch(74% .11 245);
+  --ks-patina-deep: oklch(46% .13 250);
+
+  --ks-paper: oklch(97.8% 0 0);
+  --ks-paper-raised: oklch(99.5% 0 0);
+  --ks-paper-deep: oklch(95% 0 0);
+  --ks-ink: oklch(13% 0 0);
+  --ks-text: oklch(22% 0 0);
+  --ks-text-muted: oklch(46% 0 0);
+  --ks-rule: oklch(13% 0 0 / .08);
+
+  --vp-font-family-base: 'Albert Sans', ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --ks-font-display: 'Alumni Sans', 'Albert Sans', sans-serif;
+
+  --vp-c-bg: var(--ks-paper);
+  --vp-c-bg-alt: var(--ks-paper-deep);
+  --vp-c-bg-soft: var(--ks-paper-deep);
+  --vp-c-bg-elv: var(--ks-paper-raised);
+  --vp-c-text-1: var(--ks-ink);
+  --vp-c-text-2: var(--ks-text-muted);
+  --vp-c-text-3: oklch(66% 0 0);
+  --vp-c-divider: var(--ks-rule);
+  --vp-c-border: oklch(13% 0 0 / .14);
+  --vp-c-gutter: var(--ks-rule);
+
+  --vp-c-brand-1: var(--ks-kinpaku-deep);
+  --vp-c-brand-2: var(--ks-kinpaku-rich);
+  --vp-c-brand-3: var(--ks-kinpaku);
+  --vp-c-brand-soft: oklch(62% .17 258 / .16);
+
+  --vp-home-hero-name-color: var(--ks-kinpaku-deep);
+
+  --vp-shadow-2: 0 1px 1px oklch(13% 0 0/.04), 0 3px 5px oklch(13% 0 0/.05), 0 12px 20px oklch(13% 0 0/.06);
 }
 
-/* Hide copied text after code copy - Comprehensive */
-.vp-copy-code-message,
-.vp-copy-code-button[aria-label*="copied"],
-.vp-copy-code-button.copied,
-[class*="copied"] {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
+.dark {
+  --vp-c-bg: oklch(17% 0 0);
+  --vp-c-bg-alt: oklch(14% 0 0);
+  --vp-c-bg-soft: oklch(24% 0 0);
+  --vp-c-bg-elv: oklch(24% 0 0);
+  --vp-c-text-1: oklch(93% 0 0);
+  --vp-c-text-2: oklch(68% 0 0);
+  --vp-c-text-3: oklch(55% 0 0);
+  --vp-c-divider: oklch(100% 0 0 / .10);
+  --vp-c-border: oklch(100% 0 0 / .16);
+
+  --vp-c-brand-1: var(--ks-kinpaku);
+  --vp-c-brand-2: var(--ks-kinpaku-rich);
+  --vp-c-brand-3: var(--ks-kinpaku-deep);
+  --vp-c-brand-soft: oklch(62% .17 258 / .20);
+
+  --vp-home-hero-name-color: var(--ks-kinpaku);
 }
 
-/* Hide any tooltip or message after copying */
-.vp-copy-code-button::after,
-.vp-copy-code-button::before {
-  display: none !important;
-}
-
-/* CSS Reset and Sidebar Fix */
-* {
-  box-sizing: border-box !important;
-}
-
-.VPDoc {
-  overflow: visible !important;
-  max-width: none !important;
-  width: auto !important;
-}
-
-.VPDoc .container {
-  overflow: visible !important;
-  max-width: none !important;
-  width: auto !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.VPDoc .content-container {
-  overflow: visible !important;
-  max-width: none !important;
-  width: auto !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: flex !important;
-}
-
-.VPDoc .content {
-  overflow: visible !important;
-  max-width: none !important;
-  width: auto !important;
-  flex: 1 !important;
-  min-width: 0 !important;
-}
-
-.VPDocAside {
-  width: 256px !important;
-  max-width: 256px !important;
-  flex: 0 0 256px !important;
-  overflow: visible !important;
-  position: relative !important;
-  z-index: 100 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.VPDocOutline {
-  overflow: visible !important;
-  max-width: 100% !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-
-.VPDocAside .discord-card .discord-header,
-.VPSidebar .discord-card .discord-header,
-.aside .discord-card .discord-header {
-  margin-bottom: 0;
-}
-
-
-@media (max-width: 768px) {
-  .VPDocAside .discord-card .discord-iframe,
-  .VPSidebar .discord-card .discord-iframe,
-  .aside .discord-card .discord-iframe {
-    height: 200px;
-  }
-  
-  .VPDocAside .discord-card,
-  .VPSidebar .discord-card,
-  .aside .discord-card {
-    margin: 12px 0;
-    padding: 10px;
-  }
-}
-
-/* Light Theme */
-html:not(.dark) {
-  --neon-bg: var(--neon-bg-light);
-  --neon-surface: var(--neon-surface-light);
-  --neon-primary: var(--neon-primary-light);
-  --neon-secondary: var(--neon-secondary-light);
-  --neon-accent: var(--neon-accent-light);
-  --neon-text: var(--neon-text-light);
-  --neon-text-muted: var(--neon-text-muted-light);
-  --neon-glow-primary: var(--neon-glow-primary-light);
-  --neon-glow-secondary: var(--neon-glow-secondary-light);
-  --neon-glow-accent: var(--neon-glow-accent-light);
-  
-  /* VitePress Light Theme Overrides */
-  --vp-c-bg: var(--neon-bg);
-  --vp-c-bg-soft: var(--neon-surface);
-  --vp-c-bg-elv: #f1f5f9;
-  --vp-c-text: var(--neon-text);
-  --vp-c-text-1: var(--neon-text);
-  --vp-c-text-2: var(--neon-text-muted);
-  --vp-c-brand-1: var(--neon-primary);
-  --vp-c-brand-2: var(--neon-secondary);
-  --vp-c-divider: rgba(14, 165, 233, 0.3);
-  --vp-c-border: rgba(14, 165, 233, 0.4);
-}
-
-/* Enhanced Light Mode Code Blocks */
-html:not(.dark) .vp-code-group {
-  background: white !important;
-  border: 1px solid rgba(14, 165, 233, 0.4);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.15);
-}
-
-html:not(.dark) .vp-code {
-  background: white !important;
-  border-radius: 6px;
-}
-
-html:not(.dark) pre {
-  background: white !important;
-  border: 1px solid rgba(14, 165, 233, 0.3);
-  border-radius: 8px;
-}
-
-html:not(.dark) code {
-  background: white !important;
-  color: #0f172a;
-  border-radius: 4px;
-  padding: 2px 4px;
-}
-
-html:not(.dark) .vp-code-group .vp-code,
-html:not(.dark) .vp-code-group pre,
-html:not(.dark) .vp-code-group code {
-  background: white !important;
-  color: #0f172a;
-  border-radius: 4px;
-  padding: 2px 4px;
-}
-
-/* Enhanced Light Mode Sidebar */
-html:not(.dark) .VPSidebar {
-  background: linear-gradient(135deg, #ffffff, #f8fdff) !important;
-  border-right: 1px solid rgba(14, 165, 233, 0.2);
-  box-shadow: 2px 0 20px rgba(14, 165, 233, 0.15);
-}
-
-/* Enhanced Light Mode Navbar Background */
-html:not(.dark) .VPNav {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border-bottom: 2px solid rgba(14, 165, 233, 0.3);
-  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.15);
-}
-
-html:not(.dark) .VPSidebar::before {
-  background: linear-gradient(135deg, 
-    rgba(14, 165, 233, 0.05), 
-    rgba(124, 58, 237, 0.03),
-    rgba(6, 182, 212, 0.04)
-  );
-}
-
-html:not(.dark) .VPSidebarItem .link:hover {
-  background: rgba(14, 165, 233, 0.08);
-  box-shadow: 0 2px 10px rgba(14, 165, 233, 0.2);
-  text-shadow: 0 0 8px rgba(14, 165, 233, 0.4);
-}
-
-html:not(.dark) .VPSidebarItem .link.active {
-  background: linear-gradient(135deg, 
-    rgba(14, 165, 233, 0.15), 
-    rgba(124, 58, 237, 0.1)
-  );
-  box-shadow: 
-    0 2px 15px rgba(14, 165, 233, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  text-shadow: 0 0 10px rgba(14, 165, 233, 0.6);
-}
-
-/* Enhanced Light Mode Tables - Soft Midnight Blue Palette */
-html:not(.dark) .VPDoc table {
-  background: linear-gradient(135deg, #fafbff, #f0f9ff);
-  border: 2px solid #a5b4fc;
-  border-radius: 12px;
-  box-shadow: 
-    0 12px 48px rgba(59, 130, 246, 0.15),
-    0 0 0 4px rgba(30, 58, 138, 0.1),
-    inset 0 2px 0 rgba(59, 130, 246, 0.15);
-}
-
-html:not(.dark) .VPDoc table th {
-  background: linear-gradient(135deg, #e0e7ff, #c4cdff);
-  border-bottom: 2px solid #a5b4fc;
-  color: #000000;
-  font-weight: 700;
-  text-align: left;
-  text-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
-}
-
-html:not(.dark) .VPDoc table td {
-  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
-  color: #000000;
-  padding: 16px 20px;
-  font-weight: 500;
-}
-
-/* Normal Alternating Row Colors - Soft Purple */
-html:not(.dark) .VPDoc table tr:nth-child(odd) td {
-  background: #e3f3fd;
-  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6);
-}
-
-html:not(.dark) .VPDoc table tr:nth-child(even) td {
-  background: #f0f9ff;
-  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6);
-}
-
-/* Normal hover effects */
-html:not(.dark) .VPDoc table tr:hover td {
-  background: #e8e8ff !important;
-  box-shadow: 
-    inset 0 0 0 1px rgba(59, 130, 246, 0.15),
-    0 1px 4px rgba(59, 130, 246, 0.1);
-  transition: all 0.2s ease;
-}
-
-/* Normal table links */
-html:not(.dark) .VPDoc table td a {
-  color: #a5b4fc;
+.VPNavBarTitle .title,
+.vp-doc h1,
+.vp-doc h2,
+.VPHomeHero .name,
+.VPHomeHero .text {
+  font-family: var(--ks-font-display);
   font-weight: 600;
-  transition: all 0.2s ease;
+  letter-spacing: -0.01em;
 }
 
-html:not(.dark) .VPDoc table td a:hover {
-  color: #6366f1;
-  text-decoration: underline;
-}
-
-/* Code blocks with clearer text */
-html:not(.dark) .VPDoc code {
-  opacity: 0.8;
-}
-
-/* Inline code with clearer text */
-html:not(.dark) .VPDoc :not(pre) > code {
-  opacity: 0.9;
-}
-
-/* Dark Theme */
-html.dark {
-  --neon-bg: var(--neon-bg-dark);
-  --neon-surface: var(--neon-surface-dark);
-  --neon-primary: var(--neon-primary-dark);
-  --neon-secondary: var(--neon-secondary-dark);
-  --neon-accent: var(--neon-accent-dark);
-  --neon-text: var(--neon-text-dark);
-  --neon-text-muted: var(--neon-text-muted-dark);
-  --neon-glow-primary: var(--neon-glow-primary-dark);
-  --neon-glow-secondary: var(--neon-glow-secondary-dark);
-  --neon-glow-accent: var(--neon-glow-accent-dark);
-  
-  /* VitePress Dark Theme Overrides */
-  --vp-c-bg: var(--neon-bg);
-  --vp-c-bg-soft: var(--neon-surface);
-  --vp-c-bg-elv: #1a2332;
-  --vp-c-text: var(--neon-text);
-  --vp-c-text-1: var(--neon-text);
-  --vp-c-text-2: var(--neon-text-muted);
-  --vp-c-brand-1: var(--neon-primary);
-  --vp-c-brand-2: var(--neon-secondary);
-  --vp-c-divider: rgba(139, 92, 246, 0.2);
-  --vp-c-border: rgba(139, 92, 246, 0.3);
-}
-
-/* Cinematic Animated Background System */
-body {
-  position: relative;
-  background: var(--neon-bg);
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.15), transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.12), transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.08), transparent 40%);
-  background-attachment: fixed;
-  overflow-x: hidden;
-}
-
-html.dark body {
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.08), transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.06), transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.04), transparent 40%);
-}
-
-/* Layered Animated Background Orbs - DISABLED */
-body::before {
-  display: none !important;
-}
-
-/* Floating Glowing Orbs - DISABLED */
-body::after {
-  display: none !important;
-}
-
-/* Animated Grid Pattern - DISABLED */
-body::before::before {
-  display: none !important;
-}
-
-/* Floating Orb Elements - DISABLED */
-.parallax-orb {
-  display: none !important;
-}
-
-.parallax-orb:nth-child(1) {
-  width: 400px;
-  height: 400px;
-  top: 10%;
-  left: 10%;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.3), transparent);
-  animation: floatOrb1 20s ease-in-out infinite alternate;
-}
-
-.parallax-orb:nth-child(2) {
-  width: 300px;
-  height: 300px;
-  top: 60%;
-  right: 15%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.25), transparent);
-  animation: floatOrb2 25s ease-in-out infinite alternate;
-}
-
-.parallax-orb:nth-child(3) {
-  width: 250px;
-  height: 250px;
-  bottom: 20%;
-  left: 50%;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.2), transparent);
-  animation: floatOrb3 18s ease-in-out infinite alternate;
-}
-
-/* Keyframe Animations */
-@keyframes cinematicPulse {
-  0% { opacity: 0.3; transform: scale(1) rotate(0deg); }
-  25% { opacity: 0.6; transform: scale(1.05) rotate(1deg); }
-  50% { opacity: 0.8; transform: scale(1.1) rotate(-1deg); }
-  75% { opacity: 0.5; transform: scale(1.03) rotate(0.5deg); }
-  100% { opacity: 0.4; transform: scale(1.01) rotate(-0.5deg); }
-}
-
-@keyframes floatOrb1 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.1); }
-  66% { transform: translate(-20px, 30px) scale(0.95); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes floatOrb2 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-25px, 15px) scale(1.15); }
-  66% { transform: translate(15px, -25px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes floatOrb3 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(20px, 25px) scale(1.05); }
-  66% { transform: translate(-30px, -15px) scale(1.1); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
-}
-
-/* Premium Glass Navbar */
-.VPNav {
-  backdrop-filter: blur(20px);
-  background: rgba(10, 15, 28, 0.8) !important;
-  border-bottom: 2px solid rgba(0, 240, 255, 0.3);
-  box-shadow: 0 4px 25px rgba(0, 240, 255, 0.2);
-  transition: var(--neon-transition-smooth);
-  position: relative;
-  overflow: visible;
-}
-
-/* Animated Neon Bottom Border */
-.VPNav::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent 0%,
-    rgba(0, 240, 255, 0.8) 15%,
-    var(--neon-primary) 35%,
-    rgba(139, 92, 246, 0.8) 50%,
-    var(--neon-secondary) 65%,
-    rgba(139, 92, 246, 0.8) 85%,
-    transparent 100%
-  );
-  animation: neonBorderPulse 3s ease-in-out infinite;
-  z-index: 1000;
-  pointer-events: none;
-}
-
-@keyframes neonBorderPulse {
-  0%, 100% { opacity: 0.6; transform: scaleX(1); }
-  50% { opacity: 1; transform: scaleX(1.05); }
-}
-
-/* Premium Site Title with Shimmer */
 .VPNavBarTitle .title {
-  background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary), var(--neon-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: var(--neon-glow-primary);
-  transition: var(--neon-transition-smooth);
-  position: relative;
-  animation: titleShimmer 4s ease-in-out infinite;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
-@keyframes titleShimmer {
-  0%, 100% { filter: brightness(1) hue-rotate(0deg); }
-  25% { filter: brightness(1.2) hue-rotate(5deg); }
-  50% { filter: brightness(1.1) hue-rotate(-3deg); }
-  75% { filter: brightness(1.15) hue-rotate(2deg); }
+.vp-doc h1 {
+  font-size: 2.6rem;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
-.VPNavBarTitle .title:hover {
-  transform: scale(1.05);
-  filter: brightness(1.3);
-  text-shadow: 
-    0 0 25px rgba(0, 240, 255, 0.8),
-    0 0 40px rgba(139, 92, 246, 0.6);
+.vp-doc {
+  font-size: 16px;
+  line-height: 1.75;
 }
 
-/* Premium Nav Links with Animated Underline */
-.VPNavBarMenu .link {
-  position: relative;
-  transition: var(--neon-transition-smooth);
-  font-weight: 500;
+.vp-doc h2 {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 1.7rem;
 }
 
-.VPNavBarMenu .link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--neon-primary), var(--neon-accent), var(--neon-secondary));
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--neon-glow-accent);
-  transform-origin: center;
-}
-
-.VPNavBarMenu .link:hover::after,
-.VPNavBarMenu .link.active::after {
-  width: 120%;
-  left: -10%;
-}
-
-.VPNavBarMenu .link.active {
-  color: var(--neon-primary);
-  text-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
-  animation: activeLinkGlow 2s ease-in-out infinite;
-}
-
-@keyframes activeLinkGlow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-.VPNavBarMenu .link:hover {
-  color: var(--neon-primary);
-  text-shadow: 
-    0 0 12px rgba(0, 240, 255, 1),
-    0 0 20px rgba(0, 240, 255, 0.8),
-    0 0 30px rgba(0, 240, 255, 0.6);
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Premium Sidebar with Animated Gradient Glow */
-.VPSidebar {
-  position: relative;
-  background: rgba(17, 24, 39, 0.7) !important;
-  border-right: 1px solid rgba(0, 240, 255, 0.4);
-  backdrop-filter: blur(15px);
-  box-shadow: 2px 0 30px rgba(0, 240, 255, 0.2);
-  overflow: visible;
-}
-
-/* Animated Gradient Glow Behind Sidebar */
-.VPSidebar::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  height: 490vh;
-  background: linear-gradient(135deg, 
-    rgba(14, 165, 233, 0.15), 
-    rgba(124, 58, 237, 0.1),
-    rgba(99, 102, 241, 0.05)
-  );
-  filter: blur(20px);
-  z-index: -1;
-  animation: sidebarGlow 8s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-@keyframes sidebarGlow {
-  0% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.05); }
-  100% { opacity: 0.4; transform: scale(1.02); }
-}
-
-/* Interactive Sidebar Items with Neon Indicator */
-.VPSidebarItem .link {
-  transition: var(--neon-transition-smooth);
-  border-radius: 6px;
-  margin: 2px 6px;
-  padding: 3px 12px;
-  position: relative;
-  overflow: hidden;
-  font-size: 0.85em;
-  line-height: 1.2;
-}
-
-/* Animated Neon Left Bar Indicator */
-.VPSidebarItem .link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--neon-primary), var(--neon-secondary));
-  border-radius: 0 2px 2px 0;
-  transform: scaleY(0);
-  transform-origin: center;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--neon-glow-primary);
-  z-index: 2;
-}
-
-.VPSidebarItem .link:hover::before {
-  transform: scaleY(1);
-  box-shadow: var(--neon-glow-primary);
-}
-
-.VPSidebarItem .link.active::before {
-  transform: scaleY(1);
-  background: linear-gradient(180deg, var(--neon-primary), var(--neon-accent));
-  box-shadow: var(--neon-glow-primary);
-  animation: activeIndicatorPulse 2s ease-in-out infinite;
-}
-
-@keyframes activeIndicatorPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-/* Premium Hover Effects */
-.VPSidebarItem .link:hover {
-  transform: translateX(4px) scale(1.02);
-  color: var(--neon-primary);
-  background: rgba(0, 240, 255, 0.1);
-  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
-}
-
-.VPSidebarItem .link.active {
-  background: linear-gradient(135deg, 
-    rgba(0, 240, 255, 0.2), 
-    rgba(139, 92, 246, 0.15)
-  );
-  border-radius: 10px;
-  color: var(--neon-primary);
+.vp-doc h3 {
+  margin-top: 2rem;
   font-weight: 600;
-  box-shadow: 
-    0 4px 20px rgba(0, 240, 255, 0.4),
-    inset 0 2px 0 rgba(255, 255, 255, 0.1);
-  text-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
-  transform: scale(1.03);
 }
 
-/* Hide anchor links (which show # symbols) completely */
-.VPDoc h1 .header-anchor,
-.VPDoc h2 .header-anchor,
-.VPDoc h3 .header-anchor,
-.VPDoc h4 .header-anchor,
-.VPDoc h5 .header-anchor,
-.VPDoc h6 .header-anchor {
-  display: none !important;
-}
-
-/* Premium Page Content with Smooth Transitions */
-.VPContent {
-  transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: top center;
-}
-
-/* Premium Headings with Neon Accent */
-.VPDoc h2 {
-  position: relative;
-  padding-left: 20px;
-  margin-top: 2.5rem;
-  margin-bottom: 1.2rem;
-  transition: var(--neon-transition-smooth);
-}
-
-.VPDoc h2::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--neon-primary), var(--neon-secondary));
-  border-radius: 2px;
-  box-shadow: var(--neon-glow-primary);
-  transition: var(--neon-transition-smooth);
-}
-
-.VPDoc h2:hover {
-  transform: translateX(4px);
-  color: var(--neon-primary);
-}
-
-.VPDoc h2:hover::before {
-  width: 5px;
-  box-shadow: var(--neon-glow-secondary);
-}
-
-/* Premium Code Blocks with Neon Border */
-.vp-code,
-div[class*="language-"] {
-  border: 1px solid rgba(0, 240, 255, 0.4);
-  border-radius: 12px;
-  background: rgba(17, 24, 39, 0.6) !important;
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(0, 240, 255, 0.1),
-    0 0 20px rgba(0, 240, 255, 0.2);
-  position: relative;
-  overflow: hidden;
-  transition: var(--neon-transition-smooth);
-}
-
-.vp-code:hover,
-div[class*="language-"]:hover {
-  border-color: rgba(0, 240, 255, 0.6);
-  box-shadow: 
-    0 6px 25px rgba(0, 240, 255, 0.3),
-    inset 0 1px 0 rgba(0, 240, 255, 0.15),
-    0 0 30px rgba(0, 240, 255, 0.4);
-  transform: translateY(-2px);
-}
-
-/* Shiki GitHub Light Theme Override for Light Mode */
-html:not(.dark) .shiki.github-light {
-  background: white !important;
-}
-
-html:not(.dark) .shiki.github-light .vp-code {
-  background: white !important;
-}
-
-/* Premium Links with Animated Underline */
-.VPDoc a {
-  transition: var(--neon-transition-smooth);
-  position: relative;
-  color: var(--neon-primary);
+.vp-doc a {
+  color: var(--vp-c-text-1);
   text-decoration: none;
+  border-bottom: 1px solid var(--ks-kinpaku-rich);
+  transition: border-color .15s ease, color .15s ease;
 }
-
-.VPDoc a::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, var(--neon-primary), var(--neon-accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.vp-doc a:hover {
+  color: var(--ks-kinpaku-deep);
+  border-bottom-color: var(--ks-kinpaku-deep);
 }
+.dark .vp-doc a { color: var(--ks-kinpaku); border-bottom-color: oklch(55% .18 260 / .55); }
+.dark .vp-doc a:hover { border-bottom-color: var(--ks-kinpaku); }
 
-.VPDoc a:hover {
-  color: var(--neon-primary);
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
-  transform: translateY(-1px);
-}
-
-.VPDoc a:hover::after {
-  transform: scaleX(1);
-}
-
-/* Make dropdown child text non-selectable but keep clickable */
-.VPSidebarItem .curtain,
-.VPSidebarItem .items,
-.VPSidebarItem .item {
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  -webkit-touch-callout: none !important;
-}
-
-/* Prevent selection on all dropdown text but keep clicks */
-.VPSidebarItem .curtain *,
-.VPSidebarItem .items *,
-.VPSidebarItem .item * {
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  -webkit-touch-callout: none !important;
-}
-
-/* Make individual dropdown items clickable */
-.VPSidebarItem .item {
-  pointer-events: auto !important;
-  cursor: pointer !important;
-}
-
-/* Premium Search Box */
-.VPSearchBox {
-  border: 1px solid rgba(0, 240, 255, 0.4) !important;
-  border-radius: 10px !important;
-  background: rgba(17, 24, 39, 0.8) !important;
-  backdrop-filter: blur(12px);
-  transition: var(--neon-transition-smooth);
-  position: relative;
-}
-
-.VPSearchBox:focus-within {
-  border-color: var(--neon-primary) !important;
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.4) !important;
-  transform: translateY(-2px) scale(1.02);
-}
-
-/* Premium Outline */
-.VPOutline {
-  border-left: 1px solid rgba(139, 92, 246, 0.3);
-  padding-left: 1rem;
-  transition: var(--neon-transition-smooth);
-}
-
-.VPOutline .outline-link {
-  border-radius: 6px;
-  transition: var(--neon-transition-smooth);
-  position: relative;
-  padding: 4px 8px;
-}
-
-.VPOutline .outline-link:hover {
-  background: rgba(139, 92, 246, 0.15);
-  color: var(--neon-secondary);
-  transform: translateX(4px) scale(1.02);
-  text-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
-  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.3);
-}
-
-.VPOutline .outline-link.active {
-  color: var(--neon-secondary);
-  background: rgba(139, 92, 246, 0.2);
-  font-weight: 600;
-  text-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-  animation: outlineActivePulse 2s ease-in-out infinite;
-}
-
-@keyframes outlineActivePulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
-}
-
-/* Premium Tables */
-.VPDoc table {
-  border-radius: 8px;
-  border: 1px solid rgba(0, 240, 255, 0.3);
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.2),
-    0 0 15px rgba(0, 240, 255, 0.2),
-    inset 0 0 10px rgba(0, 240, 255, 0.05);
-  backdrop-filter: blur(10px);
-  background: rgba(17, 24, 39, 0.3);
-  overflow: visible;
-  transition: var(--neon-transition-smooth);
-  width: fit-content;
-  max-width: none;
-  min-width: auto;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-.VPDoc table th {
-  background: rgba(0, 240, 255, 0.1);
-  border-bottom: 1px solid var(--neon-primary);
-  color: var(--neon-primary);
-  padding: 8px 12px;
-  text-align: left;
-  font-weight: 600;
-  font-size: 0.95em;
-  line-height: 1.4;
-  height: auto;
-  min-height: auto;
-}
-
-.VPDoc table td {
-  padding: 6px 10px;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
-  font-size: 0.9em;
-  line-height: 1.4;
-  height: auto;
-  min-height: auto;
-}
-
-.VPDoc table tr:hover {
-  background: rgba(0, 240, 255, 0.05);
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
-}
-
-/* Premium Buttons */
-.VPButton {
-  transition: var(--neon-transition-smooth);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(0, 240, 255, 0.4);
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(0, 240, 255, 0.1));
-  backdrop-filter: blur(15px);
-  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.2);
-}
-
-.VPButton::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.4), transparent);
-  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.VPButton:hover::before {
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent);
-}
-
-.VPButton:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 
-    0 15px 40px rgba(0, 240, 255, 0.4),
-    0 0 25px rgba(139, 92, 246, 0.3),
-    inset 0 2px 0 rgba(255, 255, 255, 0.1);
-  border-color: rgba(0, 240, 255, 0.7);
-}
-
-/* Copy Button */
-button[title*="Copy"],
-button[aria-label*="copy"],
-button[class*="copy"],
-.vp-copy-code-button,
-.copy-button,
-[data-copy="true"] {
-  transition: var(--neon-transition-smooth);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(0, 240, 255, 0.3);
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(139, 92, 246, 0.1));
-  color: var(--neon-text);
-  font-weight: 500;
-  padding: 8px 16px;
+.vp-doc :not(pre) > code {
   font-size: 0.85em;
+  color: var(--ks-patina-deep);
+  background: var(--vp-c-bg-soft);
+  border-radius: 4px;
 }
+.dark .vp-doc :not(pre) > code { color: var(--ks-patina); }
 
-button[title*="Copy"]:hover,
-button[aria-label*="copy"]:hover,
-button[class*="copy"]:hover,
-.vp-copy-code-button:hover,
-.copy-button:hover,
-[data-copy="true"]:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 
-    0 8px 25px rgba(0, 240, 255, 0.4),
-    0 0 15px rgba(139, 92, 246, 0.3);
-  border-color: rgba(0, 240, 255, 0.6);
-  color: var(--neon-primary);
-}
+.vp-doc table { display: table; width: 100%; margin: 1.25rem 0; }
+.vp-doc .table-wrapper { overflow-x: auto; }
+.vp-doc th { font-weight: 600; background: var(--vp-c-bg-soft); }
 
-button[title*="Copy"]::after,
-button[aria-label*="copy"]::after,
-button[class*="copy"]::after,
-.vp-copy-code-button::after,
-.copy-button::after,
-[data-copy="true"]::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  right: 8px;
-  font-size: 0.7em;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-  font-weight: 500;
-}
-
-/* Custom Neon Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 240, 255, 0.1);
-  border-radius: 5px;
-}
-
+::selection { background: oklch(62% .17 258 / .30); }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: var(--neon-glow-primary);
-  transition: var(--neon-transition-smooth);
+  background: var(--vp-c-border);
+  border: 3px solid var(--vp-c-bg);
+  border-radius: 8px;
 }
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--neon-secondary), var(--neon-primary));
-  box-shadow: var(--neon-glow-secondary);
-  transform: scale(1.1);
-}
-
-/* Firefox scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--neon-primary) rgba(0, 240, 255, 0.1);
-}
-
-/* Premium Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Premium Mobile Responsiveness */
-@media (max-width: 768px) {
-  .VPNav .VPSearchBox {
-    width: 200px;
-  }
-  
-  .VPSidebar::after {
-    display: none;
-  }
-  
-  .VPNavBarTitle .title:hover {
-    transform: none;
-  }
-  
-  .VPSidebarItem .link:hover {
-    transform: translateX(2px);
-  }
-  
-  .VPDoc h2:hover {
-    transform: none;
-  }
-  
-  .VPDoc a:hover {
-    transform: none;
-  }
-}
-
-.VPDoc .content-container {
-  display: flex !important;
-  flex-direction: column !important;
-  flex: 1 !important;
-  min-width: 0 !important;
-}
-
-div[data-v-98ddab3d],
-div[data-v-10119189] {
-  overflow: visible !important;
-  width: auto !important;
-}
-
-.VPDocAside[data-v-98ddab3d],
-.VPDocAside[data-v-10119189] {
-  width: 256px !important;
-  flex: 0 0 256px !important;
-}
-
-.VPOutline {
-  padding: 1rem 0 !important;
-}
-
-.VPOutline .outline-title {
-  font-size: 0.85em !important;
-  font-weight: 600 !important;
-  color: var(--neon-text-muted) !important;
-  margin-bottom: 0.5rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-}
-
-.VPOutline .outline-item {
-  margin: 0.25rem 0 !important;
-}
-
-.VPOutline .outline-link {
-  display: block !important;
-  padding: 0.25rem 0.5rem !important;
-  color: var(--neon-text) !important;
-  text-decoration: none !important;
-  border-radius: 4px !important;
-  transition: var(--neon-transition) !important;
-  font-size: 0.9em !important;
-  line-height: 1.4 !important;
-}
-
-.VPOutline .outline-link:hover {
-  background: rgba(0, 240, 255, 0.1) !important;
-  color: var(--neon-primary) !important;
-  transform: translateX(2px) !important;
-}
-
-.VPOutline .outline-link.active {
-  background: rgba(0, 240, 255, 0.2) !important;
-  color: var(--neon-primary) !important;
-  font-weight: 600 !important;
-  border-left: 3px solid var(--neon-primary) !important;
-}
-
-.VPDoc h1, .VPDoc h2, .VPDoc h3, .VPDoc h4, .VPDoc h5, .VPDoc h6 {
-  scroll-margin-top: 2rem !important;
-}
-
-.VPDoc h3 code, .VPDoc h4 code, .VPDoc h5 code {
-  font-family: 'Courier New', monospace !important;
-  background: rgba(0, 240, 255, 0.1) !important;
-  padding: 0.1em 0.3em !important;
-  border-radius: 3px !important;
-  font-size: 0.9em !important;
-}
-
-.VPDocFooter .edit-link-button:hover {
-  border-color: rgba(0, 240, 255, 0.6) !important;
-  color: var(--neon-primary) !important;
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.6) !important;
-}
-
-.VPDocFooter .pager-link {
-  background: rgba(0, 240, 255, 0.1) !important;
-  border: 1px solid rgba(0, 240, 255, 0.3) !important;
-  border-radius: 8px !important;
-  padding: 12px 20px !important;
-  transition: var(--neon-transition-smooth) !important;
-}
-
-.VPDocFooter .pager-link:hover {
-  background: rgba(0, 240, 255, 0.2) !important;
-  border-color: rgba(0, 240, 255, 0.5) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3) !important;
-}
+::-webkit-scrollbar-thumb:hover { background: var(--ks-kinpaku-rich); }
+* { scrollbar-width: thin; scrollbar-color: var(--vp-c-border) transparent; }

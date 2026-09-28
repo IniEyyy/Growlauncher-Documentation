@@ -66,6 +66,12 @@ export default defineConfig({
 
     ['link', { rel: 'icon', href: '/Growlauncher-Documentation/favicon.svg' }],
 
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Alumni+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap' }],
+
     ['meta', { name: 'keywords', content: 'Growlauncher, Powerkuy, Lua, API, documentation, ImGui, scripting, automation, Growtopia' }],
 
     ['meta', { name: 'author', content: 'PowerKuy' }],
@@ -88,11 +94,7 @@ export default defineConfig({
 
   themeConfig: {
 
-    // Appearance Toggle
-
-    appearance: 'dark',
-
-    
+    siteTitle: 'Growlauncher',
 
     search: {
 
@@ -161,23 +163,23 @@ export default defineConfig({
 
       { text: "Getting Started", link: "/getting-started" },
 
-      { text: "Functions", link: "/functions/" },
-
-      { text: "Structs", link: "/structs/" },
-
-      { text: "ImGui", link: "/imgui/" },
-
-      { text: "Hooks", link: "/hooks/" },
-
-      { text: "Namespaces", link: "/namespaces/" },
-
-      { text: "Enums", link: "/enums/" },
+      {
+        text: "Reference",
+        items: [
+          { text: "Functions", link: "/functions/" },
+          { text: "Structs", link: "/structs/" },
+          { text: "ImGui", link: "/imgui/" },
+          { text: "Hooks", link: "/hooks/" },
+          { text: "Namespaces", link: "/namespaces/" },
+          { text: "Enums", link: "/enums/" }
+        ]
+      },
 
       { text: "Examples", link: "/examples" },
 
-      { text: "Team", link: "/team" },
+      { text: "Changelog", link: "/changelog" },
 
-      { text: "Changelog", link: "/changelog" }
+      { text: "Team", link: "/team" }
 
     ],
 
