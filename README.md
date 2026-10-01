@@ -1,7 +1,6 @@
 # Growlauncher API Documentation
 
 [![](assets/banner.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
-[![](assets/icon.png)](https://github.com/IniEyyy/Growlauncher-Documentation/blob/main/README.md)
 
 Check our [site](https://inieyyy.github.io/Growlauncher-Documentation/)
 
