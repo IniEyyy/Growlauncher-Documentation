@@ -74,6 +74,7 @@ DragFloat(label:string, v:number, v_speed:number|nil, v_min:number|nil, v_max:nu
 ```lua
 DragFloat2(label:string, v:number[], v_speed:number|nil, v_min:number|nil, v_max:number|nil, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Drag for 2 float values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -91,6 +92,7 @@ DragFloat2(label:string, v:number[], v_speed:number|nil, v_min:number|nil, v_max
 ```lua
 DragFloat3(label:string, v:number[], v_speed:number|nil, v_min:number|nil, v_max:number|nil, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Drag for 3 float values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -108,6 +110,7 @@ DragFloat3(label:string, v:number[], v_speed:number|nil, v_min:number|nil, v_max
 ```lua
 DragFloat4(label:string, v:number[], v_speed:number|nil, v_min:number|nil, v_max:number|nil, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Drag for 4 float values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -125,6 +128,7 @@ DragFloat4(label:string, v:number[], v_speed:number|nil, v_min:number|nil, v_max
 ```lua
 DragFloatRange2(label:string, v_current_min:number, v_current_max:number, v_speed:number|nil, v_min:number|nil, v_max:number|nil, format:string|nil, format_max:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, number, number
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Drag for float range
 - **Parameters**: 
   - `label:string` - Widget label
@@ -161,6 +165,7 @@ DragInt(label:string, v:integer, v_speed:number|nil, v_min:integer|nil, v_max:in
 ```lua
 DragInt2(label:string, v:integer[], v_speed:number|nil, v_min:integer|nil, v_max:integer|nil, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, integer[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Drag for 2 integer values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -178,6 +183,7 @@ DragInt2(label:string, v:integer[], v_speed:number|nil, v_min:integer|nil, v_max
 ```lua
 DragInt3(label:string, v:integer[], v_speed:number|nil, v_min:integer|nil, v_max:integer|nil, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, integer[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Drag for 3 integer values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -195,6 +201,7 @@ DragInt3(label:string, v:integer[], v_speed:number|nil, v_min:integer|nil, v_max
 ```lua
 DragInt4(label:string, v:integer[], v_speed:number|nil, v_min:integer|nil, v_max:integer|nil, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, integer[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Drag for 4 integer values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -212,6 +219,7 @@ DragInt4(label:string, v:integer[], v_speed:number|nil, v_min:integer|nil, v_max
 ```lua
 DragIntRange2(label:string, v_current_min:integer, v_current_max:integer, v_speed:number|nil, v_min:integer|nil, v_max:integer|nil, format:string|nil, format_max:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, integer, integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Drag for integer range
 - **Parameters**: 
   - `label:string` - Widget label
@@ -265,6 +273,7 @@ SliderFloat(label:string, v:number, v_min:number, v_max:number, format:string|ni
 ```lua
 SliderFloat2(label:string, v:number[], v_min:number, v_max:number, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Slider for 2 float values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -281,6 +290,7 @@ SliderFloat2(label:string, v:number[], v_min:number, v_max:number, format:string
 ```lua
 SliderFloat3(label:string, v:number[], v_min:number, v_max:number, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Slider for 3 float values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -297,6 +307,7 @@ SliderFloat3(label:string, v:number[], v_min:number, v_max:number, format:string
 ```lua
 SliderFloat4(label:string, v:number[], v_min:number, v_max:number, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Slider for 4 float values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -345,6 +356,7 @@ SliderInt(label:string, v:integer, v_min:integer, v_max:integer, format:string|n
 ```lua
 SliderInt2(label:string, v:integer[], v_min:integer, v_max:integer, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, integer[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Slider for 2 integer values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -361,6 +373,7 @@ SliderInt2(label:string, v:integer[], v_min:integer, v_max:integer, format:strin
 ```lua
 SliderInt3(label:string, v:integer[], v_min:integer, v_max:integer, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, integer[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Slider for 3 integer values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -377,6 +390,7 @@ SliderInt3(label:string, v:integer[], v_min:integer, v_max:integer, format:strin
 ```lua
 SliderInt4(label:string, v:integer[], v_min:integer, v_max:integer, format:string|nil, flags:ImGuiSliderFlags|nil) -> boolean, integer[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Slider for 4 integer values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -481,6 +495,7 @@ RadioButton(label:string, active:boolean) -> boolean
 ```lua
 RadioButtonInt(label:string, v:integer, v_button:integer) -> boolean, integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Radio button returning integer
 - **Parameters**: 
   - `label:string` - Button label
@@ -619,6 +634,7 @@ CollapsingHeader(label:string, p_open:boolean, flags:ImGuiTreeNodeFlags|nil) -> 
 ```lua
 ListBox(label:string, current_item:integer, items:string[], height_in_items:integer|nil) -> boolean, integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: List box
 - **Parameters**: 
   - `label:string` - List label
@@ -633,6 +649,7 @@ ListBox(label:string, current_item:integer, items:string[], height_in_items:inte
 ```lua
 ListBox(label:string, current_item:integer, items_getter:function, data:userdata, items_count:integer, height_in_items:integer|nil) -> boolean, integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: List box with callback
 - **Parameters**: 
   - `label:string` - List label

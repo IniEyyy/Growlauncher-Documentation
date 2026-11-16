@@ -101,5 +101,6 @@ SetKeyboardFocusHere(offset:integer|nil)
 ```lua
 SetNextItemAllowOverlap()
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Allow next item to overlap
 - **Returns**: None

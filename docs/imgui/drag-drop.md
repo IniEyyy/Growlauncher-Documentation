@@ -10,6 +10,7 @@ Drag and drop functions for ImGui.
 ```lua
 BeginDragDropSource(flags:ImGuiDragDropFlags|nil) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Begins drag drop source
 - **Parameters**: `flags:ImGuiDragDropFlags|nil` - Drag drop flags (optional)
 - **Returns**: `boolean` - Drag drop source is active
@@ -20,6 +21,7 @@ BeginDragDropSource(flags:ImGuiDragDropFlags|nil) -> boolean
 ```lua
 SetDragDropPayload(type:string, data:any, data_size:integer, cond:ImGuiCond|nil) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Sets drag drop payload
 - **Parameters**: 
   - `type:string` - Payload type
@@ -34,6 +36,7 @@ SetDragDropPayload(type:string, data:any, data_size:integer, cond:ImGuiCond|nil)
 ```lua
 EndDragDropSource()
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Ends drag drop source
 - **Returns**: None
 
@@ -43,6 +46,7 @@ EndDragDropSource()
 ```lua
 BeginDragDropTarget() -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Begins drag drop target
 - **Returns**: `boolean` - Drag drop target is active
 
@@ -52,6 +56,7 @@ BeginDragDropTarget() -> boolean
 ```lua
 AcceptDragDropPayload(type:string, flags:ImGuiDragDropFlags|nil) -> any
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Accept drag drop payload
 - **Parameters**: 
   - `type:string` - Payload type
@@ -64,6 +69,7 @@ AcceptDragDropPayload(type:string, flags:ImGuiDragDropFlags|nil) -> any
 ```lua
 GetDragDropPayload() -> any
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets drag drop payload
 - **Returns**: `any` - Payload data
 
@@ -73,5 +79,6 @@ GetDragDropPayload() -> any
 ```lua
 EndDragDropTarget()
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Ends drag drop target
 - **Returns**: None

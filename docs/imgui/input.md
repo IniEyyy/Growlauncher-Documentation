@@ -10,6 +10,7 @@ Input event handling functions for ImGui.
 ```lua
 IsKeyDown(user_key_index:integer) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if key is down
 - **Parameters**: `user_key_index:integer` - Key index
 - **Returns**: `boolean` - Key is down
@@ -20,6 +21,7 @@ IsKeyDown(user_key_index:integer) -> boolean
 ```lua
 IsKeyPressed(user_key_index:integer, repeat:boolean|nil) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if key was pressed
 - **Parameters**: 
   - `user_key_index:integer` - Key index
@@ -32,6 +34,7 @@ IsKeyPressed(user_key_index:integer, repeat:boolean|nil) -> boolean
 ```lua
 IsKeyReleased(user_key_index:integer) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if key was released
 - **Parameters**: `user_key_index:integer` - Key index
 - **Returns**: `boolean` - Key was released
@@ -132,6 +135,7 @@ SetMouseCursor(cursor:ImGuiMouseCursor)
 ```lua
 GetKeyIndex(imgui_key:ImGuiKey) -> integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets key index
 - **Parameters**: `imgui_key:ImGuiKey` - ImGui key
 - **Returns**: `integer` - Key index
@@ -142,6 +146,7 @@ GetKeyIndex(imgui_key:ImGuiKey) -> integer
 ```lua
 CaptureKeyboardFromApp(want_capture_keyboard:boolean)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Capture keyboard from app
 - **Parameters**: `want_capture_keyboard:boolean` - Want capture keyboard
 - **Returns**: None
@@ -152,6 +157,7 @@ CaptureKeyboardFromApp(want_capture_keyboard:boolean)
 ```lua
 CaptureMouseFromApp(want_capture_mouse:boolean)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Capture mouse from app
 - **Parameters**: `want_capture_mouse:boolean` - Want capture mouse
 - **Returns**: None

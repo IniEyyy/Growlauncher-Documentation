@@ -110,6 +110,7 @@ TableHeader(label:string)
 ```lua
 TableGetSortSpecs() -> ImGuiTableSortSpecs
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets table sort specifications
 - **Returns**: `ImGuiTableSortSpecs` - Sort specifications
 
@@ -191,6 +192,7 @@ TableSetBgColor(target:ImGuiTableBgTarget, color:integer, column_n:integer|nil)
 ```lua
 TableGetCellBgColor(column_n:integer|nil) -> integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets cell background color
 - **Parameters**: `column_n:integer|nil` - Column index (optional)
 - **Returns**: `integer` - Cell background color
@@ -201,6 +203,7 @@ TableGetCellBgColor(column_n:integer|nil) -> integer
 ```lua
 TableGetBorderSize() -> number
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets table border size
 - **Returns**: `number` - Border size
 
@@ -210,6 +213,7 @@ TableGetBorderSize() -> number
 ```lua
 TableGetColumnWidth(column_n:integer) -> number
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets column width
 - **Parameters**: `column_n:integer` - Column index
 - **Returns**: `number` - Column width
@@ -220,6 +224,7 @@ TableGetColumnWidth(column_n:integer) -> number
 ```lua
 TableSetColumnWidth(column_n:integer, width:number)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Sets column width
 - **Parameters**: 
   - `column_n:integer` - Column index
@@ -232,6 +237,7 @@ TableSetColumnWidth(column_n:integer, width:number)
 ```lua
 TableGetColumnWidthAuto(column_n:integer) -> number
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets column auto width
 - **Parameters**: `column_n:integer` - Column index
 - **Returns**: `number` - Auto width
@@ -242,6 +248,7 @@ TableGetColumnWidthAuto(column_n:integer) -> number
 ```lua
 TableIsColumnHidden(column_n:integer) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if column is hidden
 - **Parameters**: `column_n:integer` - Column index
 - **Returns**: `boolean` - Column is hidden
@@ -252,6 +259,7 @@ TableIsColumnHidden(column_n:integer) -> boolean
 ```lua
 TableIsColumnSorted(column_n:integer) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if column is sorted
 - **Parameters**: `column_n:integer` - Column index
 - **Returns**: `boolean` - Column is sorted
@@ -262,6 +270,7 @@ TableIsColumnSorted(column_n:integer) -> boolean
 ```lua
 TableIsColumnHovered(column_n:integer) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if column is hovered
 - **Parameters**: `column_n:integer` - Column index
 - **Returns**: `boolean` - Column is hovered
@@ -272,6 +281,7 @@ TableIsColumnHovered(column_n:integer) -> boolean
 ```lua
 TableIsColumnResized(column_n:integer) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if column is being resized
 - **Parameters**: `column_n:integer` - Column index
 - **Returns**: `boolean` - Column is being resized
@@ -282,6 +292,7 @@ TableIsColumnResized(column_n:integer) -> boolean
 ```lua
 TableGetHoveredColumn() -> integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets hovered column index
 - **Returns**: `integer` - Column index
 
@@ -291,6 +302,7 @@ TableGetHoveredColumn() -> integer
 ```lua
 TableGetHoveredRow() -> integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets hovered row index
 - **Returns**: `integer` - Row index
 
@@ -300,6 +312,7 @@ TableGetHoveredRow() -> integer
 ```lua
 TableGetSelectedColumn() -> integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets selected column index
 - **Returns**: `integer` - Column index
 
@@ -309,6 +322,7 @@ TableGetSelectedColumn() -> integer
 ```lua
 TableGetSelectedRow() -> integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets selected row index
 - **Returns**: `integer` - Row index
 
@@ -318,6 +332,7 @@ TableGetSelectedRow() -> integer
 ```lua
 TableGetSortSpecs() -> ImGuiTableSortSpecs
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets table sort specifications
 - **Returns**: `ImGuiTableSortSpecs` - Sort specifications
 
@@ -327,6 +342,7 @@ TableGetSortSpecs() -> ImGuiTableSortSpecs
 ```lua
 TableGetSortSpecsDirty() -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if sort specifications are dirty
 - **Returns**: `boolean` - Sort specifications are dirty
 
@@ -336,6 +352,7 @@ TableGetSortSpecsDirty() -> boolean
 ```lua
 TableGetSortSpecsSingle() -> ImGuiTableColumnSortSpecs
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets single sort specification
 - **Returns**: `ImGuiTableColumnSortSpecs` - Sort specification
 
@@ -345,6 +362,7 @@ TableGetSortSpecsSingle() -> ImGuiTableColumnSortSpecs
 ```lua
 TableGetSortSpecsMulti() -> ImGuiTableColumnSortSpecs[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets multiple sort specifications
 - **Returns**: `ImGuiTableColumnSortSpecs[]` - Sort specifications array
 
@@ -354,6 +372,7 @@ TableGetSortSpecsMulti() -> ImGuiTableColumnSortSpecs[]
 ```lua
 TableGetSortSpecsCount() -> integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets sort specifications count
 - **Returns**: `integer` - Sort specifications count
 
@@ -363,6 +382,7 @@ TableGetSortSpecsCount() -> integer
 ```lua
 TableGetSortSpecsClear()
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Clears sort specifications
 - **Returns**: None
 
@@ -372,6 +392,7 @@ TableGetSortSpecsClear()
 ```lua
 TableGetSortSpecsSwap(idx_a:integer, idx_b:integer)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Swaps sort specifications
 - **Parameters**: 
   - `idx_a:integer` - First index
@@ -384,6 +405,7 @@ TableGetSortSpecsSwap(idx_a:integer, idx_b:integer)
 ```lua
 TableGetSortSpecsApply()
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Applies sort specifications
 - **Returns**: None
 
@@ -393,6 +415,7 @@ TableGetSortSpecsApply()
 ```lua
 TableGetSortSpecsIsDirty() -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if sort specifications are dirty
 - **Returns**: `boolean` - Sort specifications are dirty
 
@@ -402,5 +425,6 @@ TableGetSortSpecsIsDirty() -> boolean
 ```lua
 TableGetSortSpecsReset()
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Resets sort specifications
 - **Returns**: None

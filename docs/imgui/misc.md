@@ -13,6 +13,7 @@ GetBackgroundDrawList(viewport:ImGuiViewport|nil) -> ImDrawList
 - **Description**: Gets background draw list
 - **Parameters**: `viewport:ImGuiViewport|nil` - Viewport (optional)
 - **Returns**: `ImDrawList` - Background draw list
+- **Binding**: Not part of the 249-name binding table in Growlauncher 7.0.38. The Lua helper layer exposes the same lists as `ImGui.BG` and `ImGui.FG`.
 
 ---
 
@@ -23,6 +24,7 @@ GetForegroundDrawList(viewport:ImGuiViewport|nil) -> ImDrawList
 - **Description**: Gets foreground draw list
 - **Parameters**: `viewport:ImGuiViewport|nil` - Viewport (optional)
 - **Returns**: `ImDrawList` - Foreground draw list
+- **Binding**: Not part of the 249-name binding table in Growlauncher 7.0.38. The Lua helper layer exposes the same lists as `ImGui.BG` and `ImGui.FG`.
 
 ---
 
@@ -30,6 +32,7 @@ GetForegroundDrawList(viewport:ImGuiViewport|nil) -> ImDrawList
 ```lua
 GetDrawListSharedData() -> ImDrawListSharedData
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets draw list shared data
 - **Returns**: `ImDrawListSharedData` - Shared data
 
@@ -39,6 +42,7 @@ GetDrawListSharedData() -> ImDrawListSharedData
 ```lua
 GetStyle() -> ImGuiStyle
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets style
 - **Returns**: `ImGuiStyle` - Style structure
 
@@ -48,6 +52,7 @@ GetStyle() -> ImGuiStyle
 ```lua
 GetIO() -> ImGuiIO
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets I/O
 - **Returns**: `ImGuiIO` - I/O structure
 
@@ -57,6 +62,7 @@ GetIO() -> ImGuiIO
 ```lua
 GetFont() -> ImFont
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets current font
 - **Returns**: `ImFont` - Current font
 
@@ -152,6 +158,7 @@ PopStyleVar(count:integer|nil)
 ```lua
 GetKeyIndex(imgui_key:ImGuiKey) -> integer
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets key index
 - **Parameters**: `imgui_key:ImGuiKey` - ImGui key
 - **Returns**: `integer` - Key index
@@ -162,6 +169,7 @@ GetKeyIndex(imgui_key:ImGuiKey) -> integer
 ```lua
 IsKeyDown(user_key_index:integer) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if key is down
 - **Parameters**: `user_key_index:integer` - Key index
 - **Returns**: `boolean` - Key is down
@@ -172,6 +180,7 @@ IsKeyDown(user_key_index:integer) -> boolean
 ```lua
 IsKeyPressed(user_key_index:integer, repeat:boolean|nil) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if key was pressed
 - **Parameters**: 
   - `user_key_index:integer` - Key index
@@ -184,6 +193,7 @@ IsKeyPressed(user_key_index:integer, repeat:boolean|nil) -> boolean
 ```lua
 IsKeyReleased(user_key_index:integer) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if key was released
 - **Parameters**: `user_key_index:integer` - Key index
 - **Returns**: `boolean` - Key was released
@@ -322,6 +332,7 @@ GetFrameCount() -> integer
 ```lua
 GetFrameTime() -> number
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets frame time
 - **Returns**: `number` - Frame time
 
@@ -331,6 +342,7 @@ GetFrameTime() -> number
 ```lua
 GetIO() -> ImGuiIO
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets I/O structure
 - **Returns**: `ImGuiIO` - I/O structure
 
@@ -340,6 +352,7 @@ GetIO() -> ImGuiIO
 ```lua
 GetStyle() -> ImGuiStyle
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets style structure
 - **Returns**: `ImGuiStyle` - Style structure
 
@@ -349,6 +362,7 @@ GetStyle() -> ImGuiStyle
 ```lua
 GetDrawData() -> ImDrawData
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets draw data
 - **Returns**: `ImDrawData` - Draw data
 
@@ -358,6 +372,7 @@ GetDrawData() -> ImDrawData
 ```lua
 GetDrawListSharedData() -> ImDrawListSharedData
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets draw list shared data
 - **Returns**: `ImDrawListSharedData` - Shared data
 
@@ -367,6 +382,7 @@ GetDrawListSharedData() -> ImDrawListSharedData
 ```lua
 GetFont() -> ImFont
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets current font
 - **Returns**: `ImFont` - Current font
 

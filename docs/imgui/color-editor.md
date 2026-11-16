@@ -10,6 +10,7 @@ Color selection widgets for ImGui.
 ```lua
 ColorEdit3(label:string, col:number[], flags:ImGuiColorEditFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Color editor for 3 values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -36,6 +37,7 @@ ColorEdit4(label:string, col:number[], flags:ImGuiColorEditFlags|nil) -> boolean
 ```lua
 ColorPicker3(label:string, col:number[], flags:ImGuiColorEditFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Color picker for 3 values
 - **Parameters**: 
   - `label:string` - Widget label
@@ -49,6 +51,7 @@ ColorPicker3(label:string, col:number[], flags:ImGuiColorEditFlags|nil) -> boole
 ```lua
 ColorPicker4(label:string, col:number[], flags:ImGuiColorEditFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Color picker for 4 values
 - **Parameters**: 
   - `label:string` - Widget label

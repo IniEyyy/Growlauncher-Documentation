@@ -103,6 +103,7 @@ IsItemClicked(mouse_button:integer|nil) -> boolean
 ```lua
 IsItemDoubleClicked(mouse_button:integer|nil) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Checks if item was double clicked
 - **Parameters**: `mouse_button:integer|nil` - Mouse button (optional)
 - **Returns**: `boolean` - Item was double clicked

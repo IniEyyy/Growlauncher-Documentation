@@ -76,6 +76,7 @@ InputFloat(label:string, v:number, step:number|nil, step_fast:number|nil, format
 ```lua
 InputFloat2(label:string, v:number[], format:string|nil, flags:ImGuiInputTextFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: 2D float input widget
 - **Parameters**: 
   - `label:string` - Widget label
@@ -90,6 +91,7 @@ InputFloat2(label:string, v:number[], format:string|nil, flags:ImGuiInputTextFla
 ```lua
 InputFloat3(label:string, v:number[], format:string|nil, flags:ImGuiInputTextFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: 3D float input widget
 - **Parameters**: 
   - `label:string` - Widget label
@@ -104,6 +106,7 @@ InputFloat3(label:string, v:number[], format:string|nil, flags:ImGuiInputTextFla
 ```lua
 InputFloat4(label:string, v:number[], format:string|nil, flags:ImGuiInputTextFlags|nil) -> boolean, number[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: 4D float input widget
 - **Parameters**: 
   - `label:string` - Widget label
@@ -133,6 +136,7 @@ InputInt(label:string, v:integer, step:integer|nil, step_fast:integer|nil, flags
 ```lua
 InputInt2(label:string, v:integer[], flags:ImGuiInputTextFlags|nil) -> boolean, integer[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: 2D integer input widget
 - **Parameters**: 
   - `label:string` - Widget label
@@ -146,6 +150,7 @@ InputInt2(label:string, v:integer[], flags:ImGuiInputTextFlags|nil) -> boolean, 
 ```lua
 InputInt3(label:string, v:integer[], flags:ImGuiInputTextFlags|nil) -> boolean, integer[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: 3D integer input widget
 - **Parameters**: 
   - `label:string` - Widget label
@@ -159,6 +164,7 @@ InputInt3(label:string, v:integer[], flags:ImGuiInputTextFlags|nil) -> boolean, 
 ```lua
 InputInt4(label:string, v:integer[], flags:ImGuiInputTextFlags|nil) -> boolean, integer[]
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: 4D integer input widget
 - **Parameters**: 
   - `label:string` - Widget label
@@ -172,6 +178,7 @@ InputInt4(label:string, v:integer[], flags:ImGuiInputTextFlags|nil) -> boolean, 
 ```lua
 InputDouble(label:string, v:number, step:number|nil, step_fast:number|nil, format:string|nil, flags:ImGuiInputTextFlags|nil) -> boolean, number
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Double input widget
 - **Parameters**: 
   - `label:string` - Widget label
@@ -188,6 +195,7 @@ InputDouble(label:string, v:number, step:number|nil, step_fast:number|nil, forma
 ```lua
 InputScalar(label:string, data_type:ImGuiDataType, p_data:any, p_step:any|nil, p_step_fast:any|nil, format:string|nil, flags:ImGuiInputTextFlags|nil) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Scalar input widget
 - **Parameters**: 
   - `label:string` - Widget label
@@ -205,6 +213,7 @@ InputScalar(label:string, data_type:ImGuiDataType, p_data:any, p_step:any|nil, p
 ```lua
 InputScalarN(label:string, data_type:ImGuiDataType, p_data:any, components:integer, p_step:any|nil, p_step_fast:any|nil, format:string|nil, flags:ImGuiInputTextFlags|nil) -> boolean
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: N-component scalar input widget
 - **Parameters**: 
   - `label:string` - Widget label

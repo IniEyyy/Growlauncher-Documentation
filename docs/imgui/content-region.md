@@ -46,5 +46,6 @@ GetWindowContentRegionMax() -> ImVec2
 ```lua
 GetWindowContentRegionWidth() -> number
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets window content region width
 - **Returns**: `number` - Content region width

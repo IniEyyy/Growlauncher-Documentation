@@ -48,6 +48,7 @@ IsWindowHovered(flags:ImGuiHoveredFlags|nil) -> boolean
 ```lua
 GetWindowDrawList() -> ImDrawList
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets window's draw list
 - **Returns**: `ImDrawList` - Draw list
 
@@ -57,6 +58,7 @@ GetWindowDrawList() -> ImDrawList
 ```lua
 GetWindowDpiScale() -> number
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets window's DPI scale
 - **Returns**: `number` - DPI scale
 
@@ -120,6 +122,7 @@ GetWindowContentRegionMax() -> number, number
 ```lua
 GetWindowContentRegionWidth() -> number
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Gets window content region width
 - **Returns**: `number` - Content region width
 
@@ -195,6 +198,7 @@ SetNextWindowBgAlpha(alpha:number)
 ```lua
 SetNextWindowViewport(viewport:ImGuiViewport)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Sets next window viewport
 - **Parameters**: `viewport:ImGuiViewport` - Viewport
 - **Returns**: None

@@ -10,6 +10,7 @@ Data visualization widgets for ImGui.
 ```lua
 PlotLines(label:string, values:number[], values_count:integer, values_offset:integer|nil, overlay_text:string|nil, scale_min:number|nil, scale_max:number|nil, graph_size:ImVec2|nil, stride:integer|nil)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Plot lines
 - **Parameters**: 
   - `label:string` - Plot label
@@ -29,6 +30,7 @@ PlotLines(label:string, values:number[], values_count:integer, values_offset:int
 ```lua
 PlotLines(label:string, values_getter:function, data:userdata, values_count:integer, values_offset:integer|nil, overlay_text:string|nil, scale_min:number|nil, scale_max:number|nil, graph_size:ImVec2|nil, stride:integer|nil)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Plot lines with callback
 - **Parameters**: 
   - `label:string` - Plot label
@@ -49,6 +51,7 @@ PlotLines(label:string, values_getter:function, data:userdata, values_count:inte
 ```lua
 PlotHistogram(label:string, values:number[], values_count:integer, values_offset:integer|nil, overlay_text:string|nil, scale_min:number|nil, scale_max:number|nil, graph_size:ImVec2|nil, stride:integer|nil)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Plot histogram
 - **Parameters**: 
   - `label:string` - Plot label
@@ -68,6 +71,7 @@ PlotHistogram(label:string, values:number[], values_count:integer, values_offset
 ```lua
 PlotHistogram(label:string, values_getter:function, data:userdata, values_count:integer, values_offset:integer|nil, overlay_text:string|nil, scale_min:number|nil, scale_max:number|nil, graph_size:ImVec2|nil, stride:integer|nil)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Plot histogram with callback
 - **Parameters**: 
   - `label:string` - Plot label

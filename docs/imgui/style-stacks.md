@@ -54,6 +54,7 @@ PopStyleColor(count:integer|nil)
 ```lua
 PushFont(font:ImFont)
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Pushes a font
 - **Parameters**: `font:ImFont` - Font to push
 - **Returns**: None
@@ -64,6 +65,7 @@ PushFont(font:ImFont)
 ```lua
 PopFont()
 ```
+- **Binding**: Not registered in 7.0.38; editor hint only.
 - **Description**: Pops current font
 - **Returns**: None
 
