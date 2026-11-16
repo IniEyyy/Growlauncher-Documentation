@@ -35,6 +35,7 @@ In Growlauncher 7.0.38 the binding table registers 249 functions, the same set l
 - [Image Functions](/imgui/image) - Image display
 - [Tables](/imgui/tables) - Table creation
 - [Draw Lists](/imgui/drawlist) - Background and foreground draw lists
+- [Constants](/imgui/constants) - Constant tables on the ImGui global
 
 ## Quick Start
 

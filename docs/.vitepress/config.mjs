@@ -231,7 +231,9 @@ export default defineConfig({
 
           { text: "Module Functions", link: "/functions/module-functions" },
 
-          { text: "Login", link: "/functions/login" }
+          { text: "Login", link: "/functions/login" },
+
+          { text: "Function Aliases", link: "/functions/aliases" }
 
         ]
 
@@ -328,7 +330,9 @@ export default defineConfig({
 
           { text: "Tables", link: "/imgui/tables" },
 
-          { text: "Draw Lists", link: "/imgui/drawlist" }
+          { text: "Draw Lists", link: "/imgui/drawlist" },
+
+          { text: "Constants", link: "/imgui/constants" }
 
         ]
 

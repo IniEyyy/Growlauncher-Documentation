@@ -37,6 +37,9 @@ UI modules and notification system.
 ### [Login](/functions/login)
 Native login state helpers.
 
+### [Function Aliases](/functions/aliases)
+Every registered name and the native implementation it shares.
+
 ## Quick Reference
 
 ```lua
