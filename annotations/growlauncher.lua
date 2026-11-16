@@ -800,6 +800,73 @@ function Preferences:get(name, default) end
 ---@param value any Value yang mau disimpan
 function Preferences:set(name, value) end
 
+---Deprecated no-op stub. Prints a deprecation warning and returns nothing.
+---@deprecated
+---@param name string
+---@param flag string
+---@param netID number
+---@param posX number
+---@param posY number
+function createPlayer(name, flag, netID, posX, posY) end
+SetPathFlag = createPlayer
+
+-- Native case aliases (same implementation as the lowercase name)
+AddHook = addHook
+EditToggle = editToggle
+FindItemID = findItemID
+GetGems = getGems
+GetInventory = getInventory
+GetItemInfoByID = getItemInfoByID
+GetItemInfoByName = getItemInfoByName
+GetLocal = getLocal
+GetNPCList = getNPCList
+GetObjectList = getObjectList
+GetPing = getPing
+GetPlayerList = getPlayerList
+GetTile = getTile
+GetTiles = getTiles
+GetWorldName = getCurrentWorldName
+LogToConsole = logToConsole
+RemoveHook = removeHook
+SendPacket = sendPacket
+SendPacketRaw = sendPacketRaw
+SendVariant = sendVariant
+SetLogin = setLogin
+SetLoginEnabled = setLoginEnabled
+findPath = FindPath
+localPlayer = getLocal
+
+-- Hook events. Names are lowercase; define these functions in your script.
+---@param var VariantList
+---@param pkt TankPacket
+function onVariant(var, pkt) end
+
+---@param pkt TankPacket
+function onGamePacket(pkt) end
+
+---@param pkt TankPacket
+function onSendPacketRaw(pkt) end
+
+---@param type number
+---@param pkt string
+function onSendPacket(type, pkt) end
+
+---@param type number
+---@param name string
+---@param value string|number|boolean|table
+function onValue(type, name, value) end
+
+---@param deltaTime number
+function onDrawImGui(deltaTime) end
+
+---@param deltaTime number
+function onDraw(deltaTime) end
+
+---@param title string
+---@param alias string
+---@param isAccepted boolean
+function onDialog(title, alias, isAccepted) end
+
 -- Global assignments so Sumneko sees them
 _G.Callback = Callback
 _G.growtopia = growtopia

@@ -37,6 +37,15 @@ ImGuiSizeCallbackData = {}
 ImGuiListClipper = {}
 
 ---@class ImDrawList
+---@field AddLine fun(self: ImDrawList, ...)
+---@field AddRect fun(self: ImDrawList, ...)
+---@field AddRectFilled fun(self: ImDrawList, ...)
+---@field AddRectFilledMultiColor fun(self: ImDrawList, ...)
+---@field AddCircle fun(self: ImDrawList, ...)
+---@field AddCircleFilled fun(self: ImDrawList, ...)
+---@field AddNgon fun(self: ImDrawList, ...)
+---@field AddNgonFilled fun(self: ImDrawList, ...)
+---@field AddText fun(self: ImDrawList, ...)
 ImDrawList = {}
 
 ---@class ImFont
@@ -2382,5 +2391,11 @@ ImGui.DrawListFlags = {
     AntiAliasedFill = 4,
     AllowVtxOffset = 8
 }
+
+---@type ImDrawList
+ImGui.BG = nil
+
+---@type ImDrawList
+ImGui.FG = nil
 
 return ImGui
