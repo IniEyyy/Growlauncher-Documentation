@@ -583,6 +583,8 @@ JSON builder functions for making custom module.
 | `:tableToJSON`         | `t:table`, `indent?:string`                                                                                                                     | `json:string`             | Convert table to JSON string          |
 | `:printJSON`           | -                                                                                                                                               | -                         | Print JSON to console                 |
 
+`UserInterface` is a Lua-layer class, not a native global. Call its methods with `:` on an instance from `UserInterface.new`. Display list values are JSON in the form `{"index":0,"selected":"..."}`.
+
 ## UIManager Namespace
 
 | Function          | Params                           | Return      | Description                       |
@@ -598,6 +600,8 @@ JSON builder functions for making custom module.
 
 ## Hook Events
 
+The native layer stores and dispatches hook names in lowercase (`onvariant`, `ongamepacket`, ...). The camelCase spellings below are kept for readability. Register the lowercase name when you call `addHook`.
+
 - `onVariant(var, pkt)` [`var:VariantList`](#variantlist)[`pkt:TankPacket`](#tankpacket)
 - `onGamePacket(pkt)` [`pkt:TankPacket`](#tankpacket)
 - `onSendPacketRaw(pkt)` [`pkt:TankPacket`](#tankpacket)
@@ -611,7 +615,7 @@ JSON builder functions for making custom module.
 
 | Function             | Params                                           | Return | Description                               | Example                                                  |
 | :-                   | :-                                               | :-     | :-                                        | :-                                                       |
-| `addHook`            | `func:function`, `name:string`, `noret?:boolean` | -      | Add event hook. (noret is deprecated rn.) | `addHook(onDraw,"onDraw")`                               |
+| `addHook`            | `func:function`, `name:string`, `noret?:boolean` | -      | Add event hook. (noret is deprecated rn.) | `addHook(onDraw,"ondraw")`                               |
 | `applyHook`          | -                                                | -      | Apply hooks.                              | `applyHook()`                                            |
 | `removeHook`         | `name:string`                                    | -      | Remove event hook.                        | `removeHook("onDraw")`                                   |
 | `AddHookCallback`    | `func:function`, `name:string`                   | -      | Low-level hook callback                   | `AddHookCallback("OnPlayerJoin", "join_logger", function(player) log("Player joined: " .. player.name) end)` |
@@ -624,6 +628,8 @@ JSON builder functions for making custom module.
 -->
 
 ## Threading & Coroutine
+
+Only `sleep` and `CSleep` are native globals in 7.0.38. The other helpers on this table come from the encrypted Lua layer and are not statically verified.
 
 | Function        | Params                                           | Return    | Description                 | Example                                         |
 | :-              | :-                                               | :-        | :-                          | :-                                              |
@@ -645,26 +651,26 @@ JSON builder functions for making custom module.
 | :-             | :-                                                               | :-                        | :-                               | :-                                          |
 | `getValue`     | `type:number (0=boolean,1=number,2=str)`, `name:string`          | `boolean\|number\|string` | Get value by type and name       | `getValue(0, "ModFly")`                     |
 | `setValue`     | `name:string`, `value:any`                                       | -                         | Set value (no UI update)         | `setValue("cheat_config_fastbuy_count",1)`  |
-| `bindValue`    | `type:number`, `alias:string`, `default:string\|number\|boolean` | `boolean\|number\|string` | Bind alias with default value    | `bindValue(1, "autocrime_delay", 500)()`    |
-| `editValue`    | `name:string`, `value:string\|boolean\|number`                   | -                         | Edit or toggle value             | `editValue("cheat_config_fastbuy_count",1)` |
-| `editToggle`   | `name:string`, `value:boolean`                                   | -                         | Edit or toggle value             | `editToggle("ModFly", true)`                |
+| `bindValue`    | `type:number`, `alias:string`, `default:string\|number\|boolean` | `boolean\|number\|string` | Lua layer only, unverified        | `bindValue(1, "autocrime_delay", 500)`      |
+| `editValue`    | `name:string`, `value:string\|boolean\|number`                   | -                         | Write value, updates matching UI item | `editValue("cheat_config_fastbuy_count",1)` |
+| `editToggle`   | `name:string`, `value:boolean`                                   | -                         | Enable/disable a module toggle by alias | `editToggle("ModFly", true)`            |
 | `setMinimum`   | `version:string`                                                 | -                         | Set minimum version requirement  | `setMinimum("6.0.0")`                       |
-| `setOnValue`   | `name:string`, `func:function`                                   | -                         | Callback when value changes      | `setOnValue("autocrime_delay", onChange)`   |
+| `setOnValue`   | `name:string`, `func:function`                                   | -                         | Lua layer only, unverified        | `setOnValue("autocrime_delay", onChange)`   |
 | `addIntoModule`| `json:string`, `category_name?:string`                           | -                         | Add JSON into module             | `addIntoModule('{"key":1}',"Test")`         |
 
 ## Login
 
 | Function           | Params                                    | Return | Description                              | Example                 |
 | :-                 | :-                                        | :-     | :-                                       | :-                      |
-| `setLogin`         | `id:integer`, `arg2:string`, `arg3:string`, `arg4:string`, `arg5:string` | - | Native login helper, parameter meanings not verified | - |
-| `setLoginEnabled`  | `enabled:boolean`                         | -      | Enable or disable the login state flag   | `setLoginEnabled(true)` |
+| `setLogin`         | `platformID:integer`, `mac:string`, `rid:string`, `wk:string`, `ltoken:string` | - | Send login values to the native LoginHandler | - |
+| `setLoginEnabled`  | `enabled:boolean`                         | -      | Enable or disable the native LoginHandler | `setLoginEnabled(true)` |
 
 ## Notification & UI Modules
 
 | Function           | Params                           | Return | Description               | Example                                  |
 | :-                 | :-                               | :-     | :-                        | :-                                       |
 | `sendDialog`       | [`dialog:Dialog`](#dialog)       | -      | Send a GL dialog          | `sendDialog({title="Ey",message="HEY"})` |
-| `addCategory`      | `name:string`, `icon:string`     | -      | Add UI category           | `addCategory("Tools","Verified")`        |
+| `addCategory`      | `name:string`, `icon:string`     | -      | Add UI category. Icon is a Material Icons Rounded name (for example `Verified`) | `addCategory("Tools","Verified")`        |
 | `addShortcut`      | `name:string`                    | -      | Add shortcut              | `addShortcut("FindPath")`                |
 | `removeShortcut`   | `name:string`                    | -      | Remove shortcut           | `removeShortcut("FindPath")`             |
 | `requireModule`    | `name:string`                    | -      | Requires module           | `requireModule("IniEy")`                 |
@@ -675,10 +681,12 @@ JSON builder functions for making custom module.
 
 # Deprecated
 
+`createPlayer` and `SetPathFlag` share the same native stub. It ignores every argument, prints the `Deprecated function called` warning, and returns no values. `executeFromAssets` is still implemented in 7.0.38: it loads the asset script and prints a deprecation notice.
+
 | Function              | Params                                                                     | Return                  | Description                     |
 | :-                    | :-                                                                         | :-                      | :-                              |
 | `executeFromAssets`   | `path:string`, `name:string`                                               | -                       | Deprecated asset execute        |
-| `createPlayer`        | `name:string`, `flag:string`, `netID:number`, `posX:number`, `posY:number` | [NetAvatar](#netavatar) | Spawn a visual NPC Avatar       |
+| `createPlayer`        | `name:string`, `flag:string`, `netID:number`, `posX:number`, `posY:number` | -                       | Deprecated no-op: prints a deprecation warning and returns nothing |
 | `SetPathFlag`         | -                                                                          | -                       | -                               |
 
 ---

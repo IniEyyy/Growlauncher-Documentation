@@ -2,6 +2,10 @@
 
 JSON builder functions for making custom module.
 
+`UserInterface` and its methods are Lua-layer helpers, not native globals. The launcher resolves the generated JSON into native UI items, and every item type used here exists in 7.0.38, including `display_list`. Call methods with `:` and an instance created by `UserInterface.new`.
+
+When a display list changes, the launcher sends the value as JSON in the form `{"index":0,"selected":"..."}`.
+
 ## Functions
 
 | Function               | Params                                             | Return | Description |

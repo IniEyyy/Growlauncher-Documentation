@@ -14,6 +14,7 @@ The headings below keep the camelCase form for readability.
 
 ### onVariant()
 `onVariant(var, pkt)`
+- **Registered name**: `onvariant`
 - **Parameters**: 
   - `var:VariantList` - Variant list data
   - `pkt:TankPacket` - Tank packet data
@@ -23,6 +24,7 @@ The headings below keep the camelCase form for readability.
 
 ### onGamePacket()
 `onGamePacket(pkt)`
+- **Registered name**: `ongamepacket`
 - **Parameters**: 
   - `pkt:TankPacket` - Tank packet data
 - **Description**: Called when game packet is received
@@ -31,6 +33,7 @@ The headings below keep the camelCase form for readability.
 
 ### onSendPacketRaw()
 `onSendPacketRaw(pkt)`
+- **Registered name**: `onsendpacketraw`
 - **Parameters**: 
   - `pkt:TankPacket` - Tank packet data
 - **Description**: Called when raw packet is being sent
@@ -39,6 +42,7 @@ The headings below keep the camelCase form for readability.
 
 ### onSendPacket()
 `onSendPacket(type, pkt)`
+- **Registered name**: `onsendpacket`
 - **Parameters**: 
   - `type:number` - Packet type
   - `pkt:string` - Packet data
@@ -48,6 +52,7 @@ The headings below keep the camelCase form for readability.
 
 ### onValue()
 `onValue(type, name, value)`
+- **Registered name**: `onvalue`
 - **Parameters**: 
   - `type:number` - Value type
   - `name:string` - Value name
@@ -58,6 +63,7 @@ The headings below keep the camelCase form for readability.
 
 ### onDrawImGui()
 `onDrawImGui(deltaTime)`
+- **Registered name**: `ondrawimgui`
 - **Parameters**: 
   - `deltaTime:number` - Time since last frame
 - **Description**: Called every frame for ImGui rendering
@@ -66,6 +72,7 @@ The headings below keep the camelCase form for readability.
 
 ### onDraw()
 `onDraw(deltaTime)`
+- **Registered name**: `ondraw`
 - **Parameters**: 
   - `deltaTime:number` - Time since last frame
 - **Description**: Called every frame for drawing operations
@@ -74,6 +81,7 @@ The headings below keep the camelCase form for readability.
 
 ### onDialog()
 `onDialog(title, alias, isAccepted)`
+- **Registered name**: `ondialog`
 - **Parameters**: 
   - `title:string` - Dialog title
   - `alias:string` - Dialog alias
@@ -88,9 +96,9 @@ The headings below keep the camelCase form for readability.
 
 | Function             | Params                                           | Return | Description                               | Example                                                  |
 | :-                   | :-                                               | :-     | :-                                        | :-                                                       |
-| `addHook`            | `func:function`, `name:string`, `noret?:boolean` | -      | Add event hook. (noret is deprecated rn.) | `addHook(onDraw,"onDraw")`                               |
+| `addHook`            | `func:function`, `name:string`, `noret?:boolean` | -      | Add event hook. (noret is deprecated rn.) | `addHook(onDraw,"ondraw")`                               |
 | `applyHook`          | -                                                | -      | Apply hooks.                              | `applyHook()`                                            |
-| `removeHook`         | `name:string`                                    | -      | Remove event hook.                        | `removeHook("onDraw")`                                   |
+| `removeHook`         | `name:string`                                    | -      | Remove event hook.                        | `removeHook("ondraw")`                                   |
 | `AddHookCallback`    | `func:function`, `name:string`                   | -      | Low-level hook callback                   | `AddHookCallback("OnPlayerJoin", "join_logger", function(player) log("Player joined: " .. player.name) end)` |
 | `CallHookCallback`   | `name:string`, `...`                             | -      | Call a registered hook callback           | `CallHookCallback("OnPlayerJoin", { name = "TestBot" })`                                                     |
 | `RemoveHookCallback` | `name:string`                                    | -      | Remove a hook callback                    | `RemoveHookCallback("OnPlayerJoin", "join_logger")`                                                          |
@@ -101,7 +109,7 @@ The headings below keep the camelCase form for readability.
 
 ```lua
 -- Basic hook registration
-addHook(onDraw,"onDraw")
+addHook(onDraw,"ondraw")
 applyHook()
 
 -- Hook callback usage
@@ -110,6 +118,6 @@ AddHookCallback(function(var, pkt)
 end, "onVariant")
 
 -- Remove hooks
-removeHook("onDraw")
+removeHook("ondraw")
 RemoveHookCallback("onVariant")
 ```

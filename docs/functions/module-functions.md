@@ -4,6 +4,8 @@
 
 Module functions provide capabilities for creating UI modules, managing categories, shortcuts, and sending notifications in Growlauncher.
 
+Icons are Material Icons names. The launcher resolves each icon string reflectively as `androidx.compose.material.icons.rounded.<Name>`, so `"Verified"`, `"SportsEsports"`, `"Settings"`, and `"Info"` are valid examples. An unknown name falls back to the warning icon.
+
 ## Functions
 
 ---
@@ -27,7 +29,7 @@ Module functions provide capabilities for creating UI modules, managing categori
 - **Description**: Add UI category
 - **Parameters**: 
     - `name: string` - Category name
-    - `icon: string` - Category icon
+    - `icon: string` - Material Icons Rounded name, for example `Verified` or `SportsEsports`
 - **Returns**: 
     - None
 - **Example**:
@@ -81,15 +83,25 @@ Module functions provide capabilities for creating UI modules, managing categori
 
 ### addIntoModule()
 `addIntoModule(json:string, category:string)`
-- **Description**: Adds JSON-defined module
+- **Description**: Adds a JSON-defined module to a category
 - **Parameters**: 
     - `json: string` - JSON module definition
     - `category: string` - Module category
 - **Returns**: 
     - None
+- **Note**:
+    - Items use `text` as the label and `alias` as the value key. A toggle also accepts `default`, `description`, `icon`, and `autosave`. The `alias` is the name you pass to `editToggle` or `editValue` to flip it from Lua.
+    - Icons follow the same Material Icons Rounded names as `addCategory`.
 - **Example**:
     ```lua
-    addIntoModule("{}", "IniEy")
+    addIntoModule([[{
+      "text": "ModFly",
+      "alias": "ModFly",
+      "type": "toggle",
+      "icon": "Flight",
+      "default": false
+    }]], "IniEy")
+    editToggle("ModFly", true)
     ```
 
 ---

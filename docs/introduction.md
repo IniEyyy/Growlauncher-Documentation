@@ -63,7 +63,7 @@ function onDrawImGui(deltaTime)
     end
 end
 
-addHook(onDrawImGui, "onDraw")
+addHook(ondrawimgui, "ondrawimgui")
 applyHook()
 ```
 

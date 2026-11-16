@@ -122,6 +122,8 @@ Mathematical functions and utility operations.
     - `name:string` - Asset name
 - **Returns**: 
     - None
+- **Note**:
+    - Still implemented in Growlauncher 7.0.38 even though it is marked deprecated. It loads the asset script and shows a deprecation notice that can be suppressed with the `dont_show_` setting. An empty path raises a Lua error (`Execute failed`).
 
 ---
 

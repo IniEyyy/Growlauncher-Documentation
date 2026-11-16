@@ -55,7 +55,7 @@ Available hook events that can be intercepted:
     - None
 - **Example**:
     ```lua
-    addHook(onDraw, "onDraw")
+    addHook(onDraw, "ondraw")
     ```
 
 ---
@@ -81,7 +81,7 @@ Available hook events that can be intercepted:
     - None
 - **Example**:
     ```lua
-    removeHook("onDraw")
+    removeHook("ondraw")
     ```
 
 ---

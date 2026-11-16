@@ -4,6 +4,8 @@
 
 Value functions provide access to Growlauncher's internal value system for managing settings, configurations, and module values.
 
+Native globals in Growlauncher 7.0.38: `getValue`, `setValue`, `editValue` (also `editToggle`), `setMinimum`, and `addIntoModule`. `bindValue` and `setOnValue` are not registered in the native binding table. Their implementation is not verifiable statically because the Lua assets ship encrypted.
+
 ## Functions
 
 ---
@@ -47,6 +49,7 @@ Value functions provide access to Growlauncher's internal value system for manag
     - `default: string|number|boolean` - Default value
 - **Returns**: 
     - `boolean|number|string` - Bound value
+- **Status**: Not registered in Growlauncher 7.0.38; Lua layer only and not statically verified.
 - **Example**:
     ```lua
     bindValue(1, "autocrime_delay", 500)
@@ -56,12 +59,14 @@ Value functions provide access to Growlauncher's internal value system for manag
 
 ### editValue()
 `editValue(name:string, value:string|boolean|number)`
-- **Description**: Edit or toggle value
+- **Description**: Write a value into the launcher value store. The UI item registered under the same alias is updated too.
 - **Parameters**: 
-    - `name: string` - Value name
-    - `value: string|boolean|number` - New value
+    - `name: string` - Value name, which is the `alias` of the module item
+    - `value: string|boolean|number` - New value; numbers are stored as signed 32-bit integers, booleans are stored as the strings `true` / `false`
 - **Returns**: 
     - None
+- **Note**:
+    - `editToggle` and `editValue` are the same native function. Any module toggle whose `alias` matches `name` flips when you pass `true` or `false`.
 - **Example**:
     ```lua
     editValue("cheat_config_fastbuy_count", 1)
@@ -71,12 +76,14 @@ Value functions provide access to Growlauncher's internal value system for manag
 
 ### editToggle()
 `editToggle(name:string, value:boolean)`
-- **Description**: Edit or toggle value
+- **Description**: Edit or toggle value. For example, enable a module toggle without clicking it.
 - **Parameters**: 
-    - `name: string` - Value name
+    - `name: string` - Value name, which is the `alias` of the module item
     - `value: boolean` - Toggle value
 - **Returns**: 
     - None
+- **Note**:
+    - Same native implementation as `editValue`. The alias must match the `alias` field in the module JSON added with `addIntoModule`.
 - **Example**:
     ```lua
     editToggle("ModFly", true)
@@ -106,6 +113,7 @@ Value functions provide access to Growlauncher's internal value system for manag
     - `func: function` - Callback function
 - **Returns**: 
     - None
+- **Status**: Not registered in Growlauncher 7.0.38. No string for this name exists in the native library or DEX, so it is unverified and may be absent.
 - **Example**:
     ```lua
     setOnValue("autocrime_delay", onChange)

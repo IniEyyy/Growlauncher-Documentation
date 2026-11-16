@@ -2,33 +2,33 @@
 
 ## Overview
 
-Login functions control the native login state used by the launcher. They are rarely needed in scripts, and the exact argument meanings are not verified yet.
+Login functions control the native LoginHandler object used by the launcher. They are rarely needed in scripts.
 
 ## Functions
 
 ---
 
 ### setLogin()
-`setLogin(id, arg2, arg3, arg4, arg5)`
-- **Description**: Native login helper. Requires exactly five arguments: one integer followed by four strings.
+`setLogin(platformID, mac, rid, wk, ltoken)`
+- **Description**: Forward five login values to the native LoginHandler.
 - **Parameters**:
-    - `id: integer` - Numeric login identifier
-    - `arg2: string` - Not verified yet
-    - `arg3: string` - Not verified yet
-    - `arg4: string` - Not verified yet
-    - `arg5: string` - Not verified yet
+    - `platformID: integer` - Numeric platform identifier
+    - `mac: string` - Device MAC value
+    - `rid: string` - Login rid value
+    - `wk: string` - Login wk value
+    - `ltoken: string` - Login ltoken value
 - **Returns**:
     - None
 - **Note**:
-    - The parameter names above are placeholders. Call it only with values produced by the launcher, not with arbitrary input.
+    - The parameter names come from the signature string embedded in the native library (`setLogin ([platformID], [mac], [rid], [wk], [ltoken])`). The launcher passes these values during its own login flow.
 
 ---
 
 ### setLoginEnabled()
 `setLoginEnabled(enabled)`
-- **Description**: Enable or disable the login state flag
+- **Description**: Enable or disable the native LoginHandler.
 - **Parameters**:
-    - `enabled: boolean` - New flag state
+    - `enabled: boolean` - New enabled state
 - **Returns**:
     - None
 - **Example**:

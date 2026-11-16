@@ -64,6 +64,8 @@ Network functions provide packet sending and communication capabilities in Growt
     - None
 - **Returns**:
     - `integer` - Ping value, or `-1` when no entry is available
+- **Note**:
+    - The value is a 32-bit field read from the matching peer entry. Whether the unit is milliseconds is not verified.
 - **Example**:
     ```lua
     log(getPing())

@@ -26,7 +26,9 @@ Functions for getting player information and inventory data.
 - **Parameters**: 
     - None
 - **Returns**: 
-    - [`NetAvatar`](/structs/player#netavatar) - Local player data
+    - [`NetAvatar`](/structs/player#netavatar) - Local player data, or `nil` when no local avatar exists (for example at the login screen)
+- **Note**:
+    - The table is a serialized copy, not a live native object. `pos.x` and `pos.y` are confirmed integer fields; other fields come from the same native snapshot.
 - **Example**:
     ```lua
     log(getLocal().name)

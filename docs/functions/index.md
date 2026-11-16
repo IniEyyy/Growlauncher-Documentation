@@ -2,6 +2,18 @@
 
 Complete reference for all Growlauncher API functions.
 
+## What is callable
+
+Growlauncher 7.0.38 exposes three native surfaces:
+
+| Surface | Access | Verified count |
+| :- | :- | :- |
+| Lua globals | Bare names such as `getLocal()`, `addHook()`, `editToggle()` | 73 registrations, 46 implementations |
+| ImGui | Fields of the `ImGui` table, such as `ImGui.Begin()` | 249 functions |
+| Draw lists | Methods on `ImGui.BG` and `ImGui.FG` | 9 methods |
+
+Hooks are event globals in lowercase (`ondraw`, `onvalue`, ...). Names shown in this documentation with a **Binding** or **Status** note are editor hints or Lua-layer helpers: they are not part of the native binding table and cannot be assumed to work in this build.
+
 ## Categories
 
 ### [Console & Logging](/functions/console)

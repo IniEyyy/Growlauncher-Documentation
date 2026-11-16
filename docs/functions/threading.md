@@ -4,6 +4,8 @@
 
 Threading and coroutine functions provide concurrency capabilities for running operations in parallel or with delays in Growlauncher.
 
+Only `sleep` and `CSleep` are native globals in Growlauncher 7.0.38. `await`, `randomSleep`, `randomCSleep`, `runThread`, and `runCoroutine` are not in the native binding table; they depend on the encrypted Lua layer and are not statically verified.
+
 ## Functions
 
 ---
