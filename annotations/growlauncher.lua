@@ -201,6 +201,10 @@ function getTime() end
 ---@return integer ping Ping value, -1 when no entry is available
 function getPing() end
 
+---Get the Discord ID of the current user
+---@return string id Discord ID as decimal text
+function getDiscordID() end
+
 ---Send packet to server
 ---@param type number
 ---@param packet string

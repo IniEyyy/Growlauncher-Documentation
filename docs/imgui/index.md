@@ -4,6 +4,8 @@
 
 ImGui provides immediate mode GUI functions for creating custom interfaces, overlays, and interactive elements within Growlauncher scripts.
 
+In Growlauncher 7.0.38 the binding table registers 249 functions, the same set listed in `ImGui_Function_List.lua`. Declarations in `annotations/imgui.lua` that are absent from that list are editor hints only and are not callable in this build.
+
 ## Categories
 
 - [Demo & Debug Utilities](/imgui/demo) - Debug and demo functions

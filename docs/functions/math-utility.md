@@ -61,6 +61,8 @@ Mathematical functions and utility operations.
 - **Description**: Current time in ms
 - **Returns**: 
     - `number` - Current time in milliseconds
+- **Note**:
+    - The native code reads the microsecond based `system_clock` value and divides it by 1000, so the result is milliseconds.
 - **Example**: 
     ```lua
     log(getTime())
@@ -152,10 +154,10 @@ Mathematical functions and utility operations.
 ---
 
 ### getDiscordID()
-`getDiscordID()`
+`getDiscordID() -> string`
 - **Description**: Get user discord id
 - **Returns**: 
-    - None
+    - `string` - Discord ID as decimal text
 - **Example**: 
     ```lua
     log(getDiscordID())

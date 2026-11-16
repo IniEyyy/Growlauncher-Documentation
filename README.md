@@ -471,7 +471,7 @@ Make sure to use real growlauncher, buy it [here](#-community).
 | `executeFromAssets` | `path:string`, `name:string`                   | -                | Deprecated execute asset.        | -                                                               |
 | `error`             | `text:string`                                  | -                | Shows an error warning.          | `error("error text")`                                           |
 | `fetch`             | `url:string`                                   | response, error  | Get text data from url           | `fetch("https://raw.githubusercontent.com/PowerKuy/Growlauncher-Documentation/refs/heads/main/sample-scripts/example-for-fetch.lua")`  |
-| `getDiscordID`      | -                                              | -                | Get user discord id              | `log(getDiscordID)`                                             |
+| `getDiscordID`      | -                                              | `string`         | Get user discord id              | `log(getDiscordID())`                                           |
 
 ---
 
