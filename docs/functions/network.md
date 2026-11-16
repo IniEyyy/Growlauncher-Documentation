@@ -54,3 +54,19 @@ Network functions provide packet sending and communication capabilities in Growt
     p = getLocal()
     sendPacketRaw(false, {type=3, value=18, x=p.posX, y=p.posY, px=p.posX//32, py = p.posY//32})
     ```
+
+---
+
+### getPing()
+`getPing() -> integer`
+- **Description**: Get current connection ping
+- **Parameters**:
+    - None
+- **Returns**:
+    - `integer` - Ping value, or `-1` when no entry is available
+- **Example**:
+    ```lua
+    log(getPing())
+    ```
+
+---

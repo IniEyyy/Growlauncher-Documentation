@@ -8,6 +8,8 @@ Hook functions allow you to intercept and respond to game events, packets, and U
 
 Available hook events that can be intercepted:
 
+> The native dispatcher compares names as lowercase strings, and the official sample scripts register them in lowercase (`removeHook("ondraw")`). The camelCase names below are kept for readability; use the lowercase form when registering.
+
 - `onVariant(var, pkt)` - Variant list received
   - `var: [VariantList](/structs/variants#variantlist)` - Variant data
   - `pkt: [TankPacket](/structs/tiles#tankpacket)` - Packet data

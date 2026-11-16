@@ -34,6 +34,9 @@ Internal value system management.
 ### [Module Functions](/functions/module-functions)
 UI modules and notification system.
 
+### [Login](/functions/login)
+Native login state helpers.
+
 ## Quick Reference
 
 ```lua

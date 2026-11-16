@@ -229,7 +229,9 @@ export default defineConfig({
 
           { text: "Value Functions", link: "/functions/value-functions" },
 
-          { text: "Module Functions", link: "/functions/module-functions" }
+          { text: "Module Functions", link: "/functions/module-functions" },
+
+          { text: "Login", link: "/functions/login" }
 
         ]
 
@@ -324,7 +326,9 @@ export default defineConfig({
 
           { text: "Image Functions", link: "/imgui/image" },
 
-          { text: "Tables", link: "/imgui/tables" }
+          { text: "Tables", link: "/imgui/tables" },
+
+          { text: "Draw Lists", link: "/imgui/drawlist" }
 
         ]
 

@@ -32,6 +32,7 @@ ImGui provides immediate mode GUI functions for creating custom interfaces, over
 - [Input Text Widgets](/imgui/input-text) - Text input widgets
 - [Image Functions](/imgui/image) - Image display
 - [Tables](/imgui/tables) - Table creation
+- [Draw Lists](/imgui/drawlist) - Background and foreground draw lists
 
 ## Quick Start
 

@@ -162,6 +162,10 @@
 ---@param text string|number|boolean
 function LogToConsole(text) end
 
+---Log a value with debug formatting (Mod_Menu tag)
+---@param value any
+function logDebug(value) end
+
 ---Add data into module
 ---@param json string
 ---@param category_name string|nil
@@ -192,6 +196,10 @@ function sendNotification(text) end
 ---Get current time in milliseconds
 ---@return number
 function getTime() end
+
+---Get current connection ping
+---@return integer ping Ping value, -1 when no entry is available
+function getPing() end
 
 ---Send packet to server
 ---@param type number
@@ -277,6 +285,18 @@ function editValue(name, value) end
 ---@param version string
 function setMinimum(version) end
 
+---Native login helper. Parameter meanings are not verified yet.
+---@param id integer
+---@param arg2 string
+---@param arg3 string
+---@param arg4 string
+---@param arg5 string
+function setLogin(id, arg2, arg3, arg4, arg5) end
+
+---Enable or disable the login state flag
+---@param enabled boolean
+function setLoginEnabled(enabled) end
+
 ---Run function in separate thread
 ---@param func function
 ---@param ... any
@@ -314,6 +334,16 @@ function getItemInfoByName(name) end
 ---Get all tiles in world
 ---@return Tile[]
 function getTiles() end
+
+---Change a tile foreground visually (global form of tile.setFg)
+---@param tile Tile
+---@param itemid integer
+function setFg(tile, itemid) end
+
+---Change a tile background visually (global form of tile.setBg)
+---@param tile Tile
+---@param itemid integer
+function setBg(tile, itemid) end
 
 ---Get local player data
 ---@return NetAvatar

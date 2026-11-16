@@ -4,6 +4,12 @@ Hooks allow intercepting game events and packets for advanced scripting capabili
 
 ## Hook Events
 
+The dispatcher inside the native layer compares hook names as lowercase strings. The official sample scripts also register hooks in lowercase, for example `removeHook("ondraw")`. Use the lowercase form when you register a hook:
+
+`ondraw`, `onvalue`, `ondialog`, `onsendpacket`, `onvariant`, `onsendpacketraw`, `onsendpacketrawtype`, `ondrawimgui`, `ongamepacket`
+
+The headings below keep the camelCase form for readability.
+
 ---
 
 ### onVariant()

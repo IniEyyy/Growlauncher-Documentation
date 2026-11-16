@@ -415,6 +415,7 @@ Make sure to use real growlauncher, buy it [here](#-community).
 | `log`          | `text:string\|number\|boolean` | -        | Logs text to console   | `log("Hello")`                       |
 | `LogToConsole` | `text:string\|number\|boolean` | -        | Logs text to console   | `logToConsole("Hello")`              |
 | `dumpTable`    | `o: any`                       | `string` | Dump table into string | `tbl = {1,2,3}; log(dumpTable(tbl))` |
+| `logDebug`     | `value:any`                    | -        | Log with Mod_Menu tag  | `logDebug(123)`                      |
 
 ## Networking & Packets
 
@@ -423,6 +424,7 @@ Make sure to use real growlauncher, buy it [here](#-community).
 | `sendPacket`    | `type:number`, `packet:string`, `to_client_first?:boolean`                                            | -      | Send packet to server          | `sendPacket(2,"action\|input\ntext\|Hi")`                     |
 | `sendVariant`   | `variantlist:VariantList`, [`packet_data?:TankPacket`](#tankpacket), `netid?:number`, `value?:number` | -      | Send variant list              | `sendVariant({v1 = "OnConsoleMessage", v2 = "Console here"})` |
 | `sendPacketRaw` | `flag:boolean`, [`packet:TankPacket`](#tankpacket)                                                    | -      | Send raw TankPacket            | `p=getLocal(); sendPacketRaw(false, {type=3, value=18, x=p.posX, y=p.posY, px=p.posX//32, py = p.posY//32})` |
+| `getPing`       | -                                                                                                     | `integer` | Current connection ping, -1 when unavailable | `log(getPing())`                              |
 
 ## Player Info
 
@@ -490,6 +492,13 @@ Make sure to use real growlauncher, buy it [here](#-community).
 | `tile.getTile` | `x:number`, `y:number`           | [`Tile`](#tile) | Get tile at coordinates    | `tile.getTile(GetLocal().posX//32,GetLocal().posY//32)`                   |
 | `tile.setFg`   | [`Tile`](#tile), `itemid:number` | -               | Change foreground visually | `tile.setFg(tile.getTile(GetLocal().posX//32,GetLocal().posY//32), 7188)` |
 | `tile.setBg`   | [`Tile`](#tile), `itemid:number` | -               | Change background visually | `tile.setBg(tile.getTile(GetLocal().posX//32,GetLocal().posY//32), 18)` |
+
+The same functions are registered as globals. Both forms take the tile first and the item ID second.
+
+| Function | Params                           | Return | Description                | Example                      |
+| :-       | :-                               | :-     | :-                         | :-                           |
+| `setFg`  | [`Tile`](#tile), `itemid:number` | -      | Change foreground visually | `setFg(getTile(10,5), 7188)` |
+| `setBg`  | [`Tile`](#tile), `itemid:number` | -      | Change background visually | `setBg(getTile(10,5), 18)`   |
 
 ## Growtopia Namespace
 
@@ -642,6 +651,13 @@ JSON builder functions for making custom module.
 | `setMinimum`   | `version:string`                                                 | -                         | Set minimum version requirement  | `setMinimum("6.0.0")`                       |
 | `setOnValue`   | `name:string`, `func:function`                                   | -                         | Callback when value changes      | `setOnValue("autocrime_delay", onChange)`   |
 | `addIntoModule`| `json:string`, `category_name?:string`                           | -                         | Add JSON into module             | `addIntoModule('{"key":1}',"Test")`         |
+
+## Login
+
+| Function           | Params                                    | Return | Description                              | Example                 |
+| :-                 | :-                                        | :-     | :-                                       | :-                      |
+| `setLogin`         | `id:integer`, `arg2:string`, `arg3:string`, `arg4:string`, `arg5:string` | - | Native login helper, parameter meanings not verified | - |
+| `setLoginEnabled`  | `enabled:boolean`                         | -      | Enable or disable the login state flag   | `setLoginEnabled(true)` |
 
 ## Notification & UI Modules
 

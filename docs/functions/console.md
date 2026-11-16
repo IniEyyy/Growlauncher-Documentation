@@ -49,3 +49,19 @@ Console functions provide logging capabilities for debugging and monitoring scri
     log(dumpTable(tbl))
     ```
 
+---
+
+### logDebug()
+`logDebug(value)`
+- **Description**: Logs one value with the Mod_Menu debug tag
+- **Parameters**:
+    - `value: any` - Value to log. Numbers print as `%d`, booleans print `true` or `false`, other types print `nil`.
+- **Returns**:
+    - None
+- **Example**:
+    ```lua
+    logDebug(123)
+    ```
+
+---
+
